@@ -1,0 +1,194 @@
+﻿@model AlphaABSV2.Models.BookingForm
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                    <li class="active">
+                        Delete Booking
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                Bookings
+            </h2>
+            <small>View all Bookings here.</small>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h2>Delete @Model.GroupOrganiser Booking</h2>
+
+                        @*<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        Delete Bookings
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.BookingRef)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.BookingRef)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DateOfBooking)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DateOfBooking)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Source)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Source)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.VenueID)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.VenueID)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Purpose)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Purpose)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.GroupOrganiser)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.GroupOrganiser)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PartyName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.PartyName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.GroupSize)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.GroupSize)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.StartTime)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.StartTime)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.EndTime)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.EndTime)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.BookingStatus)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.BookingStatus)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.BookingSummary)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.BookingSummary)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DaySheetNotes)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DaySheetNotes)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.InternalNotes)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.InternalNotes)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.SendEmail)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SendEmail)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.SendText)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SendText)
+                            </dd>
+
+                        </dl>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Delete" class="btn btn-danger btn-md" /> |
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-md" })
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model AlphaABSV2.Models.Venue
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Venue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VenueID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

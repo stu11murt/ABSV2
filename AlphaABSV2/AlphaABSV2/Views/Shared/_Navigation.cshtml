@@ -1,0 +1,115 @@
+﻿<div id="navigation">
+    <div class="profile-picture">
+        <a href="@Url.Action("Index", "Dashboard")">
+            <img src="~/Images/FBDPDLogosmall.png" class="img-polaroid m-b" alt="logo">
+        </a>
+
+        <div class="stats-label text-color">
+            <span class="font-extra-bold font-uppercase">Deep Blue Development</span>
+
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                    <small class="text-muted">Developer<b class="caret"></b></small>
+                </a>
+                <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="analytics.html">Analytics</a></li>
+                    <li class="divider"></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </div>
+            <div id="sparkline1" class="small-chart m-t-sm">9,1,2,4,7,3,4,2</div>
+            <div>
+                <h4 class="font-extra-bold m-b-xs">
+                    12,336
+                </h4>
+                <small class="text-muted">Amount of players this year.</small>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav" id="side-menu">
+        <li class="@Html.IsSelected(controller: "Dashboard")">
+            <a href="@Url.Action("Index", "Dashboard")"> <span class="nav-label">Home</span> <span class="label label-primary pull-right">v.2.0</span> </a>
+        </li>
+        <li class="@Html.IsSelected(controller: "EventsCalendar")">
+            <a href="@Url.Action("EventsCalendar", "BookingForm")"> <span class="nav-label">Event Calendar</span></a>
+        </li>
+        <li class="@Html.IsSelected(controller: "NewBooking")">
+            <a href="@Url.Action("Create", "BookingForm")"> <span class="nav-label">New Booking</span></a>
+        </li>
+        <li class="@Html.IsSelected(controller: "BookingForm")">
+            <a href="#"><span class="nav-label">Bookings</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "BookingForm")">All Bookings</a></li>
+                <li class="@Html.IsSelected(action: "ComfirmedBookings")"><a href="@Url.Action("ComfirmedBookings", "BookingForm")">Comfirmed Bookings</a></li>
+                <li class="@Html.IsSelected(action: "ProvisionalBookings")"><a href="@Url.Action("ProvisionalBookings", "BookingForm")">Provisional Bookings</a></li>
+                <li class="@Html.IsSelected(action: "CancelledBookings")"><a href="@Url.Action("CancelledBookings", "BookingForm")">Cancelled Bookings</a></li>
+                <li class="@Html.IsSelected(action: "PostBookings")"><a href="@Url.Action("PostBookings", "BookingForm")">Postponed Bookings</a></li>
+                <li class="@Html.IsSelected(action: "AccomodationBookings")"><a href="@Url.Action("AccomodationBookings", "BookingForm")">Accomodation Bookings</a></li>
+                <li class="@Html.IsSelected(action: "RefundedBookings")"><a href="@Url.Action("RefundedBookings", "BookingForm")">Refunded Bookings</a></li>
+                <li class="@Html.IsSelected(action: "GroupBookings")"><a href="@Url.Action("GroupBookings", "BookingForm")">Group Bookings</a></li>
+            </ul>
+        </li>
+        <li class="@Html.IsSelected(controller: "BookingForm")">
+            <a href="#"><span class="nav-label">Event Info</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "PaintballQuickView")"><a href="@Url.Action("PaintballQuickView", "BookingForm")">Paintball QuickView</a></li>
+                <li class="@Html.IsSelected(action: "LaserQuickView")"><a href="@Url.Action("LaserQuickView", "BookingForm")">Laser QuickView</a></li>
+                <li class="@Html.IsSelected(action: "AirsoftQuickView")"><a href="@Url.Action("AirsoftQuickView", "BookingForm")">Airsoft QuickView</a></li>
+                <li class="@Html.IsSelected(action: "HistoricalQuickView")"><a href="@Url.Action("HistoricalQuickView", "BookingForm")">Historical QuickView</a></li>
+                <li class="@Html.IsSelected(action: "UserQuickView")"><a href="@Url.Action("UserQuickView", "BookingForm")">User QuickView</a></li>
+            </ul>
+        </li>
+        <li class="@Html.IsSelected(controller: "Marketing")">
+            <a href="#"><span class="nav-label">Marketing</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "PlayerDatabase")"><a href="@Url.Action("PlayerDatabase", "Marketing")">Player Database</a></li>
+                <li class="@Html.IsSelected(action: "EmailTemplates")"><a href="@Url.Action("EmailTemplates", "Marketing")">Email Templates</a></li>
+                <li class="@Html.IsSelected(action: "MailshotTemplates")"><a href="@Url.Action("MailShotTemplates", "Marketing")">Mail Shot Templates</a></li>
+                <li class="@Html.IsSelected(action: "SocialMedia")"><a href="@Url.Action("SocialMedia", "Marketing")">Social Media</a></li>
+            </ul>
+        </li>
+        <li class="@Html.IsSelected(controller: "Financial")">
+            <a href="#"><span class="nav-label">Financial Info</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "OverduePayments")"><a href="@Url.Action("OverduePayments", "Financial")">Login</a></li>
+                <li class="@Html.IsSelected(action: "ConfirmedPayments")"><a href="@Url.Action("ConfirmedPayments", "Financial")">Confirmed Payments</a></li>
+                <li class="@Html.IsSelected(action: "ProvisonalPayments")"><a href="@Url.Action("ProvisonalPayments", "Financial")">Provisonal Payments</a></li>
+                <li class="@Html.IsSelected(action: "FinanceReports")"><a href="@Url.Action("FinanceReports", "Financial")">Finance Reports</a></li>
+            </ul>
+        </li>
+        <li class="@Html.IsSelected(controller: "StaffManager")">
+            <a href="#"><span class="nav-label">Staff Manager</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "StaffInfo")"><a href="@Url.Action("Index", "Staff")">Staff Info</a></li>
+                <li class="@Html.IsSelected(action: "EventAssignment")"><a href="@Url.Action("EventAssignment", "Staff")">Event Assignment</a></li>
+            </ul>
+        </li>
+        <li class="@Html.IsSelected(controller: "Vouchers")">
+            <a href="#"><span class="nav-label">Vouchers</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "AllVouchers")"><a href="@Url.Action("AllVouchers", "Vouchers")">All Vouchers</a></li>
+                <li class="@Html.IsSelected(action: "LiveVouchers")"><a href="@Url.Action("LiveVouchers", "Vouchers")">Live Vouchers</a></li>
+                <li class="@Html.IsSelected(action: "VoucherReports")"><a href="@Url.Action("VoucherReports", "Vouchers")">Voucher Reports</a></li>
+    
+            </ul>
+        </li>
+        <li class="@Html.IsSelected(controller: "Accomodation")">
+            <a href="#"><span class="nav-label">Accomodation</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "HotelManager")"><a href="@Url.Action("HotelManager", "Hotel")">Hotel Manager</a></li>
+            </ul>
+        </li>
+        <li class="@Html.IsSelected(controller: "GeneralAdmin")">
+            <a href="#"><span class="nav-label">ABS Admin</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "AgentsManager")"><a href="@Url.Action("AgentsManager", "GeneralAdmin")">Agents Manager</a></li>
+                <li class="@Html.IsSelected(action: "SpecialOffers")"><a href="@Url.Action("SpecialOffers", "GeneralAdmin")">Special Offers</a></li>
+                <li class="@Html.IsSelected(action: "AddOnManager")"><a href="@Url.Action("AddOnManager", "GeneralAdmin")">Add On Manager</a></li>
+                <li class="@Html.IsSelected(action: "Documents")"><a href="@Url.Action("Documents", "GeneralAdmin")">Documents</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

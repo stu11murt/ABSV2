@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                    <li class="active">
+                        <span>New Booking</span>
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                Admin
+            </h2>
+            <small>Examples of various extended form controls.</small>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h2>Admin Area</h2>
+                        <p>Set up the ABS from here. Add new events and options in the booking form i.e. office ref users, Source of booking etc.. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        New Event Parent
+                    </div>
+                        <div class="panel-body">
+                            <h2>Event Setup</h2>
+                            <p>@Html.ActionLink("Event Parent Management", "Index", "EventParent", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            <p>@Html.ActionLink("Event Type Management", "Index", "Event", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            <hr />
+                            <h2>Booking Form Drop Downs</h2>
+                            <p>@Html.ActionLink("Venue", "Index", "Venue", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            <p>@Html.ActionLink("Office Ref", "Index", "OfficeRef", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            <p>@Html.ActionLink("Purpose of Booking", "Index", "Purpose", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            <p>@Html.ActionLink("Source of Booking", "Index", "Source", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            <p>@Html.ActionLink("Booking Statuses", "Index", "BookingStatus", null, new { @class = "btn btn-primary btn-lg" })</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

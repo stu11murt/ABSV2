@@ -1,0 +1,107 @@
+﻿@model AlphaABSV2.Models.Staff
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                    <li class="active">
+                        All Bookings
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                Bookings
+            </h2>
+            <small>View all Bookings here.</small>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h2>Details of @Model.FirstName @Model.LastName</h2>
+
+                        @*<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        Current Bookings
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.FirstName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.LastName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.MobileNum)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MobileNum)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.NINumber)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.NINumber)
+                            </dd>
+
+                        </dl>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.StaffID }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.StaffID }, new { @class = "btn btn-primary btn-md" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-md" })
+    </p>
+</div>
+
+

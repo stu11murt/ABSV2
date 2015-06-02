@@ -1,0 +1,26 @@
+﻿@model AlphaABSV2.Models.OfficeRef
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OfficeRef</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OfficeRefPeople)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OfficeRefPeople)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OfficeRefID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
