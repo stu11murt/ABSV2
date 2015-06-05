@@ -26,7 +26,11 @@ namespace AlphaABSV2.DAL
         public DbSet<VersionManager> VersionManagers { get; set; }
         public DbSet<Staff> Staff { get; set; }
         public DbSet<StaffSkills> StaffSkills { get; set; }
-
+        public DbSet<MarketingDatabase> MarketingDB { get; set; }
+        public DbSet<EmailManager> EmailManager { get; set; }
+        public DbSet<EmailTemplates> EmailTemplates { get; set; }
+        public DbSet<EmailCategories> EmailCategory { get; set; }
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

@@ -43,13 +43,13 @@
             <a href="#"><span class="nav-label">Bookings</span><span class="fa arrow"></span> </a>
             <ul class="nav nav-second-level">
                 <li class="@Html.IsSelected(action: "Index")"><a href="@Url.Action("Index", "BookingForm")">All Bookings</a></li>
+                <li class="@Html.IsSelected(action: "GroupBookings")"><a href="@Url.Action("GroupBookings", "BookingForm")">Group Bookings</a></li>
                 <li class="@Html.IsSelected(action: "ComfirmedBookings")"><a href="@Url.Action("ComfirmedBookings", "BookingForm")">Comfirmed Bookings</a></li>
-                <li class="@Html.IsSelected(action: "ProvisionalBookings")"><a href="@Url.Action("ProvisionalBookings", "BookingForm")">Provisional Bookings</a></li>
+                <li class="@Html.IsSelected(action: "DisplayProvBookings")"><a href="@Url.Action("DisplayProvBookings", "BookingForm")">Provisional Bookings</a></li>
                 <li class="@Html.IsSelected(action: "CancelledBookings")"><a href="@Url.Action("CancelledBookings", "BookingForm")">Cancelled Bookings</a></li>
                 <li class="@Html.IsSelected(action: "PostBookings")"><a href="@Url.Action("PostBookings", "BookingForm")">Postponed Bookings</a></li>
                 <li class="@Html.IsSelected(action: "AccomodationBookings")"><a href="@Url.Action("AccomodationBookings", "BookingForm")">Accomodation Bookings</a></li>
                 <li class="@Html.IsSelected(action: "RefundedBookings")"><a href="@Url.Action("RefundedBookings", "BookingForm")">Refunded Bookings</a></li>
-                <li class="@Html.IsSelected(action: "GroupBookings")"><a href="@Url.Action("GroupBookings", "BookingForm")">Group Bookings</a></li>
             </ul>
         </li>
         <li class="@Html.IsSelected(controller: "BookingForm")">
@@ -66,15 +66,15 @@
             <a href="#"><span class="nav-label">Marketing</span><span class="fa arrow"></span> </a>
             <ul class="nav nav-second-level">
                 <li class="@Html.IsSelected(action: "PlayerDatabase")"><a href="@Url.Action("PlayerDatabase", "Marketing")">Player Database</a></li>
-                <li class="@Html.IsSelected(action: "EmailTemplates")"><a href="@Url.Action("EmailTemplates", "Marketing")">Email Templates</a></li>
-                <li class="@Html.IsSelected(action: "MailshotTemplates")"><a href="@Url.Action("MailShotTemplates", "Marketing")">Mail Shot Templates</a></li>
+                <li class="@Html.IsSelected(action: "EmailManager")"><a href="@Url.Action("Index", "EmailManager")">Email Templates</a></li>
+                <li class="@Html.IsSelected(action: "MailshotTemplates")"><a href="@Url.Action("MailShotTemplates", "EmailManager")">Mail Shot Templates</a></li>
                 <li class="@Html.IsSelected(action: "SocialMedia")"><a href="@Url.Action("SocialMedia", "Marketing")">Social Media</a></li>
             </ul>
         </li>
         <li class="@Html.IsSelected(controller: "Financial")">
             <a href="#"><span class="nav-label">Financial Info</span><span class="fa arrow"></span> </a>
             <ul class="nav nav-second-level">
-                <li class="@Html.IsSelected(action: "OverduePayments")"><a href="@Url.Action("OverduePayments", "Financial")">Login</a></li>
+                <li class="@Html.IsSelected(action: "OverduePayments")"><a href="@Url.Action("OverduePayments", "Financial")">Overdue Payments</a></li>
                 <li class="@Html.IsSelected(action: "ConfirmedPayments")"><a href="@Url.Action("ConfirmedPayments", "Financial")">Confirmed Payments</a></li>
                 <li class="@Html.IsSelected(action: "ProvisonalPayments")"><a href="@Url.Action("ProvisonalPayments", "Financial")">Provisonal Payments</a></li>
                 <li class="@Html.IsSelected(action: "FinanceReports")"><a href="@Url.Action("FinanceReports", "Financial")">Finance Reports</a></li>
@@ -84,7 +84,7 @@
             <a href="#"><span class="nav-label">Staff Manager</span><span class="fa arrow"></span> </a>
             <ul class="nav nav-second-level">
                 <li class="@Html.IsSelected(action: "StaffInfo")"><a href="@Url.Action("Index", "Staff")">Staff Info</a></li>
-                <li class="@Html.IsSelected(action: "EventAssignment")"><a href="@Url.Action("EventAssignment", "Staff")">Event Assignment</a></li>
+                <li class="@Html.IsSelected(action: "EventAssignment")"><a href="@Url.Action("AssignStaff", "Staff")">Event Assignment</a></li>
             </ul>
         </li>
         <li class="@Html.IsSelected(controller: "Vouchers")">

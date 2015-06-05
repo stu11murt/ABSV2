@@ -21,6 +21,11 @@ namespace AlphaABSV2.Models
         [Display(Name = "Date of Booking")]
         public DateTime DateOfBooking { get; set; }
 
+        public string Email { get; set; }
+
+        [Display(Name="Tel/Mob Num")]
+        public string TelNo { get; set; }
+
         public int Source { get; set; }
         //[Display(Name = "Source of Booking")]
         //public virtual ICollection<Source> Sources { get; set; }
@@ -32,6 +37,12 @@ namespace AlphaABSV2.Models
         public int Purpose { get; set; }
         //[Display(Name = "Purpose of Event")]
         //public virtual ICollection<Purpose> Purposes { get; set; }
+
+        [Display(Name = "Group Organiser First Name")]
+        public string GroupOrganiserFName { get; set; }
+
+        [Display(Name = "GroupOrgansiser Last Name")]
+        public string GroupOrganiserLName { get; set; }
 
         [Display(Name = "Group Organiser")]
         public string GroupOrganiser { get; set; }
