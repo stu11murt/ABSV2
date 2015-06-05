@@ -3829,3 +3829,19 @@ ul.mailbox-list li:hover a {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+
+#draggable{
+    width: 100px; 
+    height: 20px; 
+    padding:0.5em; 
+    float: left; 
+    margin:10px;
+}
+
+#droppable{
+    width: 100px; 
+    height: 20px; 
+    padding:0.5em; 
+    float: left; 
+    margin:10px;
+}

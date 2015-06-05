@@ -1,0 +1,75 @@
+﻿@model AlphaABSV2.Models.GroupBooking
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GroupBooking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingForm.BookingRef)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookingForm.BookingRef)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupOrganiser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupOrganiser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupRef)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupRef)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerAmountToPay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerAmountToPay)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.GroupBookingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

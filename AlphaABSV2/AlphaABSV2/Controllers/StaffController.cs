@@ -116,6 +116,12 @@ namespace AlphaABSV2.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult AssignStaff()
+        {
+            ViewBag.Events = db.EventParents.ToList();
+            return View(db.Staff.ToList());
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

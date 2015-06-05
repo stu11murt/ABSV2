@@ -1,0 +1,84 @@
+﻿@model IEnumerable<AlphaABSV2.Models.EmailTemplates>
+@using AlphaABSV2.Models;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                    <li class="active">
+                        All Bookings
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                Event Parent
+            </h2>
+            <small>View all Bookings here.</small>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+    <div>
+       <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        All Templates
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="hpanel stats">
+                            
+                            @foreach(EmailTemplates template in Model)
+                            { 
+                                <div class="panel-body h-100">
+                                    @*<div class="stats-title pull-left">
+                                        <h4>Users Activity</h4>
+                                    </div>
+                                    <div class="stats-icon pull-right">
+                                        <i class="pe-7s-share fa-4x"></i>
+                                    </div>*@
+                                    <div class="m-t-xl">
+                                        <h3 class="m-b-xs">@template.TemplateTitle</h3>
+                                        @*<span class="font-bold no-margins">
+                                            Social users
+                                        </span>*@
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <small class="stats-label">Email Category ID : @template.EmailCategoryID</small>
+                                            </div>
+
+                                            <div class="col-xs-6">
+                                                <small class="stats-label">Mailchimp</small>
+                                                @Html.CheckBoxFor(chk => template.MailChimp)
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    @Html.ActionLink("Edit Email", "EditEmail", new { id = @template.EmailTemplatesID }, new { @class = "btn btn-primary btn-md" })
+                                </div>
+                                <br />
+                            }
+                            
+                            <p>
+                                @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

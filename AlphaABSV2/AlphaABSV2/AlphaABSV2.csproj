@@ -47,7 +47,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MailChimp">
+      <HintPath>..\packages\MailChimp.NET.1.1.75.0\lib\net35\MailChimp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\packages\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -165,10 +171,14 @@
     <Compile Include="Controllers\BookingFormController.cs" />
     <Compile Include="Controllers\BookingStatusController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\EmailCategoriesController.cs" />
+    <Compile Include="Controllers\EmailManagerController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\EventParentController.cs" />
+    <Compile Include="Controllers\GroupBookingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MarketingDatabaseController.cs" />
     <Compile Include="Controllers\OfficeRefController.cs" />
     <Compile Include="Controllers\PurposeController.cs" />
     <Compile Include="Controllers\SourceController.cs" />
@@ -179,6 +189,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\BookingDBHelper.cs" />
+    <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Helpers\HMTLHelperExtensions.cs" />
     <Compile Include="Migrations\201505261558165_InitialCreate.cs" />
     <Compile Include="Migrations\201505261558165_InitialCreate.Designer.cs">
@@ -200,16 +212,52 @@
     <Compile Include="Migrations\201506020726261_staffmanager2.Designer.cs">
       <DependentUpon>201506020726261_staffmanager2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506040843010_EmailManager.cs" />
+    <Compile Include="Migrations\201506040843010_EmailManager.Designer.cs">
+      <DependentUpon>201506040843010_EmailManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506040855382_EmailManager1.cs" />
+    <Compile Include="Migrations\201506040855382_EmailManager1.Designer.cs">
+      <DependentUpon>201506040855382_EmailManager1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506040915202_EmailManager2.cs" />
+    <Compile Include="Migrations\201506040915202_EmailManager2.Designer.cs">
+      <DependentUpon>201506040915202_EmailManager2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506041020113_EmailManagerContent.cs" />
+    <Compile Include="Migrations\201506041020113_EmailManagerContent.Designer.cs">
+      <DependentUpon>201506041020113_EmailManagerContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506041143268_EmailManagerCategory.cs" />
+    <Compile Include="Migrations\201506041143268_EmailManagerCategory.Designer.cs">
+      <DependentUpon>201506041143268_EmailManagerCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506041148160_EmailManagerCategory2.cs" />
+    <Compile Include="Migrations\201506041148160_EmailManagerCategory2.Designer.cs">
+      <DependentUpon>201506041148160_EmailManagerCategory2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506050955046_namesplit.cs" />
+    <Compile Include="Migrations\201506050955046_namesplit.Designer.cs">
+      <DependentUpon>201506050955046_namesplit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506051005317_emailTel.cs" />
+    <Compile Include="Migrations\201506051005317_emailTel.Designer.cs">
+      <DependentUpon>201506051005317_emailTel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BookingForm.cs" />
     <Compile Include="Models\BookingStatus.cs" />
+    <Compile Include="Models\EmailCategories.cs" />
+    <Compile Include="Models\EmailManager.cs" />
+    <Compile Include="Models\EmailTemplates.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\EventParent.cs" />
     <Compile Include="Models\EventRecord.cs" />
     <Compile Include="Models\GroupBooking.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MarketingDatabase.cs" />
     <Compile Include="Models\OfficeRef.cs" />
     <Compile Include="Models\Purpose.cs" />
     <Compile Include="Models\Source.cs" />
@@ -222,6 +270,7 @@
     <Compile Include="ViewModels\BookingViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Emails\EmailTemplateOne.html" />
     <Content Include="Content\img\green%402x.png" />
     <Content Include="Content\img\green.png" />
     <Content Include="Content\style.css" />
@@ -2621,6 +2670,33 @@
     <Content Include="Views\Staff\Details.cshtml" />
     <Content Include="Views\Staff\Edit.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
+    <Content Include="Views\Staff\AssignStaff.cshtml" />
+    <Content Include="Views\EmailManager\Create.cshtml" />
+    <Content Include="Views\EmailManager\Delete.cshtml" />
+    <Content Include="Views\EmailManager\Details.cshtml" />
+    <Content Include="Views\EmailManager\Edit.cshtml" />
+    <Content Include="Views\EmailManager\Index.cshtml" />
+    <Content Include="Views\EmailCategories\Create.cshtml" />
+    <Content Include="Views\EmailCategories\Delete.cshtml" />
+    <Content Include="Views\EmailCategories\Details.cshtml" />
+    <Content Include="Views\EmailCategories\Edit.cshtml" />
+    <Content Include="Views\EmailCategories\Index.cshtml" />
+    <Content Include="Views\EmailManager\EditEmail.cshtml" />
+    <Content Include="Views\Shared\_Layout_Blank.cshtml" />
+    <Content Include="Views\Shared\_Layout_Landing.cshtml" />
+    <Content Include="Views\BookingForm\DisplayProvBookings.cshtml" />
+    <Content Include="Views\GroupBooking\Create.cshtml" />
+    <Content Include="Views\GroupBooking\Delete.cshtml" />
+    <Content Include="Views\GroupBooking\Details.cshtml" />
+    <Content Include="Views\GroupBooking\Edit.cshtml" />
+    <Content Include="Views\GroupBooking\Index.cshtml" />
+    <Content Include="Views\GroupBooking\Thankyou.cshtml" />
+    <Content Include="Views\BookingForm\GroupBookings.cshtml" />
+    <Content Include="Views\MarketingDatabase\Create.cshtml" />
+    <Content Include="Views\MarketingDatabase\Delete.cshtml" />
+    <Content Include="Views\MarketingDatabase\Details.cshtml" />
+    <Content Include="Views\MarketingDatabase\Edit.cshtml" />
+    <Content Include="Views\MarketingDatabase\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201505261558165_InitialCreate.resx">
@@ -2637,6 +2713,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506020726261_staffmanager2.resx">
       <DependentUpon>201506020726261_staffmanager2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506040843010_EmailManager.resx">
+      <DependentUpon>201506040843010_EmailManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506040855382_EmailManager1.resx">
+      <DependentUpon>201506040855382_EmailManager1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506040915202_EmailManager2.resx">
+      <DependentUpon>201506040915202_EmailManager2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506041020113_EmailManagerContent.resx">
+      <DependentUpon>201506041020113_EmailManagerContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506041143268_EmailManagerCategory.resx">
+      <DependentUpon>201506041143268_EmailManagerCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506041148160_EmailManagerCategory2.resx">
+      <DependentUpon>201506041148160_EmailManagerCategory2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506050955046_namesplit.resx">
+      <DependentUpon>201506050955046_namesplit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506051005317_emailTel.resx">
+      <DependentUpon>201506051005317_emailTel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

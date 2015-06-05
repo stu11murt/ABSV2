@@ -12,6 +12,7 @@ using AlphaABSV2.ViewModels;
 
 namespace AlphaABSV2.Controllers
 {
+    public enum BookingStatusEnum {  Provisional = 1, Confirmed = 2, Cancelled = 3, Postponed = 4 }
     public class BookingFormController : Controller
     {
         private ABSContext db = new ABSContext();
@@ -56,38 +57,7 @@ namespace AlphaABSV2.Controllers
 
             if (ModelState.IsValid)
             {
-                BookingForm newBooking = new BookingForm();
-                newBooking.BookingRef = bookingViewModel.booking.BookingRef;
-                newBooking.VenueID = bookingViewModel.booking.VenueID;
-                newBooking.Source = bookingViewModel.booking.Source;
-                newBooking.DateOfBooking = bookingViewModel.booking.DateOfBooking;
-                newBooking.GroupOrganiser = bookingViewModel.booking.GroupOrganiser;
-                newBooking.PartyName = bookingViewModel.booking.PartyName;
-                newBooking.GroupSize = bookingViewModel.booking.GroupSize;
-                newBooking.StartTime = bookingViewModel.booking.StartTime;
-                newBooking.EndTime = bookingViewModel.booking.EndTime;
-                newBooking.BookingSummary = bookingViewModel.booking.BookingSummary;
-                newBooking.DaySheetNotes = bookingViewModel.booking.DaySheetNotes;
-                newBooking.InternalNotes = bookingViewModel.booking.InternalNotes;
-                newBooking.SendEmail = bookingViewModel.booking.SendEmail;
-                newBooking.SendText = bookingViewModel.booking.SendText;
-
-
-                db.Bookings.Add(newBooking);
-                db.SaveChanges();
-
-                foreach (EventRecord record in bookingViewModel.EventData)
-                {
-
-                    EventRecord eventRecord = new EventRecord();
-                    eventRecord.BookingFormID = newBooking.BookingFormID;
-                    eventRecord.EventNumber = record.EventNumber;
-                    eventRecord.EventID = record.EventTypeID;
-                    eventRecord.StartTime = record.StartTime;
-                    db.EventRecord.Add(eventRecord);
-                    db.SaveChanges();
-
-                }
+               Helpers.BookingDBHelper.AddBooking(db, bookingViewModel);
 
                 return RedirectToAction("Index");
             }
@@ -161,12 +131,18 @@ namespace AlphaABSV2.Controllers
         //Display All Provisional Bookings
         public ActionResult DisplayProvBookings()
         {
-            return View(db.Bookings.ToList());
+            return View(db.Bookings.Where(b => b.BookingStatus == (int)BookingStatusEnum.Provisional).ToList());
         }
 
         public ActionResult EventsCalendar()
         {
             return View();
+        }
+
+        public ActionResult GroupBookings()
+        {
+            var groupBookings = db.GroupBookings.ToList();
+            return View(groupBookings);
         }
 
         protected override void Dispose(bool disposing)

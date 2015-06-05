@@ -29,16 +29,6 @@
     <div class="content animate-panel">
         <div>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="hpanel">
-                        <div class="panel-body">
-                            <h2>New Booking</h2>
-                            @*<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>*@
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-lg-6">
                     <div class="hpanel">
                         <div class="panel-heading">
@@ -101,10 +91,32 @@
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
-                                @Html.LabelFor(model => model.booking.GroupOrganiser, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                @Html.LabelFor(model => model.booking.GroupOrganiserFName, htmlAttributes: new { @class = "col-sm-2 control-label" })
                                 <div class="col-sm-10">
-                                    @Html.EditorFor(model => model.booking.GroupOrganiser, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.booking.GroupOrganiser, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.booking.GroupOrganiserFName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.GroupOrganiserFName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.GroupOrganiserLName, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.GroupOrganiserLName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.GroupOrganiserLName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.TelNo, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.TelNo, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.TelNo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.Email, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
@@ -220,19 +232,19 @@
                                 </div>
 
                             </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            <div class="col-sm-8">
+                                @Html.Hidden("events", Model)
+                                <button class="btn btn-primary" type="submit">Save changes</button>
                             </div>
-                                <div class="hr-line-dashed"></div>
-                                <div class="form-group">
-                                    <div class="col-sm-8 col-sm-offset-2">
-                                        @Html.Hidden("events", Model)
-                                        <button class="btn btn-default" type="submit">Cancel</button>
-                                        <button class="btn btn-primary" type="submit">Save changes</button>
-                                    </div>
-                                </div>
-                           
+                        </div>
+                        @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-primary btn-md" })
+                    </div>
                         </div>
                     </div>
-                </div>
+                
         </div>
     </div>
       

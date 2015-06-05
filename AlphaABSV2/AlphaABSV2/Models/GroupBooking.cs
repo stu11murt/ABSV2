@@ -20,10 +20,16 @@ namespace AlphaABSV2.Models
         [Display(Name = "Group Reference")]
         public string GroupRef { get; set; }
 
-        [Display(Name = "Your Email Address")]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Display(Name = "Email Address")]
         public string PlayerEmail { get; set; }
 
-        [Display(Name = "Your Mobile Number")]
+        [Display(Name = "Mobile Number")]
         public string PlayerMobile { get; set; }
 
         [DataType(DataType.Currency)]
