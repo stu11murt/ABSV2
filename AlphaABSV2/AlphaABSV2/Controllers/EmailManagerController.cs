@@ -133,12 +133,12 @@ namespace AlphaABSV2.Controllers
         [HttpPost]
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
-        public ActionResult EditEmail(FormCollection form)
+        public ActionResult EditEmail(EmailTemplates template)
         {
-            //EmailTemplates emailTemplate = db.EmailTemplates.Find(template.EmailTemplatesID);
-            //emailTemplate.TemplateContent = template.TemplateContent;
-            //emailTemplate.TemplateTitle = template.TemplateTitle;
-            //db.EmailTemplates.(emailTemplate);
+            EmailTemplates emailTemplate = db.EmailTemplates.Find(template.EmailTemplatesID);
+            emailTemplate.TemplateContent = template.TemplateContent;
+            emailTemplate.TemplateTitle = template.TemplateTitle;
+            //db.EmailTemplates.Add(emailTemplate);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
