@@ -78,12 +78,19 @@ namespace AlphaABSV2.Models
         [Display(Name = "Send Text")]
         public bool SendText { get; set; }
 
+        public DateTime Created { get; set; }
 
         //Events
         public virtual ICollection<EventParent> EventParents { get; set; }
 
         public virtual ICollection<EventRecord> EventRecords { get; set; }
 
+        public virtual ICollection<AddOnParent> AddOnParents { get; set; }
+
+        public virtual ICollection<AddOnRecord> AddOnRecords { get; set; }
+
         public virtual ICollection<GroupBooking> GroupBookings { get; set; }
+
+        public virtual ICollection<Financial> Financials { get; set; }
     }
 }

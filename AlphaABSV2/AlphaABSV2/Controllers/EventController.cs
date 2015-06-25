@@ -49,7 +49,7 @@ namespace AlphaABSV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventType,Duration,MultiSession,SessionNumber,MinNumber,MaxNumber,EventParentID")] Event @event)
+        public ActionResult Create([Bind(Include = "EventType,Duration,MultiSession,SessionNumber,MinNumber,MaxNumber,EventDeposit,EventCost,EventParentID")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace AlphaABSV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EventID,EventType,Duration,MultiSession,SessionNumber,MinNumber,MaxNumber,EventParentID")] Event @event)
+        public ActionResult Edit([Bind(Include = "EventID,EventType,Duration,MultiSession,SessionNumber,MinNumber,MaxNumber,EventDeposit,EventCost,EventParentID")] Event @event)
         {
             if (ModelState.IsValid)
             {

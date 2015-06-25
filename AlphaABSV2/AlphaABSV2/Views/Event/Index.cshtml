@@ -70,6 +70,12 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.MaxNumber)
                                 </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EventDeposit)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EventCost)
+                                </th>
                                 <th></th>
                             </tr>
 
@@ -96,6 +102,12 @@
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.MaxNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EventDeposit)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EventCost)
                                     </td>
                                     <td>
                                         @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |

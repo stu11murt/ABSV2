@@ -8,7 +8,6 @@ namespace AlphaABSV2
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-
             // Homer style
             bundles.Add(new StyleBundle("~/bundles/homer/css").Include(
                       "~/Content/style.css", new CssRewriteUrlTransform()));
@@ -21,6 +20,16 @@ namespace AlphaABSV2
                       "~/Vendor/sparkline/index.js",
                       "~/Scripts/homer.js",
                       "~/Scripts/charts.js"));
+
+            //timepicker
+            bundles.Add(new StyleBundle("~/bundles/timepicker/css").Include(
+                      "~/Vendor/Jquery-JT-TimePicker/jquery.timepicker.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/timepicker/js").Include(
+                     "~/Vendor/Jquery-JT-TimePicker/jquery.timepicker.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bookingform/js").Include(
+                    "~/Scripts/BookingForm/booking.js"));
 
             // Animate.css
             bundles.Add(new StyleBundle("~/bundles/animate/css").Include(
@@ -176,6 +185,9 @@ namespace AlphaABSV2
             // Blueimp gallery style
             bundles.Add(new StyleBundle("~/bundles/blueimp/css").Include(
                       "~/Vendor/blueimp-gallery/css/blueimp-gallery.min.css", new CssRewriteUrlTransform()));
+
+            
+            
 
         }
     }

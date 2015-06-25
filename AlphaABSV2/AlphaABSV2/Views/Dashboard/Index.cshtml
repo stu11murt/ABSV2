@@ -1,4 +1,5 @@
-﻿@{
+﻿@using AlphaABSV2.Helpers;
+@{
     ViewBag.Title = "Dashboard";
 }
 
@@ -146,7 +147,7 @@
                         <div class="row">
                             <div class="col-xs-5">
                                 <small class="stat-label">Today</small>
-                                <h4>£230.00 </h4>
+                                <h4>£@FinanceHelper.TodaysTakings(DateTime.Today)</h4>
                             </div>
                             <div class="col-xs-7">
                                 <small class="stat-label">Last week</small>
@@ -327,8 +328,7 @@
                 };
 
                 $.plot($("#flot-line-chart"), [data1, data2], chartUsersOptions);
-                $.plot($("#flot-line-chart2"), [data3, data4], chartUsersOptions);
-
+                
                 /**
                  * Flot charts 2 data and options
                  */

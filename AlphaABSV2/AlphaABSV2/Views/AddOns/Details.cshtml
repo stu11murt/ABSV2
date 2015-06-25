@@ -1,0 +1,61 @@
+﻿@model AlphaABSV2.Models.AddOns
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AddOns</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AddOnParent.AddOnCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddOnParent.AddOnCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddOnName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddOnName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddOnType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddOnType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddOnCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddOnCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreeWith)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreeWith)
+        </dd>
+
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

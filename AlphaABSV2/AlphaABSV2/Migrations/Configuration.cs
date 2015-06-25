@@ -10,7 +10,6 @@ namespace AlphaABSV2.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "AlphaABSV2.DAL.ABSContext";
         }
 
         protected override void Seed(AlphaABSV2.DAL.ABSContext context)

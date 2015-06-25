@@ -29,5 +29,14 @@ namespace AlphaABSV2.ViewModels
 
             }
         }
+
+        public List<AddOnRecord> AddOnData { get; set; }
+        public List<AddOns> DynamicAddOns
+        {
+            get { return db.AddOns.ToList();  }
+            set { }
+        }
+
+        public Financial Costs { get; set; }
     }
 }

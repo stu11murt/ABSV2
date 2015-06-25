@@ -167,6 +167,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddOnParentController.cs" />
+    <Compile Include="Controllers\AddOnsController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BookingFormController.cs" />
     <Compile Include="Controllers\BookingStatusController.cs" />
@@ -186,66 +188,27 @@
     <Compile Include="Controllers\VenueController.cs" />
     <Compile Include="Controllers\VersionManagerController.cs" />
     <Compile Include="DAL\ABSContext.cs" />
+    <Compile Include="DAL\ABSInitialiser.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BookingDBHelper.cs" />
     <Compile Include="Helpers\EmailHelper.cs" />
+    <Compile Include="Helpers\FinanceHelper.cs" />
     <Compile Include="Helpers\HMTLHelperExtensions.cs" />
-    <Compile Include="Migrations\201505261558165_InitialCreate.cs" />
-    <Compile Include="Migrations\201505261558165_InitialCreate.Designer.cs">
-      <DependentUpon>201505261558165_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201506251108047_init.cs" />
+    <Compile Include="Migrations\201506251108047_init.Designer.cs">
+      <DependentUpon>201506251108047_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505290925537_bookformchange.cs" />
-    <Compile Include="Migrations\201505290925537_bookformchange.Designer.cs">
-      <DependentUpon>201505290925537_bookformchange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505291613119_versionmanagertable.cs" />
-    <Compile Include="Migrations\201505291613119_versionmanagertable.Designer.cs">
-      <DependentUpon>201505291613119_versionmanagertable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505291616247_versionman.cs" />
-    <Compile Include="Migrations\201505291616247_versionman.Designer.cs">
-      <DependentUpon>201505291616247_versionman.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506020726261_staffmanager2.cs" />
-    <Compile Include="Migrations\201506020726261_staffmanager2.Designer.cs">
-      <DependentUpon>201506020726261_staffmanager2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506040843010_EmailManager.cs" />
-    <Compile Include="Migrations\201506040843010_EmailManager.Designer.cs">
-      <DependentUpon>201506040843010_EmailManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506040855382_EmailManager1.cs" />
-    <Compile Include="Migrations\201506040855382_EmailManager1.Designer.cs">
-      <DependentUpon>201506040855382_EmailManager1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506040915202_EmailManager2.cs" />
-    <Compile Include="Migrations\201506040915202_EmailManager2.Designer.cs">
-      <DependentUpon>201506040915202_EmailManager2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506041020113_EmailManagerContent.cs" />
-    <Compile Include="Migrations\201506041020113_EmailManagerContent.Designer.cs">
-      <DependentUpon>201506041020113_EmailManagerContent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506041143268_EmailManagerCategory.cs" />
-    <Compile Include="Migrations\201506041143268_EmailManagerCategory.Designer.cs">
-      <DependentUpon>201506041143268_EmailManagerCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506041148160_EmailManagerCategory2.cs" />
-    <Compile Include="Migrations\201506041148160_EmailManagerCategory2.Designer.cs">
-      <DependentUpon>201506041148160_EmailManagerCategory2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506050955046_namesplit.cs" />
-    <Compile Include="Migrations\201506050955046_namesplit.Designer.cs">
-      <DependentUpon>201506050955046_namesplit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506051005317_emailTel.cs" />
-    <Compile Include="Migrations\201506051005317_emailTel.Designer.cs">
-      <DependentUpon>201506051005317_emailTel.cs</DependentUpon>
+    <Compile Include="Migrations\201506251407469_finLinkToBooking.cs" />
+    <Compile Include="Migrations\201506251407469_finLinkToBooking.Designer.cs">
+      <DependentUpon>201506251407469_finLinkToBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AddOnParent.cs" />
+    <Compile Include="Models\AddOnRecord.cs" />
+    <Compile Include="Models\AddOns.cs" />
     <Compile Include="Models\BookingForm.cs" />
     <Compile Include="Models\BookingStatus.cs" />
     <Compile Include="Models\EmailCategories.cs" />
@@ -254,6 +217,7 @@
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\EventParent.cs" />
     <Compile Include="Models\EventRecord.cs" />
+    <Compile Include="Models\Financial.cs" />
     <Compile Include="Models\GroupBooking.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -330,6 +294,7 @@
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Scripts\BookingForm\Booking.js" />
     <Content Include="Scripts\charts.js" />
     <Content Include="Scripts\homer.js" />
     <Content Include="Vendor\animate.css\animate.css" />
@@ -1026,6 +991,12 @@
     <Content Include="Vendor\jquery-flot\jquery.flot.time.js" />
     <Content Include="Vendor\jquery-flot\jquery.js" />
     <Content Include="Vendor\jquery-flot\LICENSE.txt" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\.gitignore" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\GruntFile.js" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\index.html" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\jquery.timepicker.css" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\jquery.timepicker.js" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\jquery.timepicker.min.js" />
     <Content Include="Vendor\jquery-ui\AUTHORS.txt" />
     <Content Include="Vendor\jquery-ui\jquery-ui.js" />
     <Content Include="Vendor\jquery-ui\jquery-ui.min.js" />
@@ -2697,46 +2668,27 @@
     <Content Include="Views\MarketingDatabase\Details.cshtml" />
     <Content Include="Views\MarketingDatabase\Edit.cshtml" />
     <Content Include="Views\MarketingDatabase\Index.cshtml" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\bower.json" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\jt.timepicker.jquery.json" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\package.json" />
+    <Content Include="Vendor\Jquery-JT-TimePicker\README.md" />
+    <Content Include="Views\AddOnParent\Create.cshtml" />
+    <Content Include="Views\AddOnParent\Delete.cshtml" />
+    <Content Include="Views\AddOnParent\Details.cshtml" />
+    <Content Include="Views\AddOnParent\Edit.cshtml" />
+    <Content Include="Views\AddOnParent\Index.cshtml" />
+    <Content Include="Views\AddOns\Create.cshtml" />
+    <Content Include="Views\AddOns\Delete.cshtml" />
+    <Content Include="Views\AddOns\Details.cshtml" />
+    <Content Include="Views\AddOns\Edit.cshtml" />
+    <Content Include="Views\AddOns\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505261558165_InitialCreate.resx">
-      <DependentUpon>201505261558165_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506251108047_init.resx">
+      <DependentUpon>201506251108047_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505290925537_bookformchange.resx">
-      <DependentUpon>201505290925537_bookformchange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505291613119_versionmanagertable.resx">
-      <DependentUpon>201505291613119_versionmanagertable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505291616247_versionman.resx">
-      <DependentUpon>201505291616247_versionman.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506020726261_staffmanager2.resx">
-      <DependentUpon>201506020726261_staffmanager2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506040843010_EmailManager.resx">
-      <DependentUpon>201506040843010_EmailManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506040855382_EmailManager1.resx">
-      <DependentUpon>201506040855382_EmailManager1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506040915202_EmailManager2.resx">
-      <DependentUpon>201506040915202_EmailManager2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506041020113_EmailManagerContent.resx">
-      <DependentUpon>201506041020113_EmailManagerContent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506041143268_EmailManagerCategory.resx">
-      <DependentUpon>201506041143268_EmailManagerCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506041148160_EmailManagerCategory2.resx">
-      <DependentUpon>201506041148160_EmailManagerCategory2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506050955046_namesplit.resx">
-      <DependentUpon>201506050955046_namesplit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506051005317_emailTel.resx">
-      <DependentUpon>201506051005317_emailTel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506251407469_finLinkToBooking.resx">
+      <DependentUpon>201506251407469_finLinkToBooking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

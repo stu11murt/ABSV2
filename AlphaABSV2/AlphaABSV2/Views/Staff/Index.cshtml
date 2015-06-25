@@ -64,6 +64,9 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.NINumber)
                                 </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DateEmployed)
+                                </th>
                                 <th></th>
                             </tr>
 
@@ -84,6 +87,9 @@
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.NINumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DateEmployed)
                                     </td>
                                     <td>
                                         @Html.ActionLink("Edit", "Edit", new { id = item.StaffID }) |

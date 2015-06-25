@@ -39,11 +39,19 @@
                         </div>
                         <div class="panel-body">
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @*<div class="form-group">
+                    @Html.LabelFor(model => model.booking.BookingRef, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-10">
+                        @Html.EditorFor(model => model.booking.BookingRef, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.booking.BookingRef, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+                            <div class="hr-line-dashed"></div>
                             <div class="form-group">
-                                @Html.LabelFor(model => model.booking.BookingRef, htmlAttributes: new { @class = "col-sm-2 control-label" })
-                                <div class="col-sm-10">
-                                    @Html.EditorFor(model => model.booking.BookingRef, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.booking.BookingRef, "", new { @class = "text-danger" })
+                                @Html.LabelFor(model => model.booking.DateOfBooking, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-3">
+                                    @Html.EditorFor(model => model.booking.DateOfBooking, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.DateOfBooking, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
@@ -79,14 +87,6 @@
                                 <div class="col-sm-10">
                                     @Html.DropDownListFor(model => model.booking.Source, ViewBag.Source as SelectList, "- Select Source -")
                                     @Html.ValidationMessageFor(model => model.booking.Source, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.booking.DateOfBooking, htmlAttributes: new { @class = "col-sm-2 control-label" })
-                                <div class="col-sm-3">
-                                    @Html.EditorFor(model => model.booking.DateOfBooking, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.booking.DateOfBooking, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
@@ -138,19 +138,19 @@
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 @Html.LabelFor(model => model.booking.StartTime, htmlAttributes: new { @class = "col-sm-2 control-label" })
-                                <div class="col-sm-10">
+                                <div class="col-sm-2">
                                     @Html.EditorFor(model => model.booking.StartTime, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.booking.StartTime, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.booking.EndTime, htmlAttributes: new { @class = "col-sm-2 control-label" })
-                                <div class="col-sm-10">
-                                    @Html.EditorFor(model => model.booking.EndTime, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.booking.EndTime, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
+                            @*<div class="hr-line-dashed"></div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.booking.EndTime, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                    <div class="col-sm-10">
+                        @Html.EditorFor(model => model.booking.EndTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.booking.EndTime, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 @Html.LabelFor(model => model.booking.BookingStatus, htmlAttributes: new { @class = "col-sm-2 control-label" })
@@ -164,7 +164,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.booking.BookingSummary, htmlAttributes: new { @class = "col-sm-2 control-label" })
                                 <div class="col-sm-10">
-                                    @Html.EditorFor(model => model.booking.BookingSummary, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.TextAreaFor(model => model.booking.BookingSummary, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.booking.BookingSummary, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -204,35 +204,134 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- EVENT SECTION-->
+                            <!--**************-->
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <div class="col-sm-10">
 
                                     @foreach (EventParent eParent in Model.DynamicEvents.Select(e => e.EventParent).Distinct())
                                     {
-                                        <div class="col-sm-2">
-                                            @Html.DisplayFor(modelItem => eParent.EventName)
-                                        </div>
+                                        <ul class="list-group">
+                                            @Html.DisplayFor(modelItem => eParent.EventName, new { htmlAttributes = new { @class = "text-danger" } })
+                                            <li class="list-group-item">
+                                                @for (int i = 0; i < Model.DynamicEvents.Count(); i++)
+                                                {
+                                                    if (Model.DynamicEvents[i].EventParent.EventParentID == eParent.EventParentID)
+                                                    {
+                                                        <ul class="list-unstyled">
+                                                            @Html.DisplayFor(modelItem => modelItem.DynamicEvents[i].EventType, new { htmlAttributes = new { @class = "form-control" } })
+                                                            <li>
 
-                                        for (int i = 0; i < Model.DynamicEvents.Count(); i++)
-                                        {
-                                            if (Model.DynamicEvents[i].EventParent.EventParentID == eParent.EventParentID)
-                                            {
-                                                <div class="col-sm-offset-2">
-                                                    @Html.DisplayFor(modelItem => modelItem.DynamicEvents[i].EventType, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.Hidden("EventData[" + i + "].EventID", Model.DynamicEvents[i].EventID)
-                                                    @Html.Hidden("EventData[" + i + "].EventTypeID", Model.DynamicEvents[i].EventID)
-                                                    @Html.EditorFor(eventDat => eventDat.EventData[i].StartTime, new { htmlAttributes = new { @class = "form-control" } })
-                                                    @Html.EditorFor(eventDat => eventDat.EventData[i].EventNumber, new { htmlAttributes = new { @class = "form-control" } })
-                                                </div>
-                                            }
-                                        }
+                                                                @Html.Hidden("EventData[" + i + "].EventID", Model.DynamicEvents[i].EventID)
+                                                                @*@Html.Hidden("EventData[" + i + "].EventTypeID", Model.DynamicEvents[i].EventID)*@
+                                                                @Html.LabelFor(eventDat => eventDat.EventData[i].StartTime, new { htmlAttributes = new { @class = "form-control" } })
+                                                                <br />
+                                                                @Html.EditorFor(eventDat => eventDat.EventData[i].StartTime, new { htmlAttributes = new { @class = "time" } })
+
+                                                            </li>
+                                                            <li>
+                                                                @Html.LabelFor(eventDat => eventDat.EventData[i].EventNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                                                @Html.EditorFor(eventDat => eventDat.EventData[i].EventNumber, new { htmlAttributes = new { @class = "form-control" } })
+
+                                                            </li>
+
+                                                        </ul>
+                                                    }
+                                                }
+                                            </li>
+                                        </ul>
+
+
                                     }
 
                                 </div>
 
                             </div>
+
+                            <!--END OF EVENTS SECTION-->
+                            <!--*********************-->
+                            <!-- ADDON SECTION-->
+                            <!--**************-->
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-10">
+
+                                    @foreach (AddOnParent aParent in Model.DynamicAddOns.Select(a => a.AddOnParent).Distinct())
+                                    {
+                                        <ul class="list-group">
+                                            @Html.DisplayFor(modelItem => aParent.AddOnCategory, new { htmlAttributes = new { @class = "text-danger" } })
+                                            <li class="list-group-item">
+                                                @for (int i = 0; i < Model.DynamicAddOns.Count(); i++)
+                                                {
+                                                    if (Model.DynamicAddOns[i].AddOnParent.AddOnParentID == aParent.AddOnParentID)
+                                                    {
+                                                        <ul class="list-unstyled">
+                                                            @Html.DisplayFor(modelItem => modelItem.DynamicAddOns[i].AddOnName, new { htmlAttributes = new { @class = "form-control" } })
+                                                            <li>
+
+                                                                @Html.Hidden("AddOnData[" + i + "].AddOnsID", Model.DynamicAddOns[i].ID)
+                                                                @*@Html.Hidden("EventData[" + i + "].EventTypeID", Model.DynamicEvents[i].EventID)*@
+                                                                @*@Html.LabelFor(eventDat => eventDat.AddOnData[i].AddOnNumber, new { htmlAttributes = new { @class = "form-control" } })*@
+                                                                @Html.EditorFor(eventDat => eventDat.AddOnData[i].AddOnNumber, new { htmlAttributes = new { @class = "form-control" } })
+
+                                                            </li>
+                                                            @*<li>
+                                                    @Html.LabelFor(eventDat => eventDat.EventData[i].EventNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.EditorFor(eventDat => eventDat.EventData[i].EventNumber, new { htmlAttributes = new { @class = "form-control" } })
+
+                                                </li>*@
+
+                                                        </ul>
+                                                    }
+                                                }
+                                            </li>
+                                        </ul>
+
+
+                                    }
+
+                                </div>
+
+                            </div>
+                        
+
+                        <!-- END OF ADDON SECTION-->
+                        <!--**********************-->
+                        <!-- FINANCIAL SECTION-->
+                        <!--******************-->
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Costs.DepositDueOnDate, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    @Html.EditorFor(model => model.Costs.DepositDueOnDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Costs.DepositDueOnDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Costs.DepositTotalTaken, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    @Html.EditorFor(model => model.Costs.DepositTotalTaken, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Costs.DepositTotalTaken, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Costs.AmountTaken, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                            <div class="col-sm-10">
+                                <div class="col-sm-3">
+                                    @Html.EditorFor(model => model.Costs.AmountTaken, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Costs.AmountTaken, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END OF FINANCIAL SECTION-->
+                        <!--*************************-->
+                    </div>
+                    </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <div class="col-sm-8">
@@ -246,8 +345,19 @@
                     </div>
                 
         </div>
-    </div>
+    
       
 }
 
+@section Styles{
+
+    @Styles.Render("~/bundles/timepicker/css")
+
+}
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/timepicker/js")
+    @Scripts.Render("~/bundles/bookingform/js")
+  }
        

@@ -30,11 +30,18 @@ namespace AlphaABSV2.Models
         [Display(Name = "Maximum Number")]
         public int MaxNumber { get; set; }
 
+        [Display(Name = "Event Deposit")]
+        [DataType(DataType.Currency)]
+        public decimal EventDeposit { get; set; }
+
+        [Display(Name = "Event Cost")]
+        [DataType(DataType.Currency)]
+        public decimal EventCost { get; set; }
 
         //Navigation properties
         public int EventParentID { get; set; }
         public virtual EventParent EventParent { get; set; }
 
-        public virtual ICollection<EventRecord> EventRecords { get; set; }
+        public virtual ICollection<EventRecord> EventRecord { get; set; }
     }
 }

@@ -1,0 +1,27 @@
+﻿@model AlphaABSV2.Models.AddOnParent
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AddOnParent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AddOnCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddOnCategory)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AddOnParentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

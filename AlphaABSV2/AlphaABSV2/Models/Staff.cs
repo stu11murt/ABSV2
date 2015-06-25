@@ -25,6 +25,12 @@ namespace AlphaABSV2.Models
         [Display(Name="National Ins Number")]
         public string NINumber { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date Employed")]
+        public DateTime DateEmployed { get; set; }
+
+
         public virtual ICollection<StaffSkills> StaffSkills { get; set; }
 
     }

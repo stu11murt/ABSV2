@@ -22,6 +22,7 @@ namespace AlphaABSV2.Models
 
         public string Email { get; set; }
 
+        public DateTime Created { get; set; }
 
         public bool MailChimpSubscribed { get; set; }
     }
