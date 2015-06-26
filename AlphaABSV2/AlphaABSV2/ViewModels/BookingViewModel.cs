@@ -38,5 +38,7 @@ namespace AlphaABSV2.ViewModels
         }
 
         public Financial Costs { get; set; }
+
+        
     }
 }

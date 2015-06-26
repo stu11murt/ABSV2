@@ -40,7 +40,7 @@ namespace AlphaABSV2.Controllers
         // GET: AddOns/Create
         public ActionResult Create()
         {
-            ViewBag.AddOnParentID = new SelectList(db.AddOnParent, "AddOnParentID", "AddOnCategory");
+            ViewBag.AddOnParentID = new SelectList(db.AddOnParents, "AddOnParentID", "AddOnCategory");
             ViewBag.BookingFormID = new SelectList(db.Bookings, "BookingFormID", "BookingRef");
             return View();
         }
@@ -59,7 +59,7 @@ namespace AlphaABSV2.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AddOnParentID = new SelectList(db.AddOnParent, "AddOnParentID", "AddOnCategory", addOns.AddOnParentID);
+            ViewBag.AddOnParentID = new SelectList(db.AddOnParents, "AddOnParentID", "AddOnCategory", addOns.AddOnParentID);
             return View(addOns);
         }
 
@@ -75,7 +75,7 @@ namespace AlphaABSV2.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AddOnParentID = new SelectList(db.AddOnParent, "AddOnParentID", "AddOnCategory", addOns.AddOnParentID);
+            ViewBag.AddOnParentID = new SelectList(db.AddOnParents, "AddOnParentID", "AddOnCategory", addOns.AddOnParentID);
             return View(addOns);
         }
 
@@ -92,7 +92,7 @@ namespace AlphaABSV2.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AddOnParentID = new SelectList(db.AddOnParent, "AddOnParentID", "AddOnCategory", addOns.AddOnParentID);
+            ViewBag.AddOnParentID = new SelectList(db.AddOnParents, "AddOnParentID", "AddOnCategory", addOns.AddOnParentID);
             return View(addOns);
         }
 

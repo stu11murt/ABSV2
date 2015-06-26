@@ -1,0 +1,88 @@
+﻿@model IEnumerable<AlphaABSV2.Models.AccommRecord>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccomParent.AccommName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingForm.BookingRef)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckInDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckOutDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelBookingInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateHotelDepositDue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalHotelBalance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateToPayHotel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HotelContact)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccomParent.AccommName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingForm.BookingRef)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckInDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckOutDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelBookingInfo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateHotelDepositDue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinalHotelBalance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateToPayHotel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HotelContact)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AccommRecordID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AccommRecordID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AccommRecordID })
+        </td>
+    </tr>
+}
+
+</table>

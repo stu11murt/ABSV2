@@ -16,8 +16,9 @@ namespace AlphaABSV2.Models
         public int BookingFormID { get; set; }
 
         [Display(Name="Number")]
-        public int AddOnNumber { get; set; }
+        public int? AddOnNumber { get; set; }
 
         public virtual AddOns AddOns { get; set; }
+        public virtual BookingForm BookingForm { get; set; }
     }
 }

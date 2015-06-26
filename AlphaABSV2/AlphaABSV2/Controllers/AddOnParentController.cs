@@ -18,7 +18,7 @@ namespace AlphaABSV2.Controllers
         // GET: AddOnParent
         public ActionResult Index()
         {
-            return View(db.AddOnParent.ToList());
+            return View(db.AddOnParents.ToList());
         }
 
         // GET: AddOnParent/Details/5
@@ -28,7 +28,7 @@ namespace AlphaABSV2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AddOnParent addOnParent = db.AddOnParent.Find(id);
+            AddOnParent addOnParent = db.AddOnParents.Find(id);
             if (addOnParent == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace AlphaABSV2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.AddOnParent.Add(addOnParent);
+                db.AddOnParents.Add(addOnParent);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace AlphaABSV2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AddOnParent addOnParent = db.AddOnParent.Find(id);
+            AddOnParent addOnParent = db.AddOnParents.Find(id);
             if (addOnParent == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace AlphaABSV2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AddOnParent addOnParent = db.AddOnParent.Find(id);
+            AddOnParent addOnParent = db.AddOnParents.Find(id);
             if (addOnParent == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace AlphaABSV2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AddOnParent addOnParent = db.AddOnParent.Find(id);
-            db.AddOnParent.Remove(addOnParent);
+            AddOnParent addOnParent = db.AddOnParents.Find(id);
+            db.AddOnParents.Remove(addOnParent);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

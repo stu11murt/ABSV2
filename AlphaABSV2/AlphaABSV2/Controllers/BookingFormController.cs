@@ -62,7 +62,7 @@ namespace AlphaABSV2.Controllers
                 return RedirectToAction("Index");
             }
 
-            InitiateDropDowns(bookingViewModel.booking.VenueID, bookingViewModel.booking.Source, bookingViewModel.booking.OfficeRef, bookingViewModel.booking.Purpose, bookingViewModel.booking.BookingStatus);
+            InitiateDropDowns(bookingViewModel.booking.VenueID, bookingViewModel.booking.Source, bookingViewModel.booking.OfficeRef, bookingViewModel.booking.Purpose, bookingViewModel.booking.BookingStatus, bookingViewModel.booking.HotelID);
             return View(bookingViewModel);
         }
 
@@ -81,7 +81,7 @@ namespace AlphaABSV2.Controllers
             }
             
             PopulateVenueDropDownList(bookingForm.VenueID);
-            InitiateDropDowns(bookingForm.VenueID, bookingForm.Source, bookingForm.OfficeRef, bookingForm.Purpose, bookingForm.BookingStatus);
+            InitiateDropDowns(bookingForm.VenueID, bookingForm.Source, bookingForm.OfficeRef, bookingForm.Purpose, bookingForm.BookingStatus, bookingForm.HotelID);
             return View(bookingForm);
         }
 
@@ -134,6 +134,26 @@ namespace AlphaABSV2.Controllers
             return View(db.Bookings.Where(b => b.BookingStatus == (int)BookingStatusEnum.Provisional).ToList());
         }
 
+        public ActionResult ConfirmedBookings()
+        {
+            return View(db.Bookings.Where(b => b.BookingStatus == (int)BookingStatusEnum.Confirmed).ToList());
+        }
+
+        public ActionResult PostponedBookings()
+        {
+            return View(db.Bookings.Where(b => b.BookingStatus == (int)BookingStatusEnum.Postponed).ToList());
+        }
+
+        public ActionResult CancelledBookings()
+        {
+            return View(db.Bookings.Where(b => b.BookingStatus == (int)BookingStatusEnum.Cancelled).ToList());
+        }
+
+        public ActionResult AccomodationBookings()
+        {
+            return View(db.Bookings);
+        }
+
         public ActionResult EventsCalendar()
         {
             return View();
@@ -143,6 +163,16 @@ namespace AlphaABSV2.Controllers
         {
             var groupBookings = db.GroupBookings.ToList();
             return View(groupBookings);
+        }
+
+        public ActionResult OverduePayments()
+        {
+           return View(db.Bookings);
+        }
+
+        public ActionResult FinanceReports()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)
@@ -194,13 +224,22 @@ namespace AlphaABSV2.Controllers
             ViewBag.Purpose = new SelectList(purposeQuery, "PurposeID", "PurposeOfEvent", selectedPurpose);
         }
 
-        private void InitiateDropDowns(int? venueID = 0, int? sourcesID = 0, int? officeRefID = 0, int? purposeID = 0, int? bookingStatusID = 0)
+        private void PopulateHotelDropDownList(object selectedHotel= null)
+        {
+            var hotelQuery = from h in db.AccommParents
+                               orderby h.AccommName
+                               select h;
+            ViewBag.Hotel = new SelectList(hotelQuery, "AccommParentID", "AccommName", selectedHotel);
+        }
+
+        private void InitiateDropDowns(int? venueID = 0, int? sourcesID = 0, int? officeRefID = 0, int? purposeID = 0, int? bookingStatusID = 0, int? hotelID = 0)
         {
             PopulateVenueDropDownList(venueID);
             PopulateSourcesDropDownList(sourcesID);
             PopulateOfficeRefDropDownList(officeRefID);
             PopulatePurposeDropDownList(purposeID);
             PopulateBookingstatusDropDownList(bookingStatusID);
+            PopulateHotelDropDownList(hotelID);
 
         }
 

@@ -29,11 +29,13 @@ namespace AlphaABSV2.DAL
         public DbSet<MarketingDatabase> MarketingDB { get; set; }
         public DbSet<EmailManager> EmailManager { get; set; }
         public DbSet<EmailTemplates> EmailTemplates { get; set; }
-        public DbSet<EmailCategories> EmailCategory { get; set; }
-        public DbSet<Financial> Financial { get; set; }
-        public DbSet<AddOnParent> AddOnParent { get; set; }
+        public DbSet<EmailCategories> EmailCategories { get; set; }
+        public DbSet<Financial> Financials { get; set; }
+        public DbSet<AddOnParent> AddOnParents { get; set; }
         public DbSet<AddOns> AddOns { get; set; }
-        public DbSet<AddOnRecord> AddOnRecord { get; set; }
+        public DbSet<AddOnRecord> AddOnRecords { get; set; }
+        public DbSet<AccommParent> AccommParents { get; set; }
+       
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

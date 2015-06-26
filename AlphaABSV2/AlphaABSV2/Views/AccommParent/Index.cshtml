@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AlphaABSV2.Models.AccommParent>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccommName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SteetName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TownCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckInTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CheckOutTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AccommName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StreetNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SteetName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TownCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckInTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckOutTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AccommParentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AccommParentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AccommParentID })
+        </td>
+    </tr>
+}
+
+</table>

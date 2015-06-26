@@ -1,0 +1,197 @@
+﻿@model IEnumerable<AlphaABSV2.Models.BookingForm>
+
+@{
+    var pageName = "Accomodation Bookings";
+    ViewBag.Title = pageName;
+    
+}
+
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                    <li class="active">
+                        @pageName
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                All Bookings
+            </h2>
+            <small>View all Bookings here.</small>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        @pageName
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BookingRef)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.OfficeRef)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DateOfBooking)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TelNo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Source)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.VenueID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Purpose)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GroupOrganiserFName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GroupOrganiserLName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GroupOrganiser)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PartyName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.GroupSize)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.StartTime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EndTime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BookingStatus)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BookingSummary)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DaySheetNotes)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InternalNotes)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SendEmail)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.SendText)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Created)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BookingRef)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.OfficeRef)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DateOfBooking)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TelNo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Source)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.VenueID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Purpose)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GroupOrganiserFName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GroupOrganiserLName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GroupOrganiser)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PartyName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GroupSize)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartTime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EndTime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BookingStatus)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BookingSummary)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DaySheetNotes)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.InternalNotes)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SendEmail)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SendText)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Created)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.BookingFormID }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.BookingFormID }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.BookingFormID })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("New Booking", "Create", null, new { @class = "btn btn-primary btn-md" })
+    </p>
+</div>

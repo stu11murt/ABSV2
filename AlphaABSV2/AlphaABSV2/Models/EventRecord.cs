@@ -25,5 +25,6 @@ namespace AlphaABSV2.Models
 
         
         public virtual Event Event { get; set; }
+        public virtual BookingForm BookingForm { get; set; }
     }
 }

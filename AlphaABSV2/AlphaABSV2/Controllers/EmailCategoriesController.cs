@@ -18,7 +18,7 @@ namespace AlphaABSV2.Controllers
         // GET: EmailCategories
         public ActionResult Index()
         {
-            return View(db.EmailCategory.ToList());
+            return View(db.EmailCategories.ToList());
         }
 
         // GET: EmailCategories/Details/5
@@ -28,7 +28,7 @@ namespace AlphaABSV2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmailCategories emailCategories = db.EmailCategory.Find(id);
+            EmailCategories emailCategories = db.EmailCategories.Find(id);
             if (emailCategories == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace AlphaABSV2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.EmailCategory.Add(emailCategories);
+                db.EmailCategories.Add(emailCategories);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace AlphaABSV2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmailCategories emailCategories = db.EmailCategory.Find(id);
+            EmailCategories emailCategories = db.EmailCategories.Find(id);
             if (emailCategories == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace AlphaABSV2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmailCategories emailCategories = db.EmailCategory.Find(id);
+            EmailCategories emailCategories = db.EmailCategories.Find(id);
             if (emailCategories == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace AlphaABSV2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            EmailCategories emailCategories = db.EmailCategory.Find(id);
-            db.EmailCategory.Remove(emailCategories);
+            EmailCategories emailCategories = db.EmailCategories.Find(id);
+            db.EmailCategories.Remove(emailCategories);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

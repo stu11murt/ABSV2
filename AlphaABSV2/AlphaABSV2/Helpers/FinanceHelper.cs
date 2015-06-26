@@ -45,7 +45,7 @@ namespace AlphaABSV2.Helpers
                 {
                     AddOns addon = db.AddOns.Find(ad.AddOnsID);
                     if (addon != null)
-                        runningTotal += ad.AddOnNumber * addon.AddOnCost;
+                        runningTotal += (decimal)ad.AddOnNumber * addon.AddOnCost;
                 }
             }
 

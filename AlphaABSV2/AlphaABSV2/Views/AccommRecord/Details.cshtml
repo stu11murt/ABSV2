@@ -1,0 +1,99 @@
+﻿@model AlphaABSV2.Models.AccommRecord
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AccommRecord</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AccomParent.AccommName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccomParent.AccommName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingForm.BookingRef)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookingForm.BookingRef)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckInDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckInDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CheckOutDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CheckOutDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelBookingInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelBookingInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateHotelDepositDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateHotelDepositDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalHotelBalance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalHotelBalance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateToPayHotel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateToPayHotel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelContact)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AccommRecordID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

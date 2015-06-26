@@ -47,6 +47,13 @@ namespace AlphaABSV2.Models
         [Display(Name = "Group Organiser")]
         public string GroupOrganiser { get; set; }
 
+        [Display(Name="House Number")]
+        public string HouseNumber { get; set; }
+
+        public string Address { get; set; }
+
+        public string PostCode { get; set; }
+        
         [Display(Name = "Party Name")]
         public string PartyName { get; set; }
 
@@ -79,6 +86,42 @@ namespace AlphaABSV2.Models
         public bool SendText { get; set; }
 
         public DateTime Created { get; set; }
+
+        //Hotel Accommodation
+        [Display(Name="Hotel")]
+        public int HotelID { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name="Check In")]
+        public DateTime CheckInDate { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Check Out")]
+        public DateTime CheckOutDate { get; set; }
+
+        [Display(Name="Booking Info")]
+        public string HotelBookingInfo { get; set; }
+
+        [Display(Name = "Total Cost")]
+        public decimal HotelTotalCost { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Hotel Deposit Due")]
+        public DateTime? HotelDateDepositDue { get; set; }
+
+        [Display(Name = "Hotel Balance")]
+        public decimal? HotelFinalBalance { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Date Balance Due")]
+        public DateTime? HotelDateToPay { get; set; }
+
+        [Display(Name = "Hotel Contact")]
+        public string HotelContact { get; set; }
 
         //Events
         public virtual ICollection<EventParent> EventParents { get; set; }

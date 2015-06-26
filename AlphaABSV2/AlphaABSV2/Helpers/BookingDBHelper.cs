@@ -51,13 +51,13 @@ namespace AlphaABSV2.Helpers
                     aRecord.AddOnNumber = addRecord.AddOnNumber;
                     aRecord.BookingFormID = newBooking.BookingFormID;
                     aRecord.AddOnsID = addRecord.AddOnsID;
-                    db.AddOnRecord.Add(aRecord);
+                    db.AddOnRecords.Add(aRecord);
                     db.SaveChanges();
                 }
 
                 //Financials
                 finance.BookingFormID = newBooking.BookingFormID;
-                db.Financial.Add(finance);
+                db.Financials.Add(finance);
                 db.SaveChanges();
 
 

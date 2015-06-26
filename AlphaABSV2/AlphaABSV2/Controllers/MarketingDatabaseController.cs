@@ -116,6 +116,11 @@ namespace AlphaABSV2.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult PlayerDatabase()
+        {
+            return View(db.MarketingDB);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

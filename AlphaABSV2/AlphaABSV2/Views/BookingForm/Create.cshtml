@@ -106,6 +106,28 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                @Html.LabelFor(model => model.booking.HouseNumber, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.HouseNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.HouseNumber, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.Address, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.PostCode, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.PostCode, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.PostCode, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 @Html.LabelFor(model => model.booking.TelNo, htmlAttributes: new { @class = "col-sm-2 control-label" })
                                 <div class="col-sm-10">
                                     @Html.EditorFor(model => model.booking.TelNo, new { htmlAttributes = new { @class = "form-control" } })
@@ -298,6 +320,93 @@
 
                         <!-- END OF ADDON SECTION-->
                         <!--**********************-->
+
+                        <!--HOTEL SECTION-->
+                        <!--*************-->
+                            <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                @Html.LabelFor(model => model.booking.HotelID, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.DropDownListFor(model => model.booking.HotelID, ViewBag.Hotel as SelectList, "- Select Status - ")
+                                    @Html.ValidationMessageFor(model => model.booking.HotelID, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.booking.CheckInDate, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                    <div class="col-sm-10">
+                                        <div class="col-sm-3">
+                                            @Html.EditorFor(model => model.booking.CheckInDate, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.booking.CheckInDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.booking.CheckOutDate, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                        <div class="col-sm-10">
+                                            <div class="col-sm-3">
+                                                @Html.EditorFor(model => model.booking.CheckOutDate, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.booking.CheckOutDate, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.booking.HotelBookingInfo, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                    <div class="col-sm-10">
+                                        @Html.EditorFor(model => model.booking.HotelBookingInfo, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.booking.HotelBookingInfo, "", new { @class = "text-danger" })
+                                    </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.HotelTotalCost, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.HotelTotalCost, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.HotelTotalCost, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.HotelDateDepositDue, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        @Html.EditorFor(model => model.booking.HotelDateDepositDue, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.booking.HotelDateDepositDue, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.HotelFinalBalance, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.HotelFinalBalance, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.HotelFinalBalance, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.HotelDateToPay, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    <div class="col-sm-3">
+                                        @Html.EditorFor(model => model.booking.HotelDateToPay, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.booking.HotelDateToPay, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.booking.HotelContact, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.booking.HotelContact, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.booking.HotelContact, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        <!--END OF HOTEL SECTION-->
+                        <!--********************-->
+                        
                         <!-- FINANCIAL SECTION-->
                         <!--******************-->
                         <div class="hr-line-dashed"></div>
