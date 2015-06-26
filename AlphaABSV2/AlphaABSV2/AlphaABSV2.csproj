@@ -204,6 +204,10 @@
     <Compile Include="Migrations\201506251407469_finLinkToBooking.Designer.cs">
       <DependentUpon>201506251407469_finLinkToBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506260826111_twekedevents.cs" />
+    <Compile Include="Migrations\201506260826111_twekedevents.Designer.cs">
+      <DependentUpon>201506260826111_twekedevents.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddOnParent.cs" />
@@ -2689,6 +2693,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506251407469_finLinkToBooking.resx">
       <DependentUpon>201506251407469_finLinkToBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506260826111_twekedevents.resx">
+      <DependentUpon>201506260826111_twekedevents.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

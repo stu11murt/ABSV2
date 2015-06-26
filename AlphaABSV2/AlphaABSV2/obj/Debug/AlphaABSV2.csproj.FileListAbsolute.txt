@@ -1,133 +1,10 @@
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.dll.config
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.pdb
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Antlr3.Runtime.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\EntityFramework.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\EntityFramework.SqlServer.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Newtonsoft.Json.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Owin.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.Helpers.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.Mvc.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.Optimization.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.Razor.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.Deployment.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.Razor.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\WebGrease.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.Helpers.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.Mvc.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.Optimization.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.Razor.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.Deployment.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.Razor.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Antlr3.Runtime.pdb
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Newtonsoft.Json.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\EntityFramework.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\EntityFramework.SqlServer.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.dll
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.pdb
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.InitialCreate.resources
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.csproj.GenerateResource.Cache
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.csprojResolveAssemblyReference.cache
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.bookformchange.resources
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.versionmanagertable.resources
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.versionman.resources
-C:\Users\DBD\Documents\Visual Studio 2013\Projects\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.staffmanager2.resources
-<<<<<<< HEAD
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.dll.config
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.pdb
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Antlr3.Runtime.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\EntityFramework.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\EntityFramework.SqlServer.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Newtonsoft.Json.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Owin.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Helpers.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Mvc.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Optimization.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Razor.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.Deployment.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.Razor.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\WebGrease.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\EntityFramework.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\EntityFramework.SqlServer.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Helpers.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Mvc.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Optimization.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Razor.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.Deployment.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPages.Razor.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Antlr3.Runtime.pdb
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Newtonsoft.Json.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.csprojResolveAssemblyReference.cache
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.InitialCreate.resources
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.bookformchange.resources
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.versionmanagertable.resources
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.versionman.resources
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.staffmanager2.resources
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.csproj.GenerateResource.Cache
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.dll
-C:\Users\DBDMobile\Documents\GitHub\ABSV2\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.pdb
-=======
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.dll.config
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\AlphaABSV2.pdb
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Antlr3.Runtime.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\EntityFramework.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\EntityFramework.SqlServer.dll
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\MailChimp.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.AspNet.Identity.Owin.dll
@@ -143,6 +20,7 @@ C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Sec
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Newtonsoft.Json.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Owin.dll
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\ServiceStack.Text.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Helpers.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Mvc.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Optimization.dll
@@ -153,6 +31,7 @@ C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.WebPage
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\WebGrease.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\EntityFramework.xml
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\EntityFramework.SqlServer.xml
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\ServiceStack.Text.xml
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Helpers.xml
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Mvc.xml
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\System.Web.Optimization.xml
@@ -174,24 +53,9 @@ C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Sec
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.init.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.finLinkToBooking.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.csproj.GenerateResource.Cache
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.pdb
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\MailChimp.dll
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\ServiceStack.Text.dll
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\ServiceStack.Text.xml
-<<<<<<< HEAD
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.csprojResolveAssemblyReference.cache
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.init.resources
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.csproj.GenerateResource.Cache
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.finLinkToBooking.resources
-=======
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.EmailManager.resources
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.EmailManager1.resources
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.EmailManager2.resources
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.EmailManagerContent.resources
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.EmailManagerCategory.resources
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.EmailManagerCategory2.resources
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.namesplit.resources
-C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.emailTel.resources
->>>>>>> origin/master
->>>>>>> origin/master
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.twekedevents.resources

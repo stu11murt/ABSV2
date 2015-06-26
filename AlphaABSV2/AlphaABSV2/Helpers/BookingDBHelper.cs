@@ -21,25 +21,11 @@ namespace AlphaABSV2.Helpers
 
 
                 BookingForm newBooking = new BookingForm();
-                newBooking.BookingRef = "temp" + DateTime.Now.ToShortDateString();
-                newBooking.VenueID = bookingViewModel.booking.VenueID;
-                newBooking.Source = bookingViewModel.booking.Source;
-                newBooking.Purpose = bookingViewModel.booking.Purpose;
-                newBooking.DateOfBooking = bookingViewModel.booking.DateOfBooking;
-                newBooking.GroupOrganiserFName = bookingViewModel.booking.GroupOrganiserFName;
-                newBooking.GroupOrganiserLName = bookingViewModel.booking.GroupOrganiserLName;
-                newBooking.GroupOrganiser =  bookingViewModel.booking.GroupOrganiserFName + " " + bookingViewModel.booking.GroupOrganiserLName;
-                newBooking.PartyName = bookingViewModel.booking.PartyName;
-                newBooking.GroupSize = bookingViewModel.booking.GroupSize;
-                newBooking.StartTime = bookingViewModel.booking.StartTime;
-                newBooking.EndTime = bookingViewModel.booking.StartTime.AddHours(2);
-                newBooking.BookingSummary = bookingViewModel.booking.BookingSummary;
-                newBooking.DaySheetNotes = bookingViewModel.booking.DaySheetNotes;
-                newBooking.InternalNotes = bookingViewModel.booking.InternalNotes;
-                newBooking.SendEmail = bookingViewModel.booking.SendEmail;
-                newBooking.SendText = bookingViewModel.booking.SendText;
-                newBooking.Created = DateTime.Now;
+                newBooking = bookingViewModel.booking;
 
+                newBooking.BookingRef = "temp" + DateTime.Now.ToShortDateString();
+                newBooking.EndTime = bookingViewModel.booking.StartTime.AddHours(2);
+                newBooking.Created = DateTime.Now;
                 db.Bookings.Add(newBooking);
                 db.SaveChanges();
 

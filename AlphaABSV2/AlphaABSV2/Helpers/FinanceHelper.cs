@@ -27,8 +27,8 @@ namespace AlphaABSV2.Helpers
                     if (relEvent != null)
                     {
                         
-                        runningTotal += ev.EventNumber * relEvent.EventCost;
-                        runningDeposit += ev.EventNumber * relEvent.EventDeposit;
+                        runningTotal += (decimal)ev.EventNumber * relEvent.EventCost;
+                        runningDeposit += (decimal)ev.EventNumber * relEvent.EventDeposit;
                         
                     }
 

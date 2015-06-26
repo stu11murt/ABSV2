@@ -16,12 +16,12 @@ namespace AlphaABSV2.Models
         public int BookingFormID { get; set; }
 
         [Display(Name = "Event Number")]
-        public int EventNumber { get; set; }
+        public int? EventNumber { get; set; }
 
         [DataType(DataType.Text)]
         [Display(Name = "Start Time")]
         //[DisplayFormat(DataFormatString = "0:hh:mm tt", ApplyFormatInEditMode = true)]
-        public DateTime StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
 
         
         public virtual Event Event { get; set; }
