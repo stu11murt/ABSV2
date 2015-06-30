@@ -2,8 +2,9 @@
 
 @{
 
-    ViewBag.Title = "Confirmed Bookings";
-    var pageName = "All Confirmed Bookings";
+
+    var pageName = "Confirmed Bookings";
+    ViewBag.Title = pageName;
 }
 
 <div class="small-header transition animated fadeIn">
@@ -18,9 +19,9 @@
                 </ol>
             </div>
             <h2 class="font-light m-b-xs">
-                All Bookings
+                @pageName
             </h2>
-            <small>View all Bookings here.</small>
+            <small>View all @pageName here.</small>
         </div>
     </div>
 </div>
@@ -43,31 +44,10 @@
                                     @Html.DisplayNameFor(model => model.BookingRef)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.OfficeRef)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DateOfBooking)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Email)
+                                    @Html.DisplayNameFor(model => model.DateOfEvent)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.TelNo)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Source)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.VenueID)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Purpose)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GroupOrganiserFName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GroupOrganiserLName)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.GroupOrganiser)
@@ -102,9 +82,6 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.SendText)
                                 </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Created)
-                                </th>
                                 <th></th>
                             </tr>
 
@@ -114,33 +91,16 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.BookingRef)
                                     </td>
+                                   
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.OfficeRef)
+                                        @Html.DisplayFor(modelItem => item.DateOfEvent)
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.DateOfBooking)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Email)
-                                    </td>
+                                    
                                     <td>
                                         @Html.DisplayFor(modelItem => item.TelNo)
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Source)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.VenueID)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Purpose)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.GroupOrganiserFName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.GroupOrganiserLName)
-                                    </td>
+                                 
+                                 
                                     <td>
                                         @Html.DisplayFor(modelItem => item.GroupOrganiser)
                                     </td>
@@ -174,9 +134,7 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.SendText)
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Created)
-                                    </td>
+                                   
                                     <td>
                                         @Html.ActionLink("Edit", "Edit", new { id = item.BookingFormID }) |
                                         @Html.ActionLink("Details", "Details", new { id = item.BookingFormID }) |

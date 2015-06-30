@@ -56,9 +56,19 @@
             <ul class="nav nav-second-level">
                 <li class="@Html.IsSelected(action: "PaintballQuickView")"><a href="@Url.Action("PaintballQuickView", "BookingForm")">Paintball QuickView</a></li>
                 <li class="@Html.IsSelected(action: "LaserQuickView")"><a href="@Url.Action("LaserQuickView", "BookingForm")">Laser QuickView</a></li>
-                <li class="@Html.IsSelected(action: "AirsoftQuickView")"><a href="@Url.Action("AirsoftQuickView", "BookingForm")">Airsoft QuickView</a></li>
+                <li class="@Html.IsSelected(action: "EventQuickView")"><a href="@Url.Action("EventQuickView", "BookingForm")">Event QuickView</a></li>
                 <li class="@Html.IsSelected(action: "HistoricalQuickView")"><a href="@Url.Action("HistoricalQuickView", "BookingForm")">Historical QuickView</a></li>
                 <li class="@Html.IsSelected(action: "UserQuickView")"><a href="@Url.Action("UserQuickView", "BookingForm")">User QuickView</a></li>
+            </ul>
+        </li>
+        <li class="@Html.IsSelected(controller: "GeneralAdmin")">
+            <a href="#"><span class="nav-label">Admin</span><span class="fa arrow"></span> </a>
+            <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "DaySheets")"><a href="@Url.Action("DaySheets", "Admin")">DaySheets Export</a></li>
+                <li class="@Html.IsSelected(action: "AgentsManager")"><a href="@Url.Action("AgentsManager", "GeneralAdmin")">Agents Manager</a></li>
+                <li class="@Html.IsSelected(action: "SpecialOffers")"><a href="@Url.Action("SpecialOffers", "GeneralAdmin")">Special Offers</a></li>
+                <li class="@Html.IsSelected(action: "AddOnManager")"><a href="@Url.Action("AddOnManager", "GeneralAdmin")">Add On Manager</a></li>
+                <li class="@Html.IsSelected(action: "Documents")"><a href="@Url.Action("Documents", "GeneralAdmin")">Documents</a></li>
             </ul>
         </li>
         <li class="@Html.IsSelected(controller: "Marketing")">
@@ -99,14 +109,6 @@
                 <li class="@Html.IsSelected(action: "HotelManager")"><a href="@Url.Action("HotelManager", "Hotel")">Hotel Manager</a></li>
             </ul>
         </li>
-        <li class="@Html.IsSelected(controller: "GeneralAdmin")">
-            <a href="#"><span class="nav-label">ABS Admin</span><span class="fa arrow"></span> </a>
-            <ul class="nav nav-second-level">
-                <li class="@Html.IsSelected(action: "AgentsManager")"><a href="@Url.Action("AgentsManager", "GeneralAdmin")">Agents Manager</a></li>
-                <li class="@Html.IsSelected(action: "SpecialOffers")"><a href="@Url.Action("SpecialOffers", "GeneralAdmin")">Special Offers</a></li>
-                <li class="@Html.IsSelected(action: "AddOnManager")"><a href="@Url.Action("AddOnManager", "GeneralAdmin")">Add On Manager</a></li>
-                <li class="@Html.IsSelected(action: "Documents")"><a href="@Url.Action("Documents", "GeneralAdmin")">Documents</a></li>
-            </ul>
-        </li>
+        
     </ul>
 </div>

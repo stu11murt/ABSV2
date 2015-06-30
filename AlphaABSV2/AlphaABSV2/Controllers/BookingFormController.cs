@@ -243,6 +243,22 @@ namespace AlphaABSV2.Controllers
 
         }
 
+        public ActionResult PaintballQuickView(int? eventID)
+        {
+           
+            return View(db.EventRecords.Where(e => e.Event.EventParentID == 1).Select(s => s.BookingForm).ToList());
+        }
+
+        public ActionResult LaserQuickView()
+        {
+           
+            return View(db.EventRecords.Where(e => e.Event.EventParentID == 2).Select(s => s.BookingForm).ToList());
+        }
+
+        public ActionResult EventQuickView()
+        {
+            return View(db.EventRecords);
+        }
         
     }
 }

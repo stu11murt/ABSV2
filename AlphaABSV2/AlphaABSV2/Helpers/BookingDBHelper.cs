@@ -25,6 +25,7 @@ namespace AlphaABSV2.Helpers
 
                 newBooking.BookingRef = "temp" + DateTime.Now.ToShortDateString();
                 newBooking.EndTime = bookingViewModel.booking.StartTime.AddHours(2);
+                newBooking.GroupOrganiser = bookingViewModel.booking.GroupOrganiserFName + " " + bookingViewModel.booking.GroupOrganiserLName;
                 newBooking.Created = DateTime.Now;
                 db.Bookings.Add(newBooking);
                 db.SaveChanges();
@@ -34,14 +35,16 @@ namespace AlphaABSV2.Helpers
 
                 foreach (EventRecord record in bookingViewModel.EventData)
                 {
-
-                    EventRecord eventRecord = new EventRecord();
-                    eventRecord.BookingFormID = newBooking.BookingFormID;
-                    eventRecord.EventNumber = record.EventNumber;
-                    eventRecord.EventID = record.EventID;
-                    eventRecord.StartTime = record.StartTime;
-                    db.EventRecords.Add(eventRecord);
-                    db.SaveChanges();
+                    if (record.EventNumber != null && record.StartTime != null)
+                    { 
+                        EventRecord eventRecord = new EventRecord();
+                        eventRecord.BookingFormID = newBooking.BookingFormID;
+                        eventRecord.EventNumber = record.EventNumber;
+                        eventRecord.EventID = record.EventID;
+                        eventRecord.StartTime = record.StartTime;
+                        db.EventRecords.Add(eventRecord);
+                        db.SaveChanges();
+                    }
 
                 }
 
@@ -98,6 +101,35 @@ namespace AlphaABSV2.Helpers
             //TODO
             booking.BookingRef = "NewUniqueRef";
             db.SaveChanges();
+        }
+
+        public static int GetTotalGroups(DateTime? eventDate, int eventParentID = 1, string eventType = "NA")
+        {
+            ABSContext db = new ABSContext();
+            if(eventDate != null)
+            {
+                return db.EventRecords.Where(e => e.Event.EventParentID == eventParentID && e.BookingForm.DateOfEvent == eventDate).Select(b => b.BookingForm).ToList().Count;
+            }
+            else
+            {
+                return db.EventRecords.Where(b => b.Event.EventType == eventType).Select(x => x.BookingForm).ToList().Count;
+            }
+            
+        }
+
+        public static int GetTotalPlayers(DateTime? eventDate, int eventParentID = 1, string eventType = "NA")
+        {
+            ABSContext db = new ABSContext();
+            if(eventDate != null)
+            {
+                return db.EventRecords.Where(e => e.Event.EventParentID == eventParentID && e.BookingForm.DateOfEvent == eventDate).Select(b => b.BookingForm.GroupSize).Sum();
+            }
+            else
+            {
+                return db.EventRecords.Where(e => e.Event.EventType == eventType).Select(b => b.BookingForm.GroupSize).Sum();
+            }
+                
+            
         }
 
    }

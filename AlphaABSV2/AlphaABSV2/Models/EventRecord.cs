@@ -20,7 +20,6 @@ namespace AlphaABSV2.Models
 
         [DataType(DataType.Text)]
         [Display(Name = "Start Time")]
-        //[DisplayFormat(DataFormatString = "0:hh:mm tt", ApplyFormatInEditMode = true)]
         public DateTime? StartTime { get; set; }
 
         

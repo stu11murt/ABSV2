@@ -66,7 +66,7 @@ namespace AlphaABSV2.Helpers
             ABSContext db = new ABSContext();
             List<decimal> res = new List<decimal>();
 
-            decimal total = Convert.ToDecimal(db.Bookings.Where(b => b.DateOfBooking == day).Sum(f => f.Financials.Sum(fi => (decimal?)fi.AmountTaken)));
+            decimal total = Convert.ToDecimal(db.Bookings.Where(b => b.DateOfEvent == day).Sum(f => f.Financials.Sum(fi => (decimal?)fi.AmountTaken)));
 
             return total;
         }
@@ -77,7 +77,7 @@ namespace AlphaABSV2.Helpers
             ABSContext db = new ABSContext();
             List<decimal> res = new List<decimal>();
 
-            decimal total = Convert.ToDecimal(db.Bookings.Where(b => b.DateOfBooking == day).Sum(f => f.Financials.Sum(fi => (decimal?)fi.AmountTaken)));
+            decimal total = Convert.ToDecimal(db.Bookings.Where(b => b.DateOfEvent == day).Sum(f => f.Financials.Sum(fi => (decimal?)fi.AmountTaken)));
 
             return total;
         }

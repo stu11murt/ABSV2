@@ -47,6 +47,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\..\..\ABS\Itext\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\..\..\..\ABS\Itext\itextsharp-dll-pdfa\itextsharp.pdfa.dll</HintPath>
+    </Reference>
     <Reference Include="MailChimp">
       <HintPath>..\packages\MailChimp.NET.1.1.75.0\lib\net35\MailChimp.dll</HintPath>
     </Reference>
@@ -237,6 +243,18 @@
     <Compile Include="Migrations\201506261619301_hotelTweak2.Designer.cs">
       <DependentUpon>201506261619301_hotelTweak2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506300900424_eventdate.cs" />
+    <Compile Include="Migrations\201506300900424_eventdate.Designer.cs">
+      <DependentUpon>201506300900424_eventdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506300909071_eventdate2.cs" />
+    <Compile Include="Migrations\201506300909071_eventdate2.Designer.cs">
+      <DependentUpon>201506300909071_eventdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506301025096_hotelfieldsnullable.cs" />
+    <Compile Include="Migrations\201506301025096_hotelfieldsnullable.Designer.cs">
+      <DependentUpon>201506301025096_hotelfieldsnullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccommParent.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -329,6 +347,8 @@
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="Icons\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
     <Content Include="Scripts\BookingForm\Booking.js" />
+    <Content Include="Scripts\BookingForm\QuickViews.js" />
+    <Content Include="Scripts\BookingForm\quickviewstyle.css" />
     <Content Include="Scripts\charts.js" />
     <Content Include="Scripts\homer.js" />
     <Content Include="Vendor\animate.css\animate.css" />
@@ -2733,6 +2753,10 @@
     <Content Include="Views\AccommRecord\Details.cshtml" />
     <Content Include="Views\AccommRecord\Edit.cshtml" />
     <Content Include="Views\AccommRecord\Index.cshtml" />
+    <Content Include="Views\BookingForm\PaintballQuickView.cshtml" />
+    <Content Include="Views\BookingForm\LaserQuickView.cshtml" />
+    <Content Include="Views\BookingForm\EventQuickView.cshtml" />
+    <Content Include="Views\Admin\DaySheets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201506251108047_init.resx">
@@ -2764,6 +2788,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506261619301_hotelTweak2.resx">
       <DependentUpon>201506261619301_hotelTweak2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506300900424_eventdate.resx">
+      <DependentUpon>201506300900424_eventdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506300909071_eventdate2.resx">
+      <DependentUpon>201506300909071_eventdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506301025096_hotelfieldsnullable.resx">
+      <DependentUpon>201506301025096_hotelfieldsnullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

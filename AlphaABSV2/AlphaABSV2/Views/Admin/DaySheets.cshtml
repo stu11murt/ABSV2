@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<AlphaABSV2.Models.BookingForm>
 
 @{
-
-    
-    var pageName = "Provisional Bookings";
+    var pageName = "DaySheets Export";
     ViewBag.Title = pageName;
 }
 
@@ -39,20 +37,16 @@
                     </div>
                     <div class="panel-body">
                         <table class="table">
-                          <tr>
+                            <tr>
                                 <th>
                                     @Html.DisplayNameFor(model => model.BookingRef)
                                 </th>
-                           
                                 <th>
                                     @Html.DisplayNameFor(model => model.DateOfEvent)
                                 </th>
-                               
                                 <th>
                                     @Html.DisplayNameFor(model => model.TelNo)
                                 </th>
-                             
-                            
                                 <th>
                                     @Html.DisplayNameFor(model => model.GroupOrganiser)
                                 </th>
@@ -86,7 +80,6 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.SendText)
                                 </th>
-                                
                                 <th></th>
                             </tr>
 
@@ -155,6 +148,7 @@
         </div>
     </div>
     <p>
-        @Html.ActionLink("New Booking", "Create", null, new { @class = "btn btn-primary btn-md" })
+        @Html.ActionLink("Export To PDF", "ExportPDF", null, new { @class = "btn btn-primary btn-md" })
+        @Html.ActionLink("Export To Excel", "ExportExcel", null, new { @class = "btn btn-primary btn-md" })
     </p>
 </div>

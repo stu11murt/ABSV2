@@ -18,8 +18,8 @@ namespace AlphaABSV2.Models
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Date of Booking")]
-        public DateTime DateOfBooking { get; set; }
+        [Display(Name = "Event Date")]
+        public DateTime DateOfEvent { get; set; }
 
         public string Email { get; set; }
 
@@ -89,23 +89,23 @@ namespace AlphaABSV2.Models
 
         //Hotel Accommodation
         [Display(Name="Hotel")]
-        public int HotelID { get; set; }
+        public int? HotelID { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name="Check In")]
-        public DateTime CheckInDate { get; set; }
+        public DateTime? CheckInDate { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Check Out")]
-        public DateTime CheckOutDate { get; set; }
+        public DateTime? CheckOutDate { get; set; }
 
         [Display(Name="Booking Info")]
         public string HotelBookingInfo { get; set; }
 
         [Display(Name = "Total Cost")]
-        public decimal HotelTotalCost { get; set; }
+        public decimal? HotelTotalCost { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
