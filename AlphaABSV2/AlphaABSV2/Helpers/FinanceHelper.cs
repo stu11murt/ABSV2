@@ -82,6 +82,16 @@ namespace AlphaABSV2.Helpers
             return total;
         }
 
+        public static decimal EventTakings(DateTime day, int eventID)
+        {
+            ABSContext db = new ABSContext();
+            List<decimal> res = new List<decimal>();
+
+            decimal total = Convert.ToDecimal(db.Bookings.Where(b => b.DateOfEvent == day && b.EventRecords.Where(e => e.EventID == eventID).Count() > 0).Sum(f => f.Financials.Sum(fi => (decimal?)fi.AmountTaken)));
+
+            return total;
+        }
+
        
     }
       

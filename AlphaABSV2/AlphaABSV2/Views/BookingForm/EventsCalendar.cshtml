@@ -25,45 +25,7 @@
 <div class="content">
 
     <div class="row">
-        @*<div class="col-lg-12">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="hpanel">
-                        <div class="panel-body">
-                            <div id="external-events">
-                                <h2>FullCalendar</h2>
-                                is a jQuery plugin that provides a full-sized, drag & drop calendar like the one below. It uses AJAX to fetch events on-the-fly for each month and is easily configured to use your own feed format (an extension is provided for Google Calendar).
-                                <p>
-                                    <a href="http://arshaw.com/fullcalendar/" target="_blank">FullCalendar documentation</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="hpanel">
-                        <div class="panel-body">
-                            <div id="external-events">
-                                <strong>Click, Drop or Resize event on calendar!</strong>
-
-                                Message from functions:
-                                <br />
-
-                                <div id='external-events'>
-                                    <p>Drag a event and drop into callendar.</p>
-                                    <div class='external-event h-bg-green text-white'>Go to shop and buy some products.</div>
-                                    <div class='external-event h-bg-green text-white'>Check the new CI from Corporation.</div>
-                                    <p class="m-t">
-                                        <input type='checkbox' id='drop-remove' class="i-checks" checked /> <label for='drop-remove'>remove after drop</label>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>*@
-        <div class="col-lg-12">
+         <div class="col-lg-12">
             <div class="hpanel">
                 <div class="panel-heading">
                     <div class="panel-tools">
@@ -82,6 +44,8 @@
 
 @section Styles {
     @Styles.Render("~/bundles/fullCalendar/css")
+    @Styles.Render("~/bundles/jqueryui/css")
+
 }
 
 @section Scripts {
@@ -137,62 +101,34 @@
                         $(this).remove();
                     }
                 },
-                events: [
-                    {
-                        title: 'All Day Event',
-                        start: new Date(y, m, 1)
-                    },
-                    {
-                        title: 'Long Event',
-                        start: new Date(y, m, d - 5),
-                        end: new Date(y, m, d - 2),
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: new Date(y, m, d - 3, 16, 0),
-                        allDay: false,
-                    },
-                    {
-                        title: 'Homer task',
-                        start: new Date(y, m, d + 5, 19, 0),
-                        end: new Date(y, m, d + 6, 22, 30),
-                        allDay: false,
-                        backgroundColor: "#62cb31",
-                        borderColor: "#62cb31"
-                    },
-                    {
-                        id: 999,
-                        title: 'Repeating Event',
-                        start: new Date(y, m, d + 4, 16, 0),
-                        allDay: false
-                    },
-                    {
-                        title: 'Meeting',
-                        start: new Date(y, m, d, 10, 30),
-                        allDay: false
-                    },
-                    {
-                        title: 'Lunch',
-                        start: new Date(y, m, d, 12, 0),
-                        end: new Date(y, m, d, 14, 0),
-                        allDay: false
-                    },
-                    {
-                        title: 'Birthday Party',
-                        start: new Date(y, m, d + 1, 19, 0),
-                        end: new Date(y, m, d + 1, 22, 30),
-                        allDay: false
-                    },
-                    {
-                        title: 'Click for Google',
-                        start: new Date(y, m, 28),
-                        end: new Date(y, m, 29),
-                        url: 'http://google.com/'
-                    }
-                ],
-            });
+                dayClick: function(date, jsEvent, view) {
 
+                    //alert('Clicked on: ' + date.format());
+
+                    //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+
+                    //alert('Current view: ' + view.name);
+
+                    // change the day's background color just for fun
+                    $(this).css('background-color', 'red');
+                    var url = "/BookingForm/QuickView?eDate=" + date.format();
+                    window.location.href = url;
+                },
+                events: "/BookingForm/GetEvents/"
+            });
+            //$(document).ready(function () {
+            //    $('#calendar').fullCalendar({
+            //        theme: true,
+            //        header: {
+            //            left: '',
+            //            center: '',
+            //            right: ''
+            //        },
+            //        defaultView: 'agendaDay',
+            //        editable: false,
+            //        events: "/BookingForm/GetEvents/"
+            //    });
+            //});
 
         });
 

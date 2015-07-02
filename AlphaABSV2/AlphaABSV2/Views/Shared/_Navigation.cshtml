@@ -54,6 +54,7 @@
         <li class="@Html.IsSelected(controller: "BookingForm")">
             <a href="#"><span class="nav-label">Event Info</span><span class="fa arrow"></span> </a>
             <ul class="nav nav-second-level">
+                <li class="@Html.IsSelected(action: "QuickView")"><a href="@Url.Action("QuickView", "BookingForm")">QuickView</a></li>
                 <li class="@Html.IsSelected(action: "PaintballQuickView")"><a href="@Url.Action("PaintballQuickView", "BookingForm")">Paintball QuickView</a></li>
                 <li class="@Html.IsSelected(action: "LaserQuickView")"><a href="@Url.Action("LaserQuickView", "BookingForm")">Laser QuickView</a></li>
                 <li class="@Html.IsSelected(action: "EventQuickView")"><a href="@Url.Action("EventQuickView", "BookingForm")">Event QuickView</a></li>

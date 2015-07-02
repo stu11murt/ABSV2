@@ -2757,6 +2757,7 @@
     <Content Include="Views\BookingForm\LaserQuickView.cshtml" />
     <Content Include="Views\BookingForm\EventQuickView.cshtml" />
     <Content Include="Views\Admin\DaySheets.cshtml" />
+    <Content Include="Views\BookingForm\QuickView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201506251108047_init.resx">

@@ -5,7 +5,7 @@
     ViewBag.Title = "Index";
 }
 
-<div class="small-header transition animated fadeIn">
+@*<div class="small-header transition animated fadeIn">
     <div class="hpanel">
         <div class="panel-body">
             <div id="hbreadcrumb" class="pull-right">
@@ -22,7 +22,7 @@
             <small>Filtered by Event Package.</small>
         </div>
     </div>
-</div>
+</div>*@
 
 <div class="content animate-panel">
     <div>
@@ -72,7 +72,7 @@
                             </tr>
                             @foreach (var ev in Model.GroupBy(e => e.Event.EventType))
                             {
-                                <tr class="group-header">
+                                <tr class="group-header" id="@ev.First().EventID">
                                     <td colspan="3">
                                         <span class="h3">@ev.Key</span>
                                     </td>
@@ -88,45 +88,64 @@
 
                                 </tr>
 
-                                foreach (var item in ev)
+                                foreach (var subEv in ev.GroupBy(e => e.BookingForm.DateOfEvent))
                                 {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.BookingRef)
+                                    <tr class="group-subheader">
+                                        <td colspan="3">
+                                            <span class="h4">@Convert.ToDateTime(subEv.Key).ToShortDateString()</span>
                                         </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.DateOfEvent)
+                                        <td colspan="3">
+                                            <span class="h4">Total Groups : @BookingDBHelper.GetTotalGroups(Convert.ToDateTime(subEv.Key), subEv.First().Event.EventParentID)</span>
                                         </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.GroupOrganiser)
+                                        <td colspan="3">
+                                            <span class="h4">Total Players : @BookingDBHelper.GetTotalPlayers(Convert.ToDateTime(subEv.Key), subEv.First().Event.EventParentID)</span>
                                         </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.PartyName)
+                                        <td colspan="3">
+                                            <span class="h4">Capacity Left : 36</span>
                                         </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.TelNo)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.GroupSize)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.StartTime)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.Financials.First().AmountTaken)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.Financials.First().BalanceRemaining)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.BookingForm.BookingStatus)
-                                        </td>
-                                        <td>
-                                            @Html.ActionLink("Edit", "Edit", new { id = item.EventRecordID }) |
-                                            @Html.ActionLink("Details", "Details", new { id = item.EventRecordID }) |
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.EventRecordID })
-                                        </td>
+
                                     </tr>
+
+                                    foreach (var item in subEv)
+                                    {
+                                        <tr class="children">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.BookingRef)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.DateOfEvent)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.GroupOrganiser)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.PartyName)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.TelNo)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.GroupSize)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.StartTime)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.Financials.First().AmountTaken)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.Financials.First().BalanceRemaining)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BookingForm.BookingStatus)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.EventRecordID }) |
+                                                @Html.ActionLink("Details", "Details", new { id = item.EventRecordID }) |
+                                                @Html.ActionLink("Delete", "Delete", new { id = item.EventRecordID })
+                                            </td>
+                                        </tr>
+                                    }
                                 }
                             }
 

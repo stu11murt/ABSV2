@@ -243,22 +243,70 @@ namespace AlphaABSV2.Controllers
 
         }
 
+        public ActionResult QuickView(string eDate)
+        {
+            
+
+           if(eDate != null)
+           {
+               DateTime eventDate = Convert.ToDateTime(eDate);
+               return View(db.EventRecords.Where(e => e.BookingForm.DateOfEvent == eventDate).ToList());
+           }
+           else
+           {
+               return View(db.EventRecords.Where(e => e.BookingForm.DateOfEvent > DateTime.Today).ToList());
+           }
+            
+        }
+
         public ActionResult PaintballQuickView(int? eventID)
         {
-           
-            return View(db.EventRecords.Where(e => e.Event.EventParentID == 1).Select(s => s.BookingForm).ToList());
+
+            return View(db.EventRecords.Where(e => e.Event.EventParentID == 1).ToList());
         }
 
         public ActionResult LaserQuickView()
         {
            
-            return View(db.EventRecords.Where(e => e.Event.EventParentID == 2).Select(s => s.BookingForm).ToList());
+            return View(db.EventRecords.Where(e => e.Event.EventParentID == 2).ToList());
         }
 
         public ActionResult EventQuickView()
         {
             return View(db.EventRecords);
         }
+
+
+        public JsonResult GetEvents(string start, string end)
+        {
+            ABSContext db = new ABSContext();
+
+            DateTime fromDate = Convert.ToDateTime(start);
+            DateTime toDate = Convert.ToDateTime(end);
+
+            //var rep = Resolver.Resolve<IEventRepository>();
+            var events = db.EventRecords.Where(e => e.BookingForm.DateOfEvent >= fromDate && e.BookingForm.DateOfEvent <= toDate);
+
+            var eventList = from e in events
+                            select new
+                            {
+                                id = e.EventID,
+                                title = e.Event.EventType,
+                                start = e.StartTime,
+                                end = e.StartTime,
+                                allDay = false
+                            };
+
+            var rows = eventList.ToArray();
+            return Json(rows, JsonRequestBehavior.AllowGet);
+        }
+
+        private static DateTime ConvertFromUnixTimestamp(double timestamp)
+        {
+            var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return origin.AddSeconds(timestamp);
+        }
+
         
     }
 }

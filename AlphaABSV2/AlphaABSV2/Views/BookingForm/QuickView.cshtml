@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<AlphaABSV2.Models.EventRecord>
-@using AlphaABSV2.Helpers;
+@using AlphaABSV2.Helpers
 
 @{
-    var pageName = "Paintball Quick View";
+    var pageName = "Quick View";
     ViewBag.Title = pageName;
 }
 
@@ -71,38 +71,38 @@
                                 </th>
                                 <th></th>
                             </tr>
-                            @foreach (var ev in Model.GroupBy(e => e.Event.EventType))
+                            @foreach (var ev in Model.GroupBy(e => e.BookingForm.DateOfEvent))
                             {
-                                <tr class="group-header" id="@ev.First().EventID">
+                                <tr class="group-header">
                                     <td colspan="3">
-                                        <span class="h3">@ev.Key</span>
+                                        <span class="h3">@Convert.ToDateTime(ev.Key).ToShortDateString()</span>
                                     </td>
                                     <td colspan="3">
-                                        <span class="h3">Total Groups : @BookingDBHelper.GetTotalGroups(null, 0, ev.Key.ToString())</span>
+                                        <span class="h3">Total Groups : @BookingDBHelper.GetTotalGroups(Convert.ToDateTime(ev.Key), ev.First().Event.EventParentID)</span>
                                     </td>
                                     <td colspan="3">
-                                        <span class="h3">Total Players : @BookingDBHelper.GetTotalPlayers(null, 0, ev.Key.ToString())</span>
+                                        <span class="h3">Total Players : @BookingDBHelper.GetTotalPlayers(Convert.ToDateTime(ev.Key), ev.First().Event.EventParentID)</span>
                                     </td>
                                     <td colspan="3">
-                                        <span class="h3">Capacity Left : 36</span>
+                                        <span class="h3">Event Takings : £@FinanceHelper.EventTakings(Convert.ToDateTime(ev.Key), ev.First().EventID)</span>
                                     </td>
 
                                 </tr>
 
-                                foreach (var subEv in ev.GroupBy(e => e.BookingForm.DateOfEvent))
+                                foreach (var subEv in ev.GroupBy(e => e.Event.EventType))
                                 {
                                     <tr class="group-subheader">
                                         <td colspan="3">
-                                            <span class="h4">@Convert.ToDateTime(subEv.Key).ToShortDateString()</span>
+                                            <span class="h4">@subEv.Key</span>
                                         </td>
                                         <td colspan="3">
-                                            <span class="h4">Total Groups : @BookingDBHelper.GetTotalGroups(Convert.ToDateTime(subEv.Key), subEv.First().Event.EventParentID)</span>
+                                            <span class="h4">Event Groups : @BookingDBHelper.GetTotalGroups(Convert.ToDateTime(subEv.First().BookingForm.DateOfEvent), 0, subEv.Key.ToString())</span>
                                         </td>
                                         <td colspan="3">
-                                            <span class="h4">Total Players : @BookingDBHelper.GetTotalPlayers(Convert.ToDateTime(subEv.Key), subEv.First().Event.EventParentID)</span>
+                                            <span class="h4">Event Players : @BookingDBHelper.GetTotalPlayers(Convert.ToDateTime(subEv.First().BookingForm.DateOfEvent), 0, subEv.Key.ToString())</span>
                                         </td>
                                         <td colspan="3">
-                                            <span class="h4">Capacity Left : 36</span>
+                                            <span class="h3">Event Takings : £@FinanceHelper.EventTakings(Convert.ToDateTime(subEv.First().BookingForm.DateOfEvent), subEv.First().EventID)</span>
                                         </td>
 
                                     </tr>
@@ -166,3 +166,5 @@
     @Scripts.Render("~/bundles/jquery/js")
     @Scripts.Render("~/bundles/quickviews/js")
 }
+
+

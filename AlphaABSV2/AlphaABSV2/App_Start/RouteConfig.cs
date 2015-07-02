@@ -18,6 +18,12 @@ namespace AlphaABSV2
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    name: "QuickView",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "BookingForm", action = "QuickView", date = UrlParameter.Optional }
+            //);
         }
     }
 }

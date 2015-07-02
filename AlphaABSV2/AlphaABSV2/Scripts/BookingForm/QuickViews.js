@@ -9,6 +9,15 @@
 
         $('.group-header').click(function () {
             $(this).nextUntil('.group-header').toggle();
+            $('.children').hide();
+        });
+    });
+
+    $(function () {
+
+
+        $('.group-subheader').click(function () {
+            $(this).nextUntil('.group-subheader, .group-header').toggle();
         });
     });
 

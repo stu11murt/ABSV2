@@ -2,7 +2,13 @@
 }
 
 .group-header{
-    background-color:bisque;
-    color:blue;
+    background-color:#6699ff;
+    color:white;
+    text-align:left;
+}
+
+.group-subheader{
+    background-color:#6699cc;
+    color:white;
     text-align:left;
 }

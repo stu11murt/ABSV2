@@ -103,30 +103,38 @@ namespace AlphaABSV2.Helpers
             db.SaveChanges();
         }
 
-        public static int GetTotalGroups(DateTime? eventDate, int eventParentID = 1, string eventType = "NA")
+        public static int GetTotalGroups(DateTime? eventDate, int eventParentID = 0, string eventType = "NA")
         {
             ABSContext db = new ABSContext();
-            if(eventDate != null)
+            if(eventDate != null && eventParentID > 0)
             {
                 return db.EventRecords.Where(e => e.Event.EventParentID == eventParentID && e.BookingForm.DateOfEvent == eventDate).Select(b => b.BookingForm).ToList().Count;
             }
+            else if (eventDate != null && eventType != "NA")
+            {
+                return db.EventRecords.Where(b => b.Event.EventType == eventType && b.BookingForm.DateOfEvent == eventDate).Select(x => x.BookingForm).ToList().Count;
+            }
             else
             {
-                return db.EventRecords.Where(b => b.Event.EventType == eventType).Select(x => x.BookingForm).ToList().Count;
+                return 0;
             }
             
         }
 
-        public static int GetTotalPlayers(DateTime? eventDate, int eventParentID = 1, string eventType = "NA")
+        public static int GetTotalPlayers(DateTime? eventDate, int eventParentID = 0, string eventType = "NA")
         {
             ABSContext db = new ABSContext();
-            if(eventDate != null)
+            if (eventDate != null && eventParentID > 0)
             {
                 return db.EventRecords.Where(e => e.Event.EventParentID == eventParentID && e.BookingForm.DateOfEvent == eventDate).Select(b => b.BookingForm.GroupSize).Sum();
             }
+            else if (eventDate != null && eventType != "NA")
+            {
+                return db.EventRecords.Where(e => e.Event.EventType == eventType && e.BookingForm.DateOfEvent == eventDate).Select(b => b.BookingForm.GroupSize).Sum();
+            }
             else
             {
-                return db.EventRecords.Where(e => e.Event.EventType == eventType).Select(b => b.BookingForm.GroupSize).Sum();
+                return 0;
             }
                 
             
