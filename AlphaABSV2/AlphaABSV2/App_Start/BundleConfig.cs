@@ -34,9 +34,14 @@ namespace AlphaABSV2
             bundles.Add(new ScriptBundle("~/bundles/quickviews/js").Include(
                     "~/Scripts/BookingForm/QuickViews.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/quickviews/css").Include(
+            bundles.Add(new StyleBundle("~/bundles/quickviews/css").Include(
                     "~/Scripts/BookingForm/quickviewstyle.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/staffrota/js").Include(
+                   "~/Scripts/BookingForm/staffrota.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/staffrota/css").Include(
+                   "~/Scripts/BookingForm/staffrota.css"));
 
             // Animate.css
             bundles.Add(new StyleBundle("~/bundles/animate/css").Include(

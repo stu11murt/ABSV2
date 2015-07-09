@@ -17,11 +17,11 @@ namespace AlphaABSV2.Helpers
             try
             {
                 //TODO update financials
-                Financial finance = FinanceHelper.CalculateCosts(db, bookingViewModel);
+                //Financial finance = FinanceHelper.CalculateCosts(db, bookingViewModel);
 
 
                 BookingForm newBooking = new BookingForm();
-                newBooking = bookingViewModel.booking;
+                newBooking = FinanceHelper.CalculateCosts(db, bookingViewModel);
 
                 newBooking.BookingRef = "temp" + DateTime.Now.ToShortDateString();
                 newBooking.EndTime = bookingViewModel.booking.StartTime.AddHours(2);
@@ -37,11 +37,21 @@ namespace AlphaABSV2.Helpers
                 {
                     if (record.EventNumber != null && record.StartTime != null)
                     { 
+                        DateTime evDate = Convert.ToDateTime(bookingViewModel.booking.DateOfEvent);
+                        DateTime st = Convert.ToDateTime(record.StartTime);
+
+                        DateTime ActStartTime = new DateTime(evDate.Year, evDate.Month, evDate.Day, st.Hour, st.Minute, st.Second);
+
+                        Event ev = db.Events.Find(record.EventID);
                         EventRecord eventRecord = new EventRecord();
                         eventRecord.BookingFormID = newBooking.BookingFormID;
                         eventRecord.EventNumber = record.EventNumber;
                         eventRecord.EventID = record.EventID;
-                        eventRecord.StartTime = record.StartTime;
+                        eventRecord.StartTime = ActStartTime;
+                        
+                        if(ev != null)
+                            eventRecord.EndTime = ActStartTime.Add((TimeSpan)ev.Duration); 
+                        
                         db.EventRecords.Add(eventRecord);
                         db.SaveChanges();
                     }
@@ -58,10 +68,10 @@ namespace AlphaABSV2.Helpers
                     db.SaveChanges();
                 }
 
-                //Financials
-                finance.BookingFormID = newBooking.BookingFormID;
-                db.Financials.Add(finance);
-                db.SaveChanges();
+                ////Financials
+                //finance.BookingFormID = newBooking.BookingFormID;
+                //db.Financials.Add(finance);
+                //db.SaveChanges();
 
 
                 //TODO
@@ -121,16 +131,16 @@ namespace AlphaABSV2.Helpers
             
         }
 
-        public static int GetTotalPlayers(DateTime? eventDate, int eventParentID = 0, string eventType = "NA")
+        public static int GetTotalPlayers(DateTime? eventDate, int eventParentID = 0, int eventType = 0)
         {
             ABSContext db = new ABSContext();
             if (eventDate != null && eventParentID > 0)
             {
-                return db.EventRecords.Where(e => e.Event.EventParentID == eventParentID && e.BookingForm.DateOfEvent == eventDate).Select(b => b.BookingForm.GroupSize).Sum();
+                return db.EventRecords.Where(e => e.Event.EventParentID == eventParentID && e.BookingForm.DateOfEvent == eventDate).Select(n => (int)n.EventNumber).Sum();
             }
-            else if (eventDate != null && eventType != "NA")
+            else if (eventDate != null && eventType > 0)
             {
-                return db.EventRecords.Where(e => e.Event.EventType == eventType && e.BookingForm.DateOfEvent == eventDate).Select(b => b.BookingForm.GroupSize).Sum();
+                return db.EventRecords.Where(e => e.Event.EventID == eventType && e.BookingForm.DateOfEvent == eventDate).Select(n => (int)n.EventNumber).Sum();
             }
             else
             {

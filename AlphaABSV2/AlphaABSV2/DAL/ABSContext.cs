@@ -35,6 +35,7 @@ namespace AlphaABSV2.DAL
         public DbSet<AddOns> AddOns { get; set; }
         public DbSet<AddOnRecord> AddOnRecords { get; set; }
         public DbSet<AccommParent> AccommParents { get; set; }
+        public DbSet<StaffEventRota> StaffEventRotas { get; set; }
        
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

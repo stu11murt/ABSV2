@@ -32,6 +32,7 @@ namespace AlphaABSV2.Models
 
 
         public virtual ICollection<StaffSkills> StaffSkills { get; set; }
+        public virtual ICollection<StaffEventRota> StaffEventRotas { get; set; }
 
     }
 }

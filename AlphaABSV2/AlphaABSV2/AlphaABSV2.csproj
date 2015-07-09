@@ -203,6 +203,7 @@
     <Compile Include="Helpers\EmailHelper.cs" />
     <Compile Include="Helpers\FinanceHelper.cs" />
     <Compile Include="Helpers\HMTLHelperExtensions.cs" />
+    <Compile Include="Helpers\MayhemHelper.cs" />
     <Compile Include="Migrations\201506251108047_init.cs" />
     <Compile Include="Migrations\201506251108047_init.Designer.cs">
       <DependentUpon>201506251108047_init.cs</DependentUpon>
@@ -255,6 +256,18 @@
     <Compile Include="Migrations\201506301025096_hotelfieldsnullable.Designer.cs">
       <DependentUpon>201506301025096_hotelfieldsnullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507030729511_endtime.cs" />
+    <Compile Include="Migrations\201507030729511_endtime.Designer.cs">
+      <DependentUpon>201507030729511_endtime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507031352242_staffrotas.cs" />
+    <Compile Include="Migrations\201507031352242_staffrotas.Designer.cs">
+      <DependentUpon>201507031352242_staffrotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507091420180_combinefinancewithbooking.cs" />
+    <Compile Include="Migrations\201507091420180_combinefinancewithbooking.Designer.cs">
+      <DependentUpon>201507091420180_combinefinancewithbooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccommParent.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -278,6 +291,7 @@
     <Compile Include="Models\Purpose.cs" />
     <Compile Include="Models\Source.cs" />
     <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\StaffEventRota.cs" />
     <Compile Include="Models\StaffSkills.cs" />
     <Compile Include="Models\Venue.cs" />
     <Compile Include="Models\VersionManager.cs" />
@@ -349,6 +363,8 @@
     <Content Include="Scripts\BookingForm\Booking.js" />
     <Content Include="Scripts\BookingForm\QuickViews.js" />
     <Content Include="Scripts\BookingForm\quickviewstyle.css" />
+    <Content Include="Scripts\BookingForm\staffrota.css" />
+    <Content Include="Scripts\BookingForm\staffrota.js" />
     <Content Include="Scripts\charts.js" />
     <Content Include="Scripts\homer.js" />
     <Content Include="Vendor\animate.css\animate.css" />
@@ -2758,6 +2774,10 @@
     <Content Include="Views\BookingForm\EventQuickView.cshtml" />
     <Content Include="Views\Admin\DaySheets.cshtml" />
     <Content Include="Views\BookingForm\QuickView.cshtml" />
+    <Content Include="Views\Staff\StaffRota.cshtml" />
+    <Content Include="Views\Staff\DisplayRotas.cshtml" />
+    <Content Include="Views\Admin\View.cshtml" />
+    <Content Include="Views\Admin\DaySheetButtonsMayhem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201506251108047_init.resx">
@@ -2798,6 +2818,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506301025096_hotelfieldsnullable.resx">
       <DependentUpon>201506301025096_hotelfieldsnullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507030729511_endtime.resx">
+      <DependentUpon>201507030729511_endtime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507031352242_staffrotas.resx">
+      <DependentUpon>201507031352242_staffrotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507091420180_combinefinancewithbooking.resx">
+      <DependentUpon>201507091420180_combinefinancewithbooking.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

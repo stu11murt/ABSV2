@@ -73,3 +73,6 @@ C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.M
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\itextsharp.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\itextsharp.pdfa.dll
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\itextsharp.xml
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.endtime.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.staffrotas.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.combinefinancewithbooking.resources

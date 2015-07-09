@@ -243,14 +243,12 @@ namespace AlphaABSV2.Controllers
 
         }
 
-        public ActionResult QuickView(string eDate)
+        public ActionResult QuickView(string eventDate)
         {
-            
-
-           if(eDate != null)
+           if(eventDate != null)
            {
-               DateTime eventDate = Convert.ToDateTime(eDate);
-               return View(db.EventRecords.Where(e => e.BookingForm.DateOfEvent == eventDate).ToList());
+               DateTime eDate = Convert.ToDateTime(eventDate);
+               return View(db.EventRecords.Where(e => e.BookingForm.DateOfEvent == eDate).ToList());
            }
            else
            {
@@ -291,10 +289,11 @@ namespace AlphaABSV2.Controllers
                             select new
                             {
                                 id = e.EventID,
-                                title = e.Event.EventType,
+                                title = e.BookingForm.GroupOrganiser + " " + e.BookingForm.GroupSize + " " + e.BookingForm.TelNo + " " + e.BookingForm.BookingStatus,
                                 start = e.StartTime,
-                                end = e.StartTime,
-                                allDay = false
+                                end = e.EndTime,
+                                allDay = false,
+                                url = "/BookingForm/Details/"+ e.BookingFormID
                             };
 
             var rows = eventList.ToArray();

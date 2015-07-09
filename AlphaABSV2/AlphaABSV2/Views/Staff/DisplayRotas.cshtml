@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AlphaABSV2.Models.StaffEventRota>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventRecord.Event.EventType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Staff.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StaffNotes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventRecord.Event.EventType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staff.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StaffNotes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StaffEventRotaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StaffEventRotaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StaffEventRotaID })
+        </td>
+    </tr>
+}
+
+</table>

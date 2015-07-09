@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using AlphaABSV2.DAL;
 using AlphaABSV2.Models;
+using Newtonsoft.Json;
 
 namespace AlphaABSV2.Controllers
 {
@@ -116,12 +117,111 @@ namespace AlphaABSV2.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult AssignStaff()
+        public ActionResult AssignStaff(string eventDate)
         {
-            ViewBag.Events = db.EventParents.ToList();
+            if (eventDate != null)
+            {
+                DateTime conDate = DateTime.Parse(eventDate);
+                ViewBag.Events = db.EventRecords.Where(e => e.BookingForm.DateOfEvent == conDate).ToList();
+            }
+            else
+            {
+                ViewBag.Events = db.EventRecords.Where(e => e.BookingForm.DateOfEvent == DateTime.Today).ToList();
+            }
+
             return View(db.Staff.ToList());
         }
 
+        public ActionResult StaffRota()
+        {
+            return View(db.Staff.ToList());
+        }
+        
+        public ActionResult CreateRota(string assignments)
+        {
+            
+            try
+            {
+                StaffArrayRoot[] result = JsonConvert.DeserializeObject<StaffArrayRoot[]>(assignments);
+                List<StaffEventRota> staffRota = new List<StaffEventRota>();
+                DateTime eDate = DateTime.Today;
+
+                if (result.Count() > 0)
+                    CheckForDeletions(db.EventRecords.Find(Convert.ToInt32(result.First().id)).BookingForm.DateOfEvent);
+
+                foreach (StaffArrayRoot staff in result)
+                {
+                    if (staff.children != null)
+                    {
+                        foreach (children child in staff.children)
+                        {
+                            StaffEventRota staffAssign = new StaffEventRota();
+                            staffAssign.EventRecordID = Convert.ToInt32(staff.id);
+                            staffAssign.StaffID = Convert.ToInt32(child.id);
+                            staffRota.Add(staffAssign);
+                        }
+                    }
+                    
+                }
+
+                foreach (StaffEventRota sRota in staffRota)
+                {
+                    eDate = GetEvDate(sRota.EventRecordID);
+                    db.StaffEventRotas.Add(sRota);
+                    db.SaveChanges();
+                }
+
+                return RedirectToAction("DisplayRotas", new { eventDate = eDate });
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+           
+        }
+
+        private DateTime GetEvDate(int id)
+        {
+            return db.EventRecords.Find(id).BookingForm.DateOfEvent;
+        }
+
+        public ActionResult DisplayRotas(DateTime? eventDate)
+        {
+            if(eventDate != null)
+                return View(db.StaffEventRotas.Where(s => s.EventRecord.BookingForm.DateOfEvent == eventDate).ToList());
+            else
+                return View(db.StaffEventRotas.ToList());
+        }
+
+        public ActionResult RemoveStaffRota(int eventRecordID, int staffID)
+        {
+            DateTime eDate = DateTime.Today;
+
+            if (db.StaffEventRotas.Where(r => r.EventRecordID == eventRecordID && r.StaffID == staffID) != null)
+            {
+                StaffEventRota RotaEntry = db.StaffEventRotas.FirstOrDefault(r => r.EventRecordID == eventRecordID && r.StaffID == staffID);
+                db.StaffEventRotas.Remove(RotaEntry);
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("AssignStaff", new { eventDate = eDate.ToShortDateString() });
+        }
+        
+        private void CheckForDeletions(DateTime eDate)
+        {
+            
+            if (db.StaffEventRotas.Where(s => s.EventRecordID > 0) != null)
+            {
+                List<StaffEventRota> rotas = db.StaffEventRotas.Where(s => s.EventRecord.BookingForm.DateOfEvent == eDate).ToList();
+                foreach (StaffEventRota rota in rotas)
+                {
+                    db.StaffEventRotas.Remove(rota);
+                    db.SaveChanges();
+                }
+            }
+        }
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -130,5 +230,23 @@ namespace AlphaABSV2.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+       
     }
+
+    public class StaffArrayRoot
+    {
+        public string id { get; set;}
+        public List<children> children { get; set; }
+    }
+
+    public class children
+    {
+        public string id { get; set; }
+        
+    }
+
+   
+    
 }

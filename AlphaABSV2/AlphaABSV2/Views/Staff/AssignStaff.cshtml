@@ -1,5 +1,15 @@
 ﻿@model IEnumerable<AlphaABSV2.Models.Staff>
 @using AlphaABSV2.Models
+@{
+    var pageName = "Staff Rota Creation";
+    ViewBag.Title = "Index";
+    DateTime eDate = DateTime.Today;
+    if((ViewBag.Events as IEnumerable<EventRecord>).Count() > 0)
+    { 
+        IEnumerable<EventRecord> events = ViewBag.Events as IEnumerable<EventRecord>;
+        eDate = events.First().BookingForm.DateOfEvent;
+    }          
+}
 <div class="small-header transition animated fadeIn">
     <div class="hpanel">
         <div class="panel-body">
@@ -7,18 +17,38 @@
                 <ol class="hbreadcrumb breadcrumb">
                     <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
                     <li class="active">
-                        <span>New Booking</span>
+                        <span>@pageName</span>
                     </li>
                 </ol>
             </div>
             <h2 class="font-light m-b-xs">
-                Admin
+                @pageName
             </h2>
-            <small>Examples of various extended form controls.</small>
+            <small>Create Staff Rotas with easy drag and drop</small>
         </div>
     </div>
 </div>
-
+<div class="row">
+    <div class="col-lg-12">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div class="panel-tools">
+                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                    <a class="closebox"><i class="fa fa-times"></i></a>
+                </div>
+                Date of Event
+            </div>
+            <div class="panel-body">
+                <p class="m-b-lg">
+                    <span>Select Date of Event</span>
+                    <div class="col-sm-3">
+                        <input type="date" id="selectDate" class="form-control text-box single-line" data-provide="datepicker" />
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-lg-6">
         <div class="hpanel">
@@ -36,20 +66,22 @@
                 </p>
 
                 <div class="dd" id="nestable2">
+                    
                     <ol class="dd-list">
                         <li class="dd-item" data-id="1">
-                            <div class="dd-handle">
-                                <span class="label h-bg-navy-blue"><i class="fa fa-users"></i></span> All Staff
-                            </div>
-                            <ol class="dd-list">
+                            @*<div class="dd-handle">
+                                <span class="label h-bg-navy-blue"><i class="fa fa-laptop"></i></span>Staff Members
+                            </div>*@
+                           <ol class="dd-list">
                                @foreach(var item in Model)
                                { 
                                     <li class="dd-item" data-id="@item.StaffID">
                                         <div class="dd-handle">
                                             <span class="pull-right">@item.LastName</span>
-                                            <span class="label h-bg-navy-blue"><i class="fa fa-laptop"></i></span>@item.FirstName @item.LastName
+                                            <span class="label h-bg-navy-blue"><i class="fa fa-users"></i></span>@item.FirstName @item.LastName
                                         </div>
                                     </li>
+                                   
                                }
                             </ol>
                         </li>
@@ -65,7 +97,7 @@
                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                     <a class="closebox"><i class="fa fa-times"></i></a>
                 </div>
-                Events running on @DateTime.Now.ToShortDateString()
+                Events running on <span id="eveDate">@eDate.ToShortDateString()</span>
             </div>
             <div class="panel-body">
 
@@ -74,34 +106,65 @@
                 </p>
 
                 <div class="dd" id="nestable">
-                    <ol class="dd-list">
-                        @foreach(var eventItem in ViewBag.Events as IEnumerable<EventParent>)
-                        { 
-                           <li class="dd-item" data-id="@eventItem.EventParentID">
-                                <div class="dd-handle">@eventItem.EventName</div>
+                    @foreach (var eventItem in ViewBag.Events as IEnumerable<EventRecord>)
+                    {
+                        <div class="hpanel">
+                            <div class="panel-heading">
+
+                            </div>
+                            <div class="panel-body">
+                                <p class="m-b-lg">
+                                    @eventItem.Event.EventType
+                                </p>
                                 <ol class="dd-list">
-                                    @*<li class="dd-item" data-id="3">
-                                        <div class="dd-handle">** Add Here **</div>
-                                    </li>*@
+
+                                    <li class="dd-item" data-id="@eventItem.EventRecordID">
+                                        <div class="dd-handle">
+                                            <span class="pull-right">Event</span>
+                                            <span class="label h-bg-navy-blue"><i class="fa fa-laptop"></i></span>@eventItem.Event.EventType - @eventItem.BookingForm.PartyName
+                                        </div>
+                                        <ol class="dd-list">
+                                            @foreach (var subItem in eventItem.StaffEventRotas)
+                                            {
+                                                <li class="dd-item" data-id="@subItem.StaffID">
+                                                    <div class="dd-handle">
+                                                        <span class="pull-right"><input type="button" id="remove" class="danger" /></span>
+                                                        <span class="label h-bg-navy-blue"><i class="fa fa-users"></i></span>@subItem.Staff.FirstName @subItem.Staff.LastName
+                                                    </div>
+                                                </li>
+                                            }
+                                        </ol>
+                                    </li>
                                 </ol>
-                            </li>
-                        }
-                    </ol>
+                            </div>
+                        </div>
+                    }
+
                 </div>
                 <div class="m-t-md">
                     <h5>Serialised Output</h5>
                 </div>
                 <textarea id="nestable-output" class="form-control"></textarea>
-
             </div>
+            <button class="btn btn-primary" type="submit" id="save">Save changes</button>
         </div>
+            
+              
     </div>
 </div>
 
    @section Scripts {
+    @Scripts.Render("~/bundles/jquery/js")
     @Scripts.Render("~/bundles/nestable/js")
+    
 
     <script type="text/javascript">
+
+   
+        $('#selectDate').change(function () {
+            var url = "/Staff/AssignStaff?eventDate=" + $(this).val();
+            window.location.href = url;
+        });
 
         $(function () {
 
@@ -138,6 +201,13 @@
                 if (action === 'collapse-all') {
                     $('.dd').nestable('collapseAll');
                 }
+            });
+
+            $('#save').click(function () {
+                //$.post("/Staff/CreateRota/" + )
+                var url = "/Staff/CreateRota?assignments=" + $('#nestable-output').val();
+                window.location.href = url;
+                //updateOutput($('#nestable').data('output', "/Staff/CreateRota?assignments="));
             });
 
         });

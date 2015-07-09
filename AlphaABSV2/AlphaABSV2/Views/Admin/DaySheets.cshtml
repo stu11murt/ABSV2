@@ -1,25 +1,26 @@
-﻿@model IEnumerable<AlphaABSV2.Models.BookingForm>
+﻿@model IEnumerable<AlphaABSV2.Models.EventRecord>
 
 @{
     var pageName = "DaySheets Export";
     ViewBag.Title = pageName;
+    var sDate = ViewBag.PassedDate;
 }
 
-<div class="small-header transition animated fadeIn">
+<div class="normalheader transition animated fadein">
     <div class="hpanel">
         <div class="panel-body">
-            <div id="hbreadcrumb" class="pull-right">
-                <ol class="hbreadcrumb breadcrumb">
-                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
-                    <li class="active">
-                        @pageName
-                    </li>
-                </ol>
+            <a class="small-header-action" href="">
+                <div class="clip-header">
+                    <i class="fa fa-arrow-up"></i>
+                </div>
+            </a>
+            <div class="row">
             </div>
-            <h2 class="font-light m-b-xs">
-                @pageName
-            </h2>
-            <small>View all @pageName here.</small>
+            <strong>
+                Select Event Date
+            </strong>
+            <div id="datepicker" data-date="@sDate"></div>
+            <input type="hidden" id="my_hidden_input" />
         </div>
     </div>
 </div>
@@ -33,115 +34,10 @@
                         <div class="panel-tools">
                             <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                         </div>
-                        @pageName
+                        @Html.Partial("DaySheetButtonsMayhem")
                     </div>
                     <div class="panel-body">
-                        <table class="table">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.BookingRef)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DateOfEvent)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.TelNo)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GroupOrganiser)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PartyName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GroupSize)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.StartTime)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.EndTime)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.BookingStatus)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.BookingSummary)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DaySheetNotes)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.InternalNotes)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.SendEmail)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.SendText)
-                                </th>
-                                <th></th>
-                            </tr>
-
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.BookingRef)
-                                    </td>
-
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.DateOfEvent)
-                                    </td>
-
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.TelNo)
-                                    </td>
-
-
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.GroupOrganiser)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.PartyName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.GroupSize)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.StartTime)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.EndTime)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.BookingStatus)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.BookingSummary)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.DaySheetNotes)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.InternalNotes)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.SendEmail)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.SendText)
-                                    </td>
-
-                                    <td>
-                                        @Html.ActionLink("Edit", "Edit", new { id = item.BookingFormID }) |
-                                        @Html.ActionLink("Details", "Details", new { id = item.BookingFormID }) |
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.BookingFormID })
-                                    </td>
-                                </tr>
-                            }
-
-                        </table>
+                        @Html.Partial("View", Model)
                     </div>
                 </div>
             </div>
@@ -149,6 +45,70 @@
     </div>
     <p>
         @Html.ActionLink("Export To PDF", "ExportPDF", null, new { @class = "btn btn-primary btn-md" })
-        @Html.ActionLink("Export To Excel", "ExportExcel", null, new { @class = "btn btn-primary btn-md" })
+        @*@Html.ActionLink("Export To Excel", "ExportToExcel", null, new { @class = "btn btn-primary btn-md" })*@
+        <button type="button" id="ExportToExcel" class="btn-lg w-xs btn-info" data-id="1">Export To Excel</button>
     </p>
 </div>
+
+@section Styles {
+    @Styles.Render("~/bundles/datepicker/css")
+}
+@section Scripts {
+
+    @Scripts.Render("~/bundles/datepicker/js")  
+
+    <script type="text/javascript">
+        
+
+        $('#datepicker').datepicker();
+
+        var sDate = $('#datepicker').attr('data-date');
+
+        $("#datepicker").on("changeDate", function (event) {
+            $("#my_hidden_input").val(
+                    $("#datepicker").datepicker('getFormattedDate')
+            )
+            
+            sDate = $("#my_hidden_input").val();
+           
+        });
+
+        $('#ExportToExcel').click(function () {
+            var url = "/Admin/ExportToExcel?eventDate=" + sDate + "&queryType=" + $(this).attr("data-id");
+            window.location.href = url;
+        });
+
+        $('#paintball').click(function() {
+            var url = "/Admin/DaySheets?selectedDate=" + sDate + "&queryType=" + $(this).attr("data-id");
+            window.location.href = url;
+        });
+
+        $('#prepay').click(function () {
+            var url = "/Admin/DaySheets?selectedDate=" + sDate + "&queryType=" + $(this).attr("data-id");
+            window.location.href = url;
+        });
+
+        $('#laser').click(function () {
+            var url = "/Admin/DaySheets?selectedDate=" + sDate + "&queryType=" + $(this).attr("data-id");
+            window.location.href = url;
+        });
+
+        $('#walkon').click(function () {
+            var url = "/Admin/DaySheets?selectedDate=" + sDate + "&queryType=" + $(this).attr("data-id");
+            window.location.href = url;
+        });
+
+        $('#bigticket').click(function () {
+            var url = "/Admin/DaySheets?selectedDate=" + sDate + "&queryType=" + $(this).attr("data-id");
+            window.location.href = url;
+        });
+
+        
+        //$('#datepicker').change(function () {
+        //    var url = "/Admin/DaySheets?selectedDate=" + $(this).val();
+        //    window.location.href = url;
+        //});
+
+    </script>
+
+}

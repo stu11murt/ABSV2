@@ -17,14 +17,42 @@
                     </li>
                 </ol>
             </div>
-            <h2 class="font-light m-b-xs">
-                @pageName
-            </h2>
-            <small>Filtered by Paintball Bookings.</small>
+            <div>
+                <h2 class="font-light m-b-xs">
+                    @pageName
+                </h2>
+            </div>
+            <div class="row">
+
+            </div>
+            <div class="col-sm-3">
+                <span>Select Date of Event</span>
+                <input type="date" id="selectDate" class="form-control text-box single-line" data-provide="datepicker" />
+            </div>
         </div>
     </div>
 </div>
-
+@*<div class="row">
+    <div class="col-lg-12">
+        <div class="hpanel">
+            <div class="panel-heading">
+                <div class="panel-tools">
+                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                    <a class="closebox"><i class="fa fa-times"></i></a>
+                </div>
+                Date of Event
+            </div>
+            <div class="panel-body">
+                <p class="m-b-lg">
+                    <span>Select Date of Event</span>
+                    <div class="col-sm-3">
+                        <input type="date" id="selectDate" class="form-control text-box single-line" data-provide="datepicker" />
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>*@
 <div class="content animate-panel">
     <div>
         <div class="row">
@@ -60,12 +88,12 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.StartTime)
                                 </th>
-                                <th>
+                                @*<th>
                                     @Html.DisplayNameFor(model => model.BookingForm.Financials.First().AmountTaken)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.BookingForm.Financials.First().BalanceRemaining)
-                                </th>
+                                </th>*@
                                 <th>
                                     @Html.DisplayNameFor(model => model.BookingForm.BookingStatus)
                                 </th>
@@ -84,7 +112,7 @@
                                         <span class="h3">Total Players : @BookingDBHelper.GetTotalPlayers(Convert.ToDateTime(ev.Key), ev.First().Event.EventParentID)</span>
                                     </td>
                                     <td colspan="3">
-                                        <span class="h3">Event Takings : £@FinanceHelper.EventTakings(Convert.ToDateTime(ev.Key), ev.First().EventID)</span>
+                                        <span class="h3">Total Takings : £@FinanceHelper.EventTakings(Convert.ToDateTime(ev.Key), ev.First().EventID)</span>
                                     </td>
 
                                 </tr>
@@ -99,10 +127,10 @@
                                             <span class="h4">Event Groups : @BookingDBHelper.GetTotalGroups(Convert.ToDateTime(subEv.First().BookingForm.DateOfEvent), 0, subEv.Key.ToString())</span>
                                         </td>
                                         <td colspan="3">
-                                            <span class="h4">Event Players : @BookingDBHelper.GetTotalPlayers(Convert.ToDateTime(subEv.First().BookingForm.DateOfEvent), 0, subEv.Key.ToString())</span>
+                                            <span class="h4">Event Players : @BookingDBHelper.GetTotalPlayers(Convert.ToDateTime(subEv.First().BookingForm.DateOfEvent), 0, subEv.First().EventID)</span>
                                         </td>
                                         <td colspan="3">
-                                            <span class="h3">Event Takings : £@FinanceHelper.EventTakings(Convert.ToDateTime(subEv.First().BookingForm.DateOfEvent), subEv.First().EventID)</span>
+                                            @*<span class="h3">Event Takings : £@FinanceHelper.EventTakings(Convert.ToDateTime(subEv.First().BookingForm.DateOfEvent), subEv.First().EventID)</span>*@
                                         </td>
 
                                     </tr>
@@ -126,17 +154,17 @@
                                                 @Html.DisplayFor(modelItem => item.BookingForm.TelNo)
                                             </td>
                                             <td>
-                                                @Html.DisplayFor(modelItem => item.BookingForm.GroupSize)
+                                                @Html.DisplayFor(modelItem => item.EventNumber)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.StartTime)
                                             </td>
-                                            <td>
+                                            @*<td>
                                                 @Html.DisplayFor(modelItem => item.BookingForm.Financials.First().AmountTaken)
                                             </td>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.BookingForm.Financials.First().BalanceRemaining)
-                                            </td>
+                                            </td>*@
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.BookingForm.BookingStatus)
                                             </td>
@@ -165,6 +193,16 @@
     @Scripts.Render("~/bundles/jqueryui/js")
     @Scripts.Render("~/bundles/jquery/js")
     @Scripts.Render("~/bundles/quickviews/js")
+
+    <script type="text/javascript">
+        $('#selectDate').change(function () {
+            var url = "/BookingForm/QuickView?eventDate=" + $(this).val();
+            window.location.href = url;
+        });
+        
+    </script>
 }
+
+
 
 

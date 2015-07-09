@@ -5,6 +5,7 @@ using System.Web.Mvc.Html;
 
 namespace AlphaABSV2
 {
+    
     public static class HMTLHelperExtensions
     {
         public static string IsSelected(this HtmlHelper html, string controller = null, string action = null)
@@ -28,5 +29,11 @@ namespace AlphaABSV2
             string currentAction = (string)html.ViewContext.RouteData.Values["action"];
             return currentAction;
         }
+
+        public static IHtmlString If(this HtmlHelper helper, Boolean condition, IHtmlString ifTrue, IHtmlString ifFalse) {
+            return condition ? ifTrue : ifFalse;
+         } // If
     }
+
+    
 }

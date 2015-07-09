@@ -22,8 +22,12 @@ namespace AlphaABSV2.Models
         [Display(Name = "Start Time")]
         public DateTime? StartTime { get; set; }
 
-        
+        [Display(Name = "End Time")]
+        public DateTime? EndTime { get; set; }
+
         public virtual Event Event { get; set; }
         public virtual BookingForm BookingForm { get; set; }
+
+        public virtual ICollection<StaffEventRota> StaffEventRotas { get; set; }
     }
 }
