@@ -24,10 +24,10 @@ namespace AlphaABSV2.Models
 
         public int? SessionNumber { get; set; }
 
-        [Display(Name = "Minimum Number")]
+        [Display(Name = "Min Number")]
         public int MinNumber { get; set; }
 
-        [Display(Name = "Maximum Number")]
+        [Display(Name = "Max Number")]
         public int MaxNumber { get; set; }
 
         [Display(Name = "Event Deposit")]

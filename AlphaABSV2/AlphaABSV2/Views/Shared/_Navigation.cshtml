@@ -66,6 +66,7 @@
             <a href="#"><span class="nav-label">Admin</span><span class="fa arrow"></span> </a>
             <ul class="nav nav-second-level">
                 <li class="@Html.IsSelected(action: "DaySheets")"><a href="@Url.Action("DaySheets", "Admin")">DaySheets Export</a></li>
+                <li class="@Html.IsSelected(action: "EmailManager")"><a href="@Url.Action("Index", "EmailManager")">Email Templates</a></li>
                 <li class="@Html.IsSelected(action: "AgentsManager")"><a href="@Url.Action("AgentsManager", "GeneralAdmin")">Agents Manager</a></li>
                 <li class="@Html.IsSelected(action: "SpecialOffers")"><a href="@Url.Action("SpecialOffers", "GeneralAdmin")">Special Offers</a></li>
                 <li class="@Html.IsSelected(action: "AddOnManager")"><a href="@Url.Action("AddOnManager", "GeneralAdmin")">Add On Manager</a></li>
@@ -76,7 +77,6 @@
             <a href="#"><span class="nav-label">Marketing</span><span class="fa arrow"></span> </a>
             <ul class="nav nav-second-level">
                 <li class="@Html.IsSelected(action: "PlayerDatabase")"><a href="@Url.Action("PlayerDatabase", "MarketingDatabase")">Player Database</a></li>
-                <li class="@Html.IsSelected(action: "EmailManager")"><a href="@Url.Action("Index", "EmailManager")">Email Templates</a></li>
                 <li class="@Html.IsSelected(action: "MailshotTemplates")"><a href="@Url.Action("MailShotTemplates", "EmailManager")">Mail Shot Templates</a></li>
                 <li class="@Html.IsSelected(action: "SocialMedia")"><a href="@Url.Action("SocialMedia", "Marketing")">Social Media</a></li>
             </ul>

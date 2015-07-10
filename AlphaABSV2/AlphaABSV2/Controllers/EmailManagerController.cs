@@ -22,8 +22,7 @@ namespace AlphaABSV2.Controllers
             return View(db.EmailTemplates.ToList());
         }
 
-
-        
+      
         // GET: EmailManager/Details/5
         public ActionResult Details(int? id)
         {
@@ -47,7 +46,6 @@ namespace AlphaABSV2.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(string sHTML)
         {
             EmailTemplates emailTemplate = new EmailTemplates();
@@ -55,7 +53,7 @@ namespace AlphaABSV2.Controllers
             emailTemplate.TemplateTitle = "Template" + DateTime.Now.ToShortTimeString();
             db.EmailTemplates.Add(emailTemplate);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
 
         // GET: EmailManager/Edit/5
