@@ -301,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Emails\EmailTemplateOne.html" />
+    <Content Include="Content\Emails\Invoice.html" />
     <Content Include="Content\img\green%402x.png" />
     <Content Include="Content\img\green.png" />
     <Content Include="Content\style.css" />

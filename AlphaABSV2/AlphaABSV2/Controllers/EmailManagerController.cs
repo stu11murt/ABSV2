@@ -30,12 +30,13 @@ namespace AlphaABSV2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmailManager emailManager = db.EmailManager.Find(id);
-            if (emailManager == null)
+            EmailTemplates emailTemplate = db.EmailTemplates.Find(id);
+            if (emailTemplate == null)
             {
                 return HttpNotFound();
             }
-            return View(emailManager);
+            emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
+            return View(emailTemplate);
         }
 
         // GET: EmailManager/Create
@@ -46,14 +47,24 @@ namespace AlphaABSV2.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(string sHTML)
+        public ActionResult Create(string sHTML, string templateNAME = "Template")
         {
-            EmailTemplates emailTemplate = new EmailTemplates();
-            emailTemplate.TemplateContent = sHTML;
-            emailTemplate.TemplateTitle = "Template" + DateTime.Now.ToShortTimeString();
-            db.EmailTemplates.Add(emailTemplate);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                EmailTemplates emailTemplate = new EmailTemplates();
+                emailTemplate.TemplateContent = HttpUtility.HtmlEncode(sHTML);
+                emailTemplate.TemplateTitle = templateNAME;
+                db.EmailTemplates.Add(emailTemplate);
+                db.SaveChanges();
+
+                return JavaScript("window.location = '/emailmanager/index'");
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+           
         }
 
         // GET: EmailManager/Edit/5
@@ -68,6 +79,7 @@ namespace AlphaABSV2.Controllers
             {
                 return HttpNotFound();
             }
+            emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
             return View(emailTemplate);
         }
 
@@ -75,16 +87,27 @@ namespace AlphaABSV2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmailManagerID")] EmailManager emailManager)
+        [ValidateInput(false)]
+        public ActionResult Edit(int id, string sHTML, string template = "Template")
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(emailManager).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                EmailTemplates emailTemplate = db.EmailTemplates.Find(Convert.ToInt32(id));
+                if (emailTemplate != null)
+                {
+                    emailTemplate.TemplateContent = HttpUtility.HtmlEncode(sHTML);
+                    emailTemplate.TemplateTitle = template;
+                    db.SaveChanges();
+                }
+
+                return JavaScript("window.location = '/emailmanager/index'");
             }
-            return View(emailManager);
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            
         }
 
         // GET: EmailManager/Delete/5
@@ -94,12 +117,13 @@ namespace AlphaABSV2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EmailManager emailManager = db.EmailManager.Find(id);
-            if (emailManager == null)
+            EmailTemplates emailTemplate = db.EmailTemplates.Find(id);
+            if (emailTemplate == null)
             {
                 return HttpNotFound();
             }
-            return View(emailManager);
+            emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
+            return View(emailTemplate);
         }
 
         // POST: EmailManager/Delete/5
@@ -107,8 +131,8 @@ namespace AlphaABSV2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            EmailManager emailManager = db.EmailManager.Find(id);
-            db.EmailManager.Remove(emailManager);
+            EmailTemplates emailTemplate = db.EmailTemplates.Find(id);
+            db.EmailTemplates.Remove(emailTemplate);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -125,6 +149,7 @@ namespace AlphaABSV2.Controllers
             {
                 return HttpNotFound();
             }
+            emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
             return View(emailTemplate);
         }
 
