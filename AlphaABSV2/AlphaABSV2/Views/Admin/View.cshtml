@@ -1,63 +1,68 @@
 ﻿@model IEnumerable<AlphaABSV2.Models.EventRecord>
 
 
-<table class="table">
-    <tr>
-    <th>
-        @Html.DisplayNameFor(model => model.BookingForm.BookingRef)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.BookingForm.PartyName)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.StartTime)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.BookingForm.Email)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.EventNumber)
-    </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BookingForm.AmountTaken)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BookingForm.BalanceRemaining)
-        </th>
+<table class="table" id="tableToExport">
+    <thead>
+        <tr>
+            
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingForm.BookingRef)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingForm.PartyName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingForm.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingForm.AmountTaken)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingForm.BalanceRemaining)
+                </th>
 
-    <th></th>
-</tr>
+                <th></th>
+          </tr>
+    </thead>
 
-@foreach (var item in Model)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookingForm.BookingRef)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookingForm.PartyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StartTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookingForm.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookingForm.AmountTaken)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BookingForm.BalanceRemaining)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.BookingFormID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.BookingFormID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.BookingFormID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingForm.BookingRef)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingForm.PartyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingForm.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingForm.AmountTaken)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingForm.BalanceRemaining)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "BookingForm", new { id = item.BookingFormID }) |
+                    @Html.ActionLink("Details", "Details", "BookingForm", new { id = item.BookingFormID }) |
+                    @Html.ActionLink("Delete", "Delete", "BookingForm", new { id = item.BookingFormID })
+                </td>
+            </tr>
+        </tbody>
+    }
 
 </table>

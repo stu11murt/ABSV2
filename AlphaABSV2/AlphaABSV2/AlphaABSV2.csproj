@@ -368,6 +368,7 @@
     <Content Include="Scripts\BookingForm\staffrota.js" />
     <Content Include="Scripts\charts.js" />
     <Content Include="Scripts\homer.js" />
+    <Content Include="Scripts\MayhemScripts\Mayhem.js" />
     <Content Include="Vendor\animate.css\animate.css" />
     <Content Include="Vendor\animate.css\animate.min.css" />
     <Content Include="Vendor\animate.css\Gruntfile.js" />
@@ -889,6 +890,12 @@
     <Content Include="Vendor\fullcalendar\dist\lang\zh-cn.js" />
     <Content Include="Vendor\fullcalendar\dist\lang\zh-tw.js" />
     <Content Include="Vendor\fullcalendar\license.txt" />
+    <Content Include="Vendor\HTMLTableExport\html2canvas.js" />
+    <Content Include="Vendor\HTMLTableExport\jquery.base64.js" />
+    <Content Include="Vendor\HTMLTableExport\jspdf.js" />
+    <Content Include="Vendor\HTMLTableExport\libs\base64.js" />
+    <Content Include="Vendor\HTMLTableExport\libs\sprintf.js" />
+    <Content Include="Vendor\HTMLTableExport\tableExport.js" />
     <Content Include="Vendor\iCheck\icheck.js" />
     <Content Include="Vendor\iCheck\icheck.min.js" />
     <Content Include="Vendor\iCheck\skins\all.css" />
