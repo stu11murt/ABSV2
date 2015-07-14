@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AddOnParentController.cs" />
     <Compile Include="Controllers\AddOnsController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\BookingFormController.cs" />
     <Compile Include="Controllers\BookingStatusController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -204,69 +205,9 @@
     <Compile Include="Helpers\FinanceHelper.cs" />
     <Compile Include="Helpers\HMTLHelperExtensions.cs" />
     <Compile Include="Helpers\MayhemHelper.cs" />
-    <Compile Include="Migrations\201506251108047_init.cs" />
-    <Compile Include="Migrations\201506251108047_init.Designer.cs">
-      <DependentUpon>201506251108047_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506251407469_finLinkToBooking.cs" />
-    <Compile Include="Migrations\201506251407469_finLinkToBooking.Designer.cs">
-      <DependentUpon>201506251407469_finLinkToBooking.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506260826111_twekedevents.cs" />
-    <Compile Include="Migrations\201506260826111_twekedevents.Designer.cs">
-      <DependentUpon>201506260826111_twekedevents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506260832233_tweakedaddons.cs" />
-    <Compile Include="Migrations\201506260832233_tweakedaddons.Designer.cs">
-      <DependentUpon>201506260832233_tweakedaddons.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506261004205_customerdetails.cs" />
-    <Compile Include="Migrations\201506261004205_customerdetails.Designer.cs">
-      <DependentUpon>201506261004205_customerdetails.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506261449486_updatinglinks.cs" />
-    <Compile Include="Migrations\201506261449486_updatinglinks.Designer.cs">
-      <DependentUpon>201506261449486_updatinglinks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506261454041_updatinglinks2.cs" />
-    <Compile Include="Migrations\201506261454041_updatinglinks2.Designer.cs">
-      <DependentUpon>201506261454041_updatinglinks2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506261556002_hotels.cs" />
-    <Compile Include="Migrations\201506261556002_hotels.Designer.cs">
-      <DependentUpon>201506261556002_hotels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506261603422_hotelTweak.cs" />
-    <Compile Include="Migrations\201506261603422_hotelTweak.Designer.cs">
-      <DependentUpon>201506261603422_hotelTweak.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506261619301_hotelTweak2.cs" />
-    <Compile Include="Migrations\201506261619301_hotelTweak2.Designer.cs">
-      <DependentUpon>201506261619301_hotelTweak2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506300900424_eventdate.cs" />
-    <Compile Include="Migrations\201506300900424_eventdate.Designer.cs">
-      <DependentUpon>201506300900424_eventdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506300909071_eventdate2.cs" />
-    <Compile Include="Migrations\201506300909071_eventdate2.Designer.cs">
-      <DependentUpon>201506300909071_eventdate2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506301025096_hotelfieldsnullable.cs" />
-    <Compile Include="Migrations\201506301025096_hotelfieldsnullable.Designer.cs">
-      <DependentUpon>201506301025096_hotelfieldsnullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507030729511_endtime.cs" />
-    <Compile Include="Migrations\201507030729511_endtime.Designer.cs">
-      <DependentUpon>201507030729511_endtime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507031352242_staffrotas.cs" />
-    <Compile Include="Migrations\201507031352242_staffrotas.Designer.cs">
-      <DependentUpon>201507031352242_staffrotas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201507091420180_combinefinancewithbooking.cs" />
-    <Compile Include="Migrations\201507091420180_combinefinancewithbooking.Designer.cs">
-      <DependentUpon>201507091420180_combinefinancewithbooking.cs</DependentUpon>
+    <Compile Include="Migrations\201507141407347_init.cs" />
+    <Compile Include="Migrations\201507141407347_init.Designer.cs">
+      <DependentUpon>201507141407347_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccommParent.cs" />
@@ -274,6 +215,7 @@
     <Compile Include="Models\AddOnParent.cs" />
     <Compile Include="Models\AddOnRecord.cs" />
     <Compile Include="Models\AddOns.cs" />
+    <Compile Include="Models\Agent.cs" />
     <Compile Include="Models\BookingForm.cs" />
     <Compile Include="Models\BookingStatus.cs" />
     <Compile Include="Models\EmailCategories.cs" />
@@ -2786,55 +2728,15 @@
     <Content Include="Views\Staff\DisplayRotas.cshtml" />
     <Content Include="Views\Admin\View.cshtml" />
     <Content Include="Views\Admin\DaySheetButtonsMayhem.cshtml" />
+    <Content Include="Views\Agent\Create.cshtml" />
+    <Content Include="Views\Agent\Delete.cshtml" />
+    <Content Include="Views\Agent\Details.cshtml" />
+    <Content Include="Views\Agent\Edit.cshtml" />
+    <Content Include="Views\Agent\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506251108047_init.resx">
-      <DependentUpon>201506251108047_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506251407469_finLinkToBooking.resx">
-      <DependentUpon>201506251407469_finLinkToBooking.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506260826111_twekedevents.resx">
-      <DependentUpon>201506260826111_twekedevents.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506260832233_tweakedaddons.resx">
-      <DependentUpon>201506260832233_tweakedaddons.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506261004205_customerdetails.resx">
-      <DependentUpon>201506261004205_customerdetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506261449486_updatinglinks.resx">
-      <DependentUpon>201506261449486_updatinglinks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506261454041_updatinglinks2.resx">
-      <DependentUpon>201506261454041_updatinglinks2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506261556002_hotels.resx">
-      <DependentUpon>201506261556002_hotels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506261603422_hotelTweak.resx">
-      <DependentUpon>201506261603422_hotelTweak.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506261619301_hotelTweak2.resx">
-      <DependentUpon>201506261619301_hotelTweak2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506300900424_eventdate.resx">
-      <DependentUpon>201506300900424_eventdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506300909071_eventdate2.resx">
-      <DependentUpon>201506300909071_eventdate2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506301025096_hotelfieldsnullable.resx">
-      <DependentUpon>201506301025096_hotelfieldsnullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507030729511_endtime.resx">
-      <DependentUpon>201507030729511_endtime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507031352242_staffrotas.resx">
-      <DependentUpon>201507031352242_staffrotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201507091420180_combinefinancewithbooking.resx">
-      <DependentUpon>201507091420180_combinefinancewithbooking.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201507141407347_init.resx">
+      <DependentUpon>201507141407347_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

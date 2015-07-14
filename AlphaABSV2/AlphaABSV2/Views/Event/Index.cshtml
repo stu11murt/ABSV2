@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<AlphaABSV2.Models.Event>
 
 @{
-    ViewBag.Title = "Index";
+    var pageName = "Events";
+    ViewBag.Title = pageName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
 <div class="small-header transition animated fadeIn">
@@ -11,12 +14,12 @@
                 <ol class="hbreadcrumb breadcrumb">
                     <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
                     <li class="active">
-                        Event Index
+                        @pageName
                     </li>
                 </ol>
             </div>
             <h2 class="font-light m-b-xs">
-                Events
+                @pageName
             </h2>
             <small>Create the Event package variations here. i.e. Adult Package (Paintball), (Super Shot) Laser Tag etc..</small>
         </div>
@@ -30,7 +33,7 @@
             <div class="col-lg-12">
                 <div class="hpanel">
                     <div class="panel-body">
-                        <h2>Event Packages</h2>
+                        <h2>@pageName</h2>
 
                         @*<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>*@
                     </div>
@@ -44,7 +47,7 @@
                         <div class="panel-tools">
                             <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                         </div>
-                        Current Events
+                        @pageName
                     </div>
                     <div class="panel-body">
                         <table class="table">
@@ -116,15 +119,14 @@
                                     </td>
                                 </tr>
                             }
-                            <tr>
-                                <td>
-                                    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
-                                </td>
-                            </tr>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
+        @Html.ActionLink("Back to Super Admin", "Index", "Admin", null, new { @class = "btn btn-primary btn-md" })
+    </p>
 </div>

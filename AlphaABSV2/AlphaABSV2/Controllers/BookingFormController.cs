@@ -62,7 +62,7 @@ namespace AlphaABSV2.Controllers
                 return RedirectToAction("Index");
             }
 
-            InitiateDropDowns(bookingViewModel.booking.VenueID, bookingViewModel.booking.Source, bookingViewModel.booking.OfficeRef, bookingViewModel.booking.Purpose, bookingViewModel.booking.BookingStatus, bookingViewModel.booking.HotelID);
+            InitiateDropDowns(bookingViewModel.booking.VenueID, bookingViewModel.booking.Source, bookingViewModel.booking.OfficeRef, bookingViewModel.booking.Purpose, bookingViewModel.booking.BookingStatus, bookingViewModel.booking.HotelID, bookingViewModel.booking.Agent);
             return View(bookingViewModel);
         }
 
@@ -81,7 +81,7 @@ namespace AlphaABSV2.Controllers
             }
             
             PopulateVenueDropDownList(bookingForm.VenueID);
-            InitiateDropDowns(bookingForm.VenueID, bookingForm.Source, bookingForm.OfficeRef, bookingForm.Purpose, bookingForm.BookingStatus, bookingForm.HotelID);
+            InitiateDropDowns(bookingForm.VenueID, bookingForm.Source, bookingForm.OfficeRef, bookingForm.Purpose, bookingForm.BookingStatus, bookingForm.HotelID, bookingForm.Agent);
             return View(bookingForm);
         }
 
@@ -232,7 +232,16 @@ namespace AlphaABSV2.Controllers
             ViewBag.Hotel = new SelectList(hotelQuery, "AccommParentID", "AccommName", selectedHotel);
         }
 
-        private void InitiateDropDowns(int? venueID = 0, int? sourcesID = 0, int? officeRefID = 0, int? purposeID = 0, int? bookingStatusID = 0, int? hotelID = 0)
+        private void PopulateAgentsDropDownList(object selectAgent = null)
+        {
+            var agentQuery = from a in db.Agents
+                             orderby a.AgentName
+                             select a;
+            ViewBag.Agents = new SelectList(agentQuery, "AgentID", "AgentName", selectAgent);
+
+        }
+
+        private void InitiateDropDowns(int? venueID = 0, int? sourcesID = 0, int? officeRefID = 0, int? purposeID = 0, int? bookingStatusID = 0, int? hotelID = 0, int? agentID = 0)
         {
             PopulateVenueDropDownList(venueID);
             PopulateSourcesDropDownList(sourcesID);
@@ -240,6 +249,7 @@ namespace AlphaABSV2.Controllers
             PopulatePurposeDropDownList(purposeID);
             PopulateBookingstatusDropDownList(bookingStatusID);
             PopulateHotelDropDownList(hotelID);
+            PopulateAgentsDropDownList(agentID);
 
         }
 

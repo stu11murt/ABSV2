@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<AlphaABSV2.Models.EventParent>
 
 @{
-    ViewBag.Title = "Index";
+    var pageName = "Event Parent";
+    ViewBag.Title = pageName;
 }
 
 <div class="small-header transition animated fadeIn">
@@ -11,12 +12,12 @@
                 <ol class="hbreadcrumb breadcrumb">
                     <li><a href="@Url.Action("Index", "Admin")">Super Admin</a></li>
                     <li class="active">
-                        Event Parent Index    
+                        @pageName    
                     </li>
                 </ol>
             </div>
             <h2 class="font-light m-b-xs">
-                Event Parent
+                @pageName
             </h2>
             <small>Create the Event Types here. i.e. Paintball, Laser Tag etc..</small>
         </div>
@@ -57,16 +58,17 @@
                                 </tr>
                                 
                             }
-                            <tr>
-                                <td>@Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })</td>
-
-                            </tr>
+                            
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
+        @Html.ActionLink("Back to Super Admin", "Index", "Admin", null, new { @class = "btn btn-primary btn-md" })
+    </p>
 </div>
 
 

@@ -27,17 +27,14 @@ namespace AlphaABSV2.Models
         public string TelNo { get; set; }
 
         public int Source { get; set; }
-        //[Display(Name = "Source of Booking")]
-        //public virtual ICollection<Source> Sources { get; set; }
+
+        public int Agent { get; set; }
 
         [Display(Name="Venue")]
         public int VenueID { get; set; }
-        //public virtual ICollection<Venue> Venues {  get; set; }
-
+        
         public int Purpose { get; set; }
-        //[Display(Name = "Purpose of Event")]
-        //public virtual ICollection<Purpose> Purposes { get; set; }
-
+        
         [Display(Name = "Group Organiser First Name")]
         public string GroupOrganiserFName { get; set; }
 
@@ -130,15 +127,19 @@ namespace AlphaABSV2.Models
         [Display(Name = "Deposit Due")]
         public DateTime DepositDueOnDate { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Event Cost Per Person")]
         public decimal EventCostPerPerson { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Deposit Per Person")]
         public decimal? DepositPerPerson { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Balance Remaining")]
         public decimal? BalanceRemaining { get; set; }
-
+        
+        [DataType(DataType.Currency)]
         [Display(Name = "Balance Remaining Per Person")]
         public decimal? BalanceRemainingPP { get; set; }
 
@@ -150,12 +151,15 @@ namespace AlphaABSV2.Models
         [Display(Name = "Amount Taken")]
         public decimal AmountTaken { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Group Spend on Day")]
         public decimal? GroupSpendOnDay { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Discount - Per Person")]
         public decimal DiscountPerPerson { get; set; }
 
+        [DataType(DataType.Currency)]
         [Display(Name = "Discount - Total")]
         public decimal DiscountTotal { get; set; }
 
@@ -169,6 +173,8 @@ namespace AlphaABSV2.Models
         public virtual ICollection<AddOnRecord> AddOnRecords { get; set; }
 
         public virtual ICollection<GroupBooking> GroupBookings { get; set; }
+
+        
 
         
     }

@@ -1,7 +1,9 @@
 ﻿@model AlphaABSV2.Models.EventParent
 
 @{
-    ViewBag.Title = "Details";
+    var pageName = "Event Parent Details";
+    ViewBag.Title = pageName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="small-header transition animated fadeIn">
@@ -11,12 +13,12 @@
                 <ol class="hbreadcrumb breadcrumb">
                     <li><a href="@Url.Action("Index", "Admin")">Super Admin</a></li>
                     <li class="active">
-                        Event Parent Details
+                        @pageName
                     </li>
                 </ol>
             </div>
             <h2 class="font-light m-b-xs">
-                Event Parent
+                @pageName
             </h2>
             <small>Create the Event Types here. i.e. Paintball, Laser Tag etc..</small>
         </div>
@@ -42,7 +44,7 @@
                         <div class="panel-tools">
                             <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                         </div>
-                        Event Parent Details
+                        @pageName
                     </div>
                     <div class="panel-body">
                         <dl class="dl-horizontal">

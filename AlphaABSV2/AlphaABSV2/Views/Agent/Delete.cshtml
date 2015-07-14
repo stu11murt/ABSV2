@@ -1,4 +1,4 @@
-﻿@model AlphaABSV2.Models.Event
+﻿@model AlphaABSV2.Models.Agent
 
 @{
     var pageName = "Venue Details";
@@ -49,59 +49,115 @@
                     <div class="panel-body">
                         <dl class="dl-horizontal">
                             <dt>
-                                @Html.DisplayNameFor(model => model.EventParent.EventName)
+                                @Html.DisplayNameFor(model => model.AgentName)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.EventParent.EventName)
+                                @Html.DisplayFor(model => model.AgentName)
                             </dd>
 
                             <dt>
-                                @Html.DisplayNameFor(model => model.EventType)
+                                @Html.DisplayNameFor(model => model.AgentCode)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.EventType)
+                                @Html.DisplayFor(model => model.AgentCode)
                             </dd>
 
                             <dt>
-                                @Html.DisplayNameFor(model => model.Duration)
+                                @Html.DisplayNameFor(model => model.MainContactNumber)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.Duration)
+                                @Html.DisplayFor(model => model.MainContactNumber)
                             </dd>
 
                             <dt>
-                                @Html.DisplayNameFor(model => model.MultiSession)
+                                @Html.DisplayNameFor(model => model.Email)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.MultiSession)
+                                @Html.DisplayFor(model => model.Email)
                             </dd>
 
                             <dt>
-                                @Html.DisplayNameFor(model => model.SessionNumber)
+                                @Html.DisplayNameFor(model => model.HouseNumber)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.SessionNumber)
+                                @Html.DisplayFor(model => model.HouseNumber)
                             </dd>
 
                             <dt>
-                                @Html.DisplayNameFor(model => model.MinNumber)
+                                @Html.DisplayNameFor(model => model.Address)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.MinNumber)
+                                @Html.DisplayFor(model => model.Address)
                             </dd>
 
                             <dt>
-                                @Html.DisplayNameFor(model => model.MaxNumber)
+                                @Html.DisplayNameFor(model => model.PostCode)
                             </dt>
 
                             <dd>
-                                @Html.DisplayFor(model => model.MaxNumber)
+                                @Html.DisplayFor(model => model.PostCode)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Active)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Active)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DiscountAmount)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DiscountAmount)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DiscountPercent)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DiscountPercent)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.SecondContactNumber)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SecondContactNumber)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Notes)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Notes)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PaymentNotes)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.PaymentNotes)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Created)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Created)
                             </dd>
 
                         </dl>
