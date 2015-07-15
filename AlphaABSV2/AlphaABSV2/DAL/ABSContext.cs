@@ -37,6 +37,9 @@ namespace AlphaABSV2.DAL
         public DbSet<AccommParent> AccommParents { get; set; }
         public DbSet<StaffEventRota> StaffEventRotas { get; set; }
         public DbSet<Agent> Agents { get; set; }
+        public DbSet<Messaging> Messages { get; set; }
+       
+        
        
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -189,6 +189,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarketingDatabaseController.cs" />
+    <Compile Include="Controllers\MessagingController.cs" />
     <Compile Include="Controllers\OfficeRefController.cs" />
     <Compile Include="Controllers\PurposeController.cs" />
     <Compile Include="Controllers\SourceController.cs" />
@@ -205,9 +206,30 @@
     <Compile Include="Helpers\FinanceHelper.cs" />
     <Compile Include="Helpers\HMTLHelperExtensions.cs" />
     <Compile Include="Helpers\MayhemHelper.cs" />
+    <Compile Include="Helpers\MessagingHelper.cs" />
     <Compile Include="Migrations\201507141407347_init.cs" />
     <Compile Include="Migrations\201507141407347_init.Designer.cs">
       <DependentUpon>201507141407347_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507150953555_messaging.cs" />
+    <Compile Include="Migrations\201507150953555_messaging.Designer.cs">
+      <DependentUpon>201507150953555_messaging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507151029051_users.cs" />
+    <Compile Include="Migrations\201507151029051_users.Designer.cs">
+      <DependentUpon>201507151029051_users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507151032382_users2.cs" />
+    <Compile Include="Migrations\201507151032382_users2.Designer.cs">
+      <DependentUpon>201507151032382_users2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507151542056_userfnamelname.cs" />
+    <Compile Include="Migrations\201507151542056_userfnamelname.Designer.cs">
+      <DependentUpon>201507151542056_userfnamelname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507151548071_userfnamelname2.cs" />
+    <Compile Include="Migrations\201507151548071_userfnamelname2.Designer.cs">
+      <DependentUpon>201507151548071_userfnamelname2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccommParent.cs" />
@@ -229,6 +251,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MarketingDatabase.cs" />
+    <Compile Include="Models\Messaging.cs" />
     <Compile Include="Models\OfficeRef.cs" />
     <Compile Include="Models\Purpose.cs" />
     <Compile Include="Models\Source.cs" />
@@ -2733,10 +2756,30 @@
     <Content Include="Views\Agent\Details.cshtml" />
     <Content Include="Views\Agent\Edit.cshtml" />
     <Content Include="Views\Agent\Index.cshtml" />
+    <Content Include="Views\Messaging\Create.cshtml" />
+    <Content Include="Views\Messaging\Delete.cshtml" />
+    <Content Include="Views\Messaging\Details.cshtml" />
+    <Content Include="Views\Messaging\Edit.cshtml" />
+    <Content Include="Views\Messaging\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201507141407347_init.resx">
       <DependentUpon>201507141407347_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507150953555_messaging.resx">
+      <DependentUpon>201507150953555_messaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507151029051_users.resx">
+      <DependentUpon>201507151029051_users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507151032382_users2.resx">
+      <DependentUpon>201507151032382_users2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507151542056_userfnamelname.resx">
+      <DependentUpon>201507151542056_userfnamelname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507151548071_userfnamelname2.resx">
+      <DependentUpon>201507151548071_userfnamelname2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -80,9 +80,7 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.PaymentNotes)
                                 </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Created)
-                                </th>
+                               
                                 <th></th>
                             </tr>
 
@@ -128,9 +126,7 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.PaymentNotes)
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Created)
-                                    </td>
+                                    
                                     <td>
                                         @Html.ActionLink("Edit", "Edit", new { id = item.AgentID }) |
                                         @Html.ActionLink("Details", "Details", new { id = item.AgentID }) |

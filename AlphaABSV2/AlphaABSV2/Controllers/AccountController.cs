@@ -9,6 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using AlphaABSV2.Models;
+using System.Collections.Generic;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace AlphaABSV2.Controllers
 {
@@ -452,6 +455,20 @@ namespace AlphaABSV2.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public List<ApplicationUser> GetUserIDs()
+        {
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            return manager.Users.ToList();
+        }
+
+        public string GetUserNameFromID(string ID)
+        {
+            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var user = manager.Users.Where(u => u.Id == ID).First();
+            return user.UserName.ToString();
+            //return manager.Users.Where(u => u.Id == ID).Select(n => n.UserName).ToString();
+        }
+
         internal class ChallengeResult : HttpUnauthorizedResult
         {
             public ChallengeResult(string provider, string redirectUri)
@@ -479,6 +496,9 @@ namespace AlphaABSV2.Controllers
                 }
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, LoginProvider);
             }
+
+
+
         }
         #endregion
     }

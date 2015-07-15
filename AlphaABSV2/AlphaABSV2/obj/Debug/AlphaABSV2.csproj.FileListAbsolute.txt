@@ -136,3 +136,8 @@ C:\Users\DBDMobile\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Microsoft.Ow
 C:\Users\DBDMobile\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.pdb
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.init.resources
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.csproj.GenerateResource.Cache
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.messaging.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.users.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.users2.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.userfnamelname.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.userfnamelname2.resources

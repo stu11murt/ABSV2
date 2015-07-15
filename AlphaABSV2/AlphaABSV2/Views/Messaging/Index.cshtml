@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AlphaABSV2.Models.Messaging>
+@using AlphaABSV2.Helpers;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <span>Recipient</span>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Read)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Archived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <span>@MessagingHelper.GetUserName(item.UserID)</span>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Read)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Archived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deleted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MessagingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MessagingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MessagingID })
+        </td>
+    </tr>
+}
+
+</table>
