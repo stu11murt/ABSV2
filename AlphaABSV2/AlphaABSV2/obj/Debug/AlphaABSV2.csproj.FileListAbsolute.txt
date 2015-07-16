@@ -141,3 +141,16 @@ C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.M
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.users2.resources
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.userfnamelname.resources
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.userfnamelname2.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Common.Logging.Core.dll
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Common.Logging.dll
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Quartz.dll
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Common.Logging.pdb
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Common.Logging.xml
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Common.Logging.Core.pdb
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Common.Logging.Core.xml
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Quartz.pdb
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\Quartz.xml
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\HtmlAgilityPack.dll
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\HtmlAgilityPack.pdb
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\HtmlAgilityPack.xml
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.emailcounter.resources

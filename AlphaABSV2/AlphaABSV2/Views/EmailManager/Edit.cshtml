@@ -1,5 +1,5 @@
 ﻿@model AlphaABSV2.Models.EmailTemplates
-
+@using HtmlAgilityPack;
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -59,42 +59,43 @@
     var piss = "";
 
     $(function () {
-       
+
         // Initialize summernote plugin
         $('.summernote').summernote();
-       
+
         //get the existing html from the model
-        var content = @Html.Raw("'"+content+"'");
+        //var content = @Html.Raw("'"+content+"'");
+        var hmtlContent = @Html.Raw("'"+content+"'");
 
         //get the tempates id for finding it in the action controller
         var tempID = @Model.EmailTemplatesID.ToString();
 
         var templateNam = "Template";
 
-            //inittilaise the summernote editore with the existing html
-            $('.summernote').code(content);
-            var sHTML = $('.summernote').code();
-        
-            $('.summernote1').summernote({
-                toolbar: [
-                    ['headline', ['style']],
-                    ['style', ['bold', 'italic', 'underline', 'superscript', 'subscript', 'strikethrough', 'clear']],
-                    ['textsize', ['fontsize']],
-                    ['alignment', ['ul', 'ol', 'paragraph', 'lineheight']],
-                ]
-            });
+        //inittilaise the summernote editore with the existing html
+        $('.summernote').code(hmtlContent);
+        var sHTML = $('.summernote').code();
 
-            //post the id, html and template name to the actioncontroller
-            $('#saveHTML').click(function () {
-                piss = $('.summernote').code();
-                templateNam = $('#title').val();
-                $.post("/EmailManager/Edit/", { id : tempID, sHTML: piss, template : templateNam });
-                
-            });
+        $('.summernote1').summernote({
+            toolbar: [
+                ['headline', ['style']],
+                ['style', ['bold', 'italic', 'underline', 'superscript', 'subscript', 'strikethrough', 'clear']],
+                ['textsize', ['fontsize']],
+                ['alignment', ['ul', 'ol', 'paragraph', 'lineheight']],
+            ]
         });
 
+        //post the id, html and template name to the actioncontroller
+        $('#saveHTML').click(function () {
+            piss = $('.summernote').code();
+            templateNam = $('#title').val();
+            $.post("/EmailManager/Edit/", { id : tempID, sHTML: piss, template : templateNam });
+
+        });
+    });
 
 
-      
-    </script>
+
+
+</script>
 }

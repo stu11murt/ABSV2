@@ -35,8 +35,16 @@ namespace AlphaABSV2.Controllers
             {
                 return HttpNotFound();
             }
-            emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
+            
+            //emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
+            emailTemplate.TemplateContent = CleanContent(emailTemplate.TemplateContent);
             return View(emailTemplate);
+        }
+
+        private string CleanContent(string html)
+        {
+             string cleanHtml = html.Replace("'", "&#39;");
+             return cleanHtml;
         }
 
         // GET: EmailManager/Create
@@ -52,7 +60,7 @@ namespace AlphaABSV2.Controllers
             try
             {
                 EmailTemplates emailTemplate = new EmailTemplates();
-                emailTemplate.TemplateContent = HttpUtility.HtmlEncode(sHTML);
+                emailTemplate.TemplateContent = sHTML;
                 emailTemplate.TemplateTitle = templateNAME;
                 db.EmailTemplates.Add(emailTemplate);
                 db.SaveChanges();
@@ -79,7 +87,8 @@ namespace AlphaABSV2.Controllers
             {
                 return HttpNotFound();
             }
-            emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
+            emailTemplate.TemplateContent = CleanContent(emailTemplate.TemplateContent);
+            //emailTemplate.TemplateContent = CleanContent(emailTemplate.TemplateContent);
             return View(emailTemplate);
         }
 
@@ -95,7 +104,7 @@ namespace AlphaABSV2.Controllers
                 EmailTemplates emailTemplate = db.EmailTemplates.Find(Convert.ToInt32(id));
                 if (emailTemplate != null)
                 {
-                    emailTemplate.TemplateContent = HttpUtility.HtmlEncode(sHTML);
+                    emailTemplate.TemplateContent = sHTML;
                     emailTemplate.TemplateTitle = template;
                     db.SaveChanges();
                 }
@@ -122,7 +131,7 @@ namespace AlphaABSV2.Controllers
             {
                 return HttpNotFound();
             }
-            emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
+            emailTemplate.TemplateContent = CleanContent(emailTemplate.TemplateContent);
             return View(emailTemplate);
         }
 
@@ -149,7 +158,7 @@ namespace AlphaABSV2.Controllers
             {
                 return HttpNotFound();
             }
-            emailTemplate.TemplateContent = HttpUtility.HtmlDecode(emailTemplate.TemplateContent);
+            emailTemplate.TemplateContent = emailTemplate.TemplateContent;
             return View(emailTemplate);
         }
 
