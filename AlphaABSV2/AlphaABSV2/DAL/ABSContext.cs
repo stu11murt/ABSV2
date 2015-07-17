@@ -38,6 +38,7 @@ namespace AlphaABSV2.DAL
         public DbSet<StaffEventRota> StaffEventRotas { get; set; }
         public DbSet<Agent> Agents { get; set; }
         public DbSet<Messaging> Messages { get; set; }
+        public DbSet<ABSSettings> ABSSetting { get; set; }
        
         
        

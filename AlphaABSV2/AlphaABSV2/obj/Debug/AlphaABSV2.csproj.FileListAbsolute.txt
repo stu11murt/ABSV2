@@ -154,3 +154,4 @@ C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\HtmlAgilityPack.dl
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\HtmlAgilityPack.pdb
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\bin\HtmlAgilityPack.xml
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.emailcounter.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.addedsettings.resources

@@ -219,6 +219,7 @@
     <Compile Include="Helpers\HMTLHelperExtensions.cs" />
     <Compile Include="Helpers\MayhemHelper.cs" />
     <Compile Include="Helpers\MessagingHelper.cs" />
+    <Compile Include="Helpers\SettingsHelper.cs" />
     <Compile Include="Migrations\201507141407347_init.cs" />
     <Compile Include="Migrations\201507141407347_init.Designer.cs">
       <DependentUpon>201507141407347_init.cs</DependentUpon>
@@ -247,7 +248,12 @@
     <Compile Include="Migrations\201507161545279_emailcounter.Designer.cs">
       <DependentUpon>201507161545279_emailcounter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507171041008_addedsettings.cs" />
+    <Compile Include="Migrations\201507171041008_addedsettings.Designer.cs">
+      <DependentUpon>201507171041008_addedsettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ABSSettings.cs" />
     <Compile Include="Models\AccommParent.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AddOnParent.cs" />
@@ -283,6 +289,12 @@
     <Compile Include="ViewModels\BookingViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Emails\Bunker\BunkerConfirmation.html" />
+    <Content Include="Content\Emails\Bunker\BunkerProvisional.html" />
+    <Content Include="Content\Emails\Bunker\BunkerSCConfirmation.html" />
+    <Content Include="Content\Emails\Bunker\BunkerSCEnquiry.html" />
+    <Content Include="Content\Emails\Bunker\BunkerZBConfirmation.html" />
+    <Content Include="Content\Emails\Bunker\BunkerZBEnquiry.html" />
     <Content Include="Content\Emails\EmailTemplateOne.html" />
     <Content Include="Content\Emails\Invoice.html" />
     <Content Include="Content\img\green%402x.png" />
@@ -2231,6 +2243,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Emails\Jungle\" />
+    <Folder Include="Content\Emails\Mayhem\" />
+    <Folder Include="Content\Emails\Paradise\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -2802,6 +2817,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507161545279_emailcounter.resx">
       <DependentUpon>201507161545279_emailcounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507171041008_addedsettings.resx">
+      <DependentUpon>201507171041008_addedsettings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
