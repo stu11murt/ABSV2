@@ -1,0 +1,87 @@
+﻿@model AlphaABSV2.Models.EmailLinker
+
+@{
+    var pageName = "Create Email Links";
+    ViewBag.Title = pageName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                    <li class="active">
+                        @pageName
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                @pageName
+            </h2>
+            <small>Create the Event package variations here. i.e. Adult Package (Paintball), (Super Shot) Laser Tag etc..</small>
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="content animate-panel">
+        <div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            <h2>@pageName</h2>
+
+                            @*<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hpanel">
+                        <div class="panel-heading">
+                            <div class="panel-tools">
+                                <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            </div>
+                            @pageName
+                        </div>
+                        <div class="panel-body">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EmailTemplatesID, "EmailTemplatesID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("EmailTemplatesID", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.EmailTemplatesID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EmailCategoriesID, "EmailCategoriesID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownList("EmailCategoriesID", null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.EmailCategoriesID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-md" })
+        </div>
+    </div>
+
+}

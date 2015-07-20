@@ -1,6 +1,8 @@
 ﻿@{
-    ViewBag.Title = "Index";
     var pageName = "Super Admin Home";
+    ViewBag.Title = pageName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
 }
 
 <div class="small-header transition animated fadeIn">
@@ -48,6 +50,8 @@
                             <p>@Html.ActionLink("Booking Statuses", "Index", "BookingStatus", null, new { @class = "btn btn-primary btn-lg" })</p>
                             <p>@Html.ActionLink("Hotel Management", "Index", "AccommParent", null, new { @class = "btn btn-primary btn-lg" })</p>
                             <p>@Html.ActionLink("Agent Management", "Index", "Agent", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            <p>@Html.ActionLink("Email Categories", "Index", "EmailCategories", null, new { @class = "btn btn-primary btn-lg" })</p>
+                            <p>@Html.ActionLink("Email Linking", "Index", "EmailLinker", null, new { @class = "btn btn-primary btn-lg" })</p>
                             <h2>Group Bookings</h2>
                             <p>@Html.ActionLink("Group Bookings", "Index", "GroupBooking", null, new { @class = "btn btn-primary btn-lg" })</p>
                             

@@ -47,7 +47,7 @@ namespace AlphaABSV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmailCategoriesID,CategoryName")] EmailCategories emailCategories)
+        public ActionResult Create([Bind(Include = "CategoryName")] EmailCategories emailCategories)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace AlphaABSV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmailCategoriesID,CategoryName")] EmailCategories emailCategories)
+        public ActionResult Edit([Bind(Include = "CategoryName")] EmailCategories emailCategories)
         {
             if (ModelState.IsValid)
             {

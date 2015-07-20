@@ -39,6 +39,7 @@ namespace AlphaABSV2.DAL
         public DbSet<Agent> Agents { get; set; }
         public DbSet<Messaging> Messages { get; set; }
         public DbSet<ABSSettings> ABSSetting { get; set; }
+        public DbSet<EmailLinker> EmailLinkers { get; set; }
        
         
        

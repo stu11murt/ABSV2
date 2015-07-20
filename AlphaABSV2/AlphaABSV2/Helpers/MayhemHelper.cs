@@ -8,7 +8,7 @@ using AlphaABSV2.DAL;
 namespace AlphaABSV2.Helpers
 {
     public enum QueryTypeMayhem { Paintball = 1, Laser = 2, Walkon = 3, BigTicket = 4, PrePay = 98, AllEvents = 99 }
-
+    //public enum EmailTypes {  PaintballEnq = 1, PaintballProv = 2, PaintballConf = 3, PaintballRec = 4, PaintballInv = 5,  LaserEnq = 6, LaserConf = 7, Las}
     public static class MayhemHelper
     {
         public static List<EventRecord> FindQueryType(DateTime selectDate, int id)

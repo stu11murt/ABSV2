@@ -1,0 +1,90 @@
+﻿@model IEnumerable<AlphaABSV2.Models.EmailLinker>
+
+@{
+    var pageName = "Email Linking";
+    ViewBag.Title = pageName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Admin")">Super Admin</a></li>
+                    <li class="active">
+                        <span>@pageName</span>
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                @pageName
+            </h2>
+            <small>Manage all Dynamic aspects of ABS</small>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h2>@pageName</h2>
+
+                        @*<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        @pageName
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EmailCategories.CategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EmailTemplates.TemplateTitle)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmailCategories.CategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmailTemplates.TemplateTitle)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.EmailLinkerID }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.EmailLinkerID }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.EmailLinkerID })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary btn-md" })
+        @Html.ActionLink("Back to Super Admin", "Index", "Admin", null, new { @class = "btn btn-primary btn-md" })
+    </p>
+</div>

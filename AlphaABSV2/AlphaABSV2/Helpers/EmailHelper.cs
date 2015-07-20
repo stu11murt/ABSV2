@@ -6,6 +6,7 @@ using System.Net.Mail;
 using System.Configuration;
 using System.Text;
 using System.IO;
+using AlphaABSV2.Helpers;
 
 namespace AlphaABSV2.Helpers
 {
@@ -13,11 +14,34 @@ namespace AlphaABSV2.Helpers
     {
         public static string SiteURL = ConfigurationManager.AppSettings["SiteUrl"];
 
-        public static string ReturnMailTemplate()
+        public static string ReturnMailTemplate(int companyRef)
         {
+            var relativePathToContent = "";
+            var txtMsg = "";
+
+            switch(companyRef)
+            {
+                case (int)SystemOwner.Jungle:
+                        relativePathToContent = "~/Content/emails/EmailTemplateOne.html";
+                        txtMsg = ReadTXTFile(HttpContext.Current.Server.MapPath(relativePathToContent));
+                        return txtMsg;
+                case (int)SystemOwner.Mayhem:
+                        relativePathToContent = "~/Content/emails/EmailTemplateOne.html";
+                        txtMsg = ReadTXTFile(HttpContext.Current.Server.MapPath(relativePathToContent));
+                        return txtMsg;
+                case (int)SystemOwner.Paradise:
+                        relativePathToContent = "~/Content/emails/EmailTemplateOne.html";
+                        txtMsg = ReadTXTFile(HttpContext.Current.Server.MapPath(relativePathToContent));
+                        return txtMsg;
+                case (int)SystemOwner.Bunker:
+                        relativePathToContent = "~/Content/emails/EmailTemplateOne.html";
+                        txtMsg = ReadTXTFile(HttpContext.Current.Server.MapPath(relativePathToContent));
+                        return txtMsg;
+                    
+            }
             //var subject = "You have been Invited to BoomWriter by a friend";
-            var relativePathToContent = "~/Content/emails/EmailTemplateOne.html";
-            var txtMsg = ReadTXTFile(HttpContext.Current.Server.MapPath(relativePathToContent));
+            //var relativePathToContent = "~/Content/emails/EmailTemplateOne.html";
+            //var txtMsg = ReadTXTFile(HttpContext.Current.Server.MapPath(relativePathToContent));
             
             //var mail = new MailMessage();
             //mail.To.Add(new MailAddress(mailAddressTo));
