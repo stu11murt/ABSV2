@@ -174,6 +174,8 @@ namespace AlphaABSV2.Models
 
         public virtual ICollection<GroupBooking> GroupBookings { get; set; }
 
+        public virtual ICollection<OnlinePayment> OnlinePayments { get; set; }
+
         
 
         

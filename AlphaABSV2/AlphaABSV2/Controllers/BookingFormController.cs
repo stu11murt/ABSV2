@@ -127,6 +127,17 @@ namespace AlphaABSV2.Controllers
             return RedirectToAction("Index");
         }
 
+        //$.post("/BookingForm/SubmitPayment/", { NameOnCard: NoC, CCNumber: templateNam, ValidFrom: VFrom, ExpiryDate:ExDate, CCVNumber: CCv, PayeeEmail: PayEmail });
+
+        //ONLINE PAYMENT SUBMISSION
+        public ActionResult SubmitOnlinePayment(string NameOnCard, string CCNumber, string ValidFrom, string ExpiryDate, string CCVNumber, string PayeeEmail)
+        {
+            //do a payment check in here
+            if (CCVNumber == "123")
+                return Content("Passed");
+            else
+                return Content("Failed");
+        }
 
         //Display All Provisional Bookings
         public ActionResult DisplayProvBookings()

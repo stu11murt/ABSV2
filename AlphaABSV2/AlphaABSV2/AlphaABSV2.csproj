@@ -266,6 +266,14 @@
     <Compile Include="Migrations\201507201114559_emailLinker.Designer.cs">
       <DependentUpon>201507201114559_emailLinker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507210817518_onlinepayment.cs" />
+    <Compile Include="Migrations\201507210817518_onlinepayment.Designer.cs">
+      <DependentUpon>201507210817518_onlinepayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507210829351_onlinepaymentAmount.cs" />
+    <Compile Include="Migrations\201507210829351_onlinepaymentAmount.Designer.cs">
+      <DependentUpon>201507210829351_onlinepaymentAmount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ABSSettings.cs" />
     <Compile Include="Models\AccommParent.cs" />
@@ -290,6 +298,7 @@
     <Compile Include="Models\MarketingDatabase.cs" />
     <Compile Include="Models\Messaging.cs" />
     <Compile Include="Models\OfficeRef.cs" />
+    <Compile Include="Models\OnlinePayment.cs" />
     <Compile Include="Models\Purpose.cs" />
     <Compile Include="Models\Source.cs" />
     <Compile Include="Models\Staff.cs" />
@@ -2815,6 +2824,7 @@
     <Content Include="Views\EmailLinker\Details.cshtml" />
     <Content Include="Views\EmailLinker\Edit.cshtml" />
     <Content Include="Views\EmailLinker\Index.cshtml" />
+    <Content Include="Views\BookingForm\OnlinePaymentPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201507141407347_init.resx">
@@ -2849,6 +2859,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507201114559_emailLinker.resx">
       <DependentUpon>201507201114559_emailLinker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507210817518_onlinepayment.resx">
+      <DependentUpon>201507210817518_onlinepayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507210829351_onlinepaymentAmount.resx">
+      <DependentUpon>201507210829351_onlinepaymentAmount.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

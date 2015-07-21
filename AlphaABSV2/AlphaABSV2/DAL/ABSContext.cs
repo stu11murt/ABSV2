@@ -40,6 +40,7 @@ namespace AlphaABSV2.DAL
         public DbSet<Messaging> Messages { get; set; }
         public DbSet<ABSSettings> ABSSetting { get; set; }
         public DbSet<EmailLinker> EmailLinkers { get; set; }
+        public DbSet<OnlinePayment> OnlinePayments { get; set; }
        
         
        

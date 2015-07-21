@@ -158,3 +158,5 @@ C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.M
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.tweaksettings.resources
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.tweaksettings2.resources
 C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.emailLinker.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.onlinepayment.resources
+C:\Users\DBD\Documents\GitHub\ABSV2\AlphaABSV2\AlphaABSV2\obj\Debug\AlphaABSV2.Migrations.onlinepaymentAmount.resources

@@ -1,0 +1,31 @@
+﻿@model AlphaABSV2.ViewModels.BookingViewModel
+
+@Html.LabelFor(model => model.OnlinePay.NameOnCard)
+@Html.EditorFor(model => model.OnlinePay.NameOnCard, new { htmlAttributes = new { @class = "form-control" } })
+@Html.ValidationMessageFor(model => model.OnlinePay.NameOnCard, "", new { @class = "text-danger" })
+
+
+<br />
+@Html.LabelFor(model => model.OnlinePay.CreditCardNumber)
+@Html.EditorFor(model => model.OnlinePay.CreditCardNumber, new { htmlAttributes = new { @class = "form-control" } })
+@Html.ValidationMessageFor(model => model.OnlinePay.CreditCardNumber, "", new { @class = "text-danger" })
+
+<br />
+@Html.LabelFor(model => model.OnlinePay.ValidFrom, htmlAttributes: new { @class = "col-sm-6 control-label" })
+@Html.EditorFor(model => model.OnlinePay.ValidFrom, new { htmlAttributes = new { @class = "form-control" } })
+@Html.ValidationMessageFor(model => model.OnlinePay.ValidFrom, "", new { @class = "text-danger" })
+
+<br />
+@Html.LabelFor(model => model.OnlinePay.ExpiryDate, htmlAttributes: new { @class = "col-sm-6 control-label" })
+@Html.EditorFor(model => model.OnlinePay.ExpiryDate, new { htmlAttributes = new { @class = "form-control" } })
+@Html.ValidationMessageFor(model => model.OnlinePay.ExpiryDate, "", new { @class = "text-danger" })
+
+<br />
+@Html.LabelFor(model => model.OnlinePay.CCV2, htmlAttributes: new { @class = "col-sm-6 control-label" })
+@Html.EditorFor(model => model.OnlinePay.CCV2, new { htmlAttributes = new { @class = "form-control" } })
+@Html.ValidationMessageFor(model => model.OnlinePay.CCV2, "", new { @class = "text-danger" })
+
+<br />
+@Html.LabelFor(model => model.OnlinePay.PayeeEmail, htmlAttributes: new { @class = "col-sm-6 control-label" })
+@Html.EditorFor(model => model.OnlinePay.PayeeEmail, new { htmlAttributes = new { @class = "form-control" } })
+@Html.ValidationMessageFor(model => model.OnlinePay.PayeeEmail, "", new { @class = "text-danger" })
