@@ -39,13 +39,6 @@
                         </div>
                         <div class="panel-body">
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            @*<div class="form-group">
-                    @Html.LabelFor(model => model.booking.BookingRef, htmlAttributes: new { @class = "col-sm-2 control-label" })
-                    <div class="col-sm-10">
-                        @Html.EditorFor(model => model.booking.BookingRef, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.booking.BookingRef, "", new { @class = "text-danger" })
-                    </div>
-                </div>*@
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 @Html.LabelFor(model => model.booking.DateOfEvent, htmlAttributes: new { @class = "col-sm-2 control-label" })
@@ -65,6 +58,15 @@
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
+                                @Html.LabelFor(model => model.booking.Agent, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.DropDownListFor(model => model.booking.Agent, ViewBag.Agents as SelectList, "- Select Agent - ")
+                                    @Html.ValidationMessageFor(model => model.booking.Agent, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
                                 @Html.LabelFor(model => model.booking.OfficeRef, htmlAttributes: new { @class = "col-sm-2 control-label" })
                                 <div class="col-sm-10">
                                     @Html.DropDownListFor(model => model.booking.OfficeRef, ViewBag.OfficeRef as SelectList, "- Select Status - ")
@@ -76,7 +78,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.booking.Purpose, htmlAttributes: new { @class = "col-sm-2 control-label" })
                                 <div class="col-sm-10">
-                                    @Html.DropDownListFor(model => model.booking.Purpose, ViewBag.Purpose as SelectList, "- Select Status - ")
+                                    @Html.DropDownListFor(model => model.booking.Purpose, ViewBag.Purpose as SelectList, "- Select Purpose - ")
                                     @Html.ValidationMessageFor(model => model.booking.Purpose, "", new { @class = "text-danger" })
 
                                 </div>
@@ -228,8 +230,10 @@
                             </div>
                             <!-- EVENT SECTION-->
                             <!--**************-->
+                            
                             <div class="hr-line-dashed"></div>
-                            <div class="form-group">
+                            <input type="checkbox" class="checkbox-circle" id="eventCheck" />
+                            <div class="form-group" id="events">
                                 <div class="col-sm-10">
 
                                     @foreach (EventParent eParent in Model.DynamicEvents.Select(e => e.EventParent).Distinct())
@@ -406,7 +410,7 @@
 
                         <!--END OF HOTEL SECTION-->
                         <!--********************-->
-                        
+                            
                         <!-- FINANCIAL SECTION-->
                         <!--******************-->
                         <div class="hr-line-dashed"></div>
@@ -439,7 +443,39 @@
                         </div>
                         <!-- END OF FINANCIAL SECTION-->
                         <!--*************************-->
-                    </div>
+
+                        <!--MODAL ONLINE PAYMENT SECTION-->
+                        <!--****************************-->
+                        <div class="text-center">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                                Take Online Payment
+                            </button>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="form" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="color-line"></div>
+                                        <div class="modal-header text-center">
+                                            <h4 class="modal-title">Online Payment</h4>
+                                            <small class="font-bold">Make sure to take Issue Number and Valid From if Card is Solo.</small>
+                                        </div>
+                                        <div class="modal-body">
+                                            @Html.Partial("OnlinePaymentPartial", Model)
+                                        </div>
+                                        <div class="modal-footer">
+                                            <div class="pull-left"><button type="button" class="btn btn-success btn-circle" id="paymentSuccess" data-dismiss="modal"><i class="fa fa-check"></i></button></div>
+                                            <div class="pull-left"><button type="button" class="btn btn-danger2 btn-circle" id="paymentError"><i class="fa fa-times"></i></button></div>
+                                            
+                                            <button type="button" class="btn btn-default" data-dismiss="modal" id="onlineClose">Close</button>
+                                            <button type="button" class="btn btn-primary" id="submitPayment">Submit Payment</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--*****************************-->
+                        <!--*****************************-->
+                </div>
+                        
                     </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">

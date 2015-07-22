@@ -47,7 +47,7 @@ namespace AlphaABSV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MarketingDatabaseID,FirstName,LastName,MobileNum,Email,MailChimpSubscribed")] MarketingDatabase marketingDatabase)
+        public ActionResult Create([Bind(Include = "MarketingDatabaseID,FirstName,LastName,MobileNum,Email,MailChimpSubscribed, Created")] MarketingDatabase marketingDatabase)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace AlphaABSV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MarketingDatabaseID,FirstName,LastName,MobileNum,Email,MailChimpSubscribed")] MarketingDatabase marketingDatabase)
+        public ActionResult Edit([Bind(Include = "MarketingDatabaseID,FirstName,LastName,MobileNum,Email,MailChimpSubscribed, Created")] MarketingDatabase marketingDatabase)
         {
             if (ModelState.IsValid)
             {

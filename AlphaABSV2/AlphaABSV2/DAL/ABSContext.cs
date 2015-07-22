@@ -36,6 +36,13 @@ namespace AlphaABSV2.DAL
         public DbSet<AddOnRecord> AddOnRecords { get; set; }
         public DbSet<AccommParent> AccommParents { get; set; }
         public DbSet<StaffEventRota> StaffEventRotas { get; set; }
+        public DbSet<Agent> Agents { get; set; }
+        public DbSet<Messaging> Messages { get; set; }
+        public DbSet<ABSSettings> ABSSetting { get; set; }
+        public DbSet<EmailLinker> EmailLinkers { get; set; }
+        public DbSet<OnlinePayment> OnlinePayments { get; set; }
+       
+        
        
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

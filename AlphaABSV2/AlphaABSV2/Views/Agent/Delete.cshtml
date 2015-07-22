@@ -1,0 +1,179 @@
+﻿@model AlphaABSV2.Models.Agent
+
+@{
+    var pageName = "Venue Details";
+    ViewBag.Title = pageName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                    <li class="active">
+                        @pageName
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                @pageName
+            </h2>
+            <small>Delete the Event Types here. i.e. Paintball, Laser Tag etc..</small>
+        </div>
+    </div>
+</div>
+
+<div class="content animate-panel">
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h2>@pageName</h2>
+                        @*<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        @pageName
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AgentName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AgentName)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.AgentCode)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.AgentCode)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.MainContactNumber)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.MainContactNumber)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.HouseNumber)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.HouseNumber)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Address)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Address)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PostCode)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.PostCode)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Active)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Active)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DiscountAmount)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DiscountAmount)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.DiscountPercent)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DiscountPercent)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.SecondContactNumber)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.SecondContactNumber)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Notes)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Notes)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.PaymentNotes)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.PaymentNotes)
+                            </dd>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Created)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Created)
+                            </dd>
+
+                        </dl>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Delete" class="btn btn-danger2 btn-md" /> |
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-md" })
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

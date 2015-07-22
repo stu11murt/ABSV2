@@ -37,6 +37,8 @@ namespace AlphaABSV2.ViewModels
             set { }
         }
 
+        public OnlinePayment OnlinePay { get; set; }
+
         
 
         

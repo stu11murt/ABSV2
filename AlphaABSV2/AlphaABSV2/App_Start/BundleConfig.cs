@@ -43,6 +43,16 @@ namespace AlphaABSV2
             bundles.Add(new StyleBundle("~/bundles/staffrota/css").Include(
                    "~/Scripts/BookingForm/staffrota.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/mayhem/js").Include(
+                   "~/Scripts/MayhemScripts/mayhem.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/htmltableexport/js").Include(
+                   "~/Vendor/HTMLTableExport/jquery.base64.js",
+                   "~/Vendor/HTMLTableExport/tableExport.js",
+                   "~/Vendor/HTMLTableExport/jspdf.js",
+                   "~/Vendor/HTMLTableExport/libs/base64.js",
+                   "~/Vendor/HTMLTableExport/libs/sprintf.js"));
+
             // Animate.css
             bundles.Add(new StyleBundle("~/bundles/animate/css").Include(
                       "~/Vendor/animate.css/animate.min.css"));

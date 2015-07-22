@@ -1,32 +1,75 @@
 ﻿@model AlphaABSV2.Models.Venue
 
 @{
-    ViewBag.Title = "Delete";
+    var pageName = "Venue Details";
+    ViewBag.Title = pageName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Venue</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.VenueName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.VenueName)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="small-header transition animated fadeIn">
+    <div class="hpanel">
+        <div class="panel-body">
+            <div id="hbreadcrumb" class="pull-right">
+                <ol class="hbreadcrumb breadcrumb">
+                    <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                    <li class="active">
+                        @pageName
+                    </li>
+                </ol>
+            </div>
+            <h2 class="font-light m-b-xs">
+                @pageName
+            </h2>
+            <small>Delete the Event Types here. i.e. Paintball, Laser Tag etc..</small>
         </div>
-    }
+    </div>
+</div>
+
+<div class="content animate-panel">
+    <div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <h2>@pageName</h2>
+                        @*<p>Individual form controls automatically receive some global styling. All textual <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements with <code>.form-control</code> are set to <code>width: 100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum spacing.</p>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        @pageName
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.VenueName)
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.VenueName)
+                            </dd>
+
+                        </dl>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Delete" class="btn btn-danger2 btn-md" /> |
+                                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary btn-md" })
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

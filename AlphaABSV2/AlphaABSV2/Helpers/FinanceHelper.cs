@@ -16,9 +16,14 @@ namespace AlphaABSV2.Helpers
             decimal runningDeposit = 0;
             decimal totalBalance = 0;
             decimal balancePP = 0;
+            decimal agentDiscount = 0;
+
 
             BookingForm newBooking = booking.booking;
 
+           
+            
+            
             foreach(EventRecord ev in booking.EventData)
             {
                 if(ev.EventNumber > 0)
@@ -49,8 +54,31 @@ namespace AlphaABSV2.Helpers
                 }
             }
 
+
+            //calculate agent discount
+            if (IsAgentBooking(newBooking))
+            {
+                Agent calcAgent = GetAgent(newBooking);
+                if (calcAgent != null)
+                    if (calcAgent.DiscountAmount > 0)
+                        agentDiscount = calcAgent.DiscountAmount;
+                    else if (calcAgent.DiscountPercent > 0)
+                        agentDiscount = calcAgent.DiscountPercent * runningTotal;
+                    else
+                        agentDiscount = 0;
+                else
+                    agentDiscount = 0;
+
+            }
+
+            
+            //apply agent discount
+            runningTotal = runningTotal - agentDiscount;
+
             totalBalance = runningTotal - booking.booking.AmountTaken;
             balancePP = totalBalance / booking.booking.GroupSize;
+          
+            
 
 
             newBooking.BalanceRemaining = totalBalance;
@@ -59,6 +87,25 @@ namespace AlphaABSV2.Helpers
 
 
             return newBooking;
+        }
+
+        static bool IsAgentBooking(BookingForm booking)
+        {
+            if (booking.Agent > 0)
+                return true;
+            else
+                return false;
+        }
+
+        static Agent GetAgent(BookingForm booking)
+        {
+            ABSContext db = new ABSContext();
+            Agent agent = db.Agents.Find(booking.Agent);
+
+            if (agent != null)
+                return agent;
+            else
+                return null;
         }
 
         public static decimal TodaysTakings(DateTime day)
